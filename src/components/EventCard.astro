@@ -1,0 +1,18 @@
+---
+import type { CanonicalEvent } from '@/lib/events/schema';
+import { formatEventDate } from '@/lib/events/data';
+
+interface Props { event: CanonicalEvent }
+const { event } = Astro.props;
+---
+<article class="event-card">
+  <p class="eyebrow">{event.location.city} · {event.categories.join(', ')}</p>
+  <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
+  <p>{event.agent_summary}</p>
+  <dl class="event-meta">
+    <div><dt>When</dt><dd>{formatEventDate(event)}</dd></div>
+    <div><dt>Where</dt><dd>{event.location.name ?? event.location.city}</dd></div>
+    <div><dt>Distance</dt><dd>{event.geo.distance_from_park_miles ?? '—'} miles from Shallow Creek</dd></div>
+    <div><dt>Source</dt><dd><a href={event.links.source_url}>Official/source page</a></dd></div>
+  </dl>
+</article>

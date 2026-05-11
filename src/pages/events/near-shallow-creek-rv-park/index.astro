@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EventCard from '@/components/EventCard.astro';
+import { getApprovedEvents } from '@/lib/events/data';
+import { itemListJsonLd } from '@/lib/events/jsonld';
+
+const events = getApprovedEvents().filter((event) => event.geo.radius_tier === 15);
+const jsonLd = itemListJsonLd(events);
+---
+<BaseLayout title="Events Near Shallow Creek RV Park" description="Source-linked events within the nearby East Texas radius around Shallow Creek RV Park.">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <section class="hero">
+    <p class="eyebrow">Near Shallow Creek RV Park</p>
+    <h1>Events near Shallow Creek RV Park</h1>
+    <p>
+      Nearby East Texas events within roughly 15 miles of Shallow Creek, useful for RV guests, locals, and weekend visitors.
+    </p>
+  </section>
+  <div class="cards">
+    {events.map((event) => <EventCard event={event} />)}
+  </div>
+</BaseLayout>

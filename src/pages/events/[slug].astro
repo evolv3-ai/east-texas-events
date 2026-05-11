@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getApprovedEvents, formatEventDate } from '@/lib/events/data';
+import { eventToJsonLd } from '@/lib/events/jsonld';
+
+export function getStaticPaths() {
+  return getApprovedEvents().map((event) => ({ params: { slug: event.slug }, props: { event } }));
+}
+
+const { event } = Astro.props;
+const jsonLd = eventToJsonLd(event);
+---
+<BaseLayout title={`${event.title} | East Texas Events`} description={event.agent_summary}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="event-detail">
+    <p class="eyebrow">{event.location.city} · {event.categories.join(', ')}</p>
+    <h1>{event.title}</h1>
+    <p class="lede">{event.agent_summary}</p>
+
+    <section class="panel">
+      <h2>Event details</h2>
+      <dl class="event-meta detail">
+        <div><dt>When</dt><dd>{formatEventDate(event)}</dd></div>
+        <div><dt>Where</dt><dd>{event.location.name ?? event.location.city}, {event.location.region}</dd></div>
+        <div><dt>Distance</dt><dd>{event.geo.distance_from_park_miles ?? '—'} miles from Shallow Creek RV Park</dd></div>
+        <div><dt>Tickets</dt><dd>{event.admission.requires_ticket ? 'Ticket or registration may be required.' : 'Ticket requirement unknown or not required.'}</dd></div>
+        <div><dt>Source confidence</dt><dd>{Math.round(event.source.confidence * 100)}%</dd></div>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Why go</h2>
+      <p>{event.why_go}</p>
+    </section>
+
+    <section>
+      <h2>Best for</h2>
+      <ul>{event.best_for.map((item) => <li>{item}</li>)}</ul>
+    </section>
+
+    <section>
+      <h2>Trip planning notes</h2>
+      <ul>{event.trip_planning_notes.map((note) => <li>{note}</li>)}</ul>
+    </section>
+
+    <section class="panel">
+      <h2>Source and freshness</h2>
+      <p>Source: <a href={event.links.source_url}>{event.source.name}</a></p>
+      <p>Last seen: {event.source.last_seen_at}. Updated: {event.updated_at}.</p>
+      <p class="warning">Verify final time, price, location, and cancellation status with the official source before attending.</p>
+    </section>
+  </article>
+</BaseLayout>

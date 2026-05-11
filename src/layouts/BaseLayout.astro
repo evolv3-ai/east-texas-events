@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+
+const { title = 'East Texas Events', description = 'Source-linked East Texas events for residents, visitors, organizers, and answer engines.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/events/">East Texas Events</a>
+      <nav>
+        <a href="/events/">Events</a>
+        <a href="/events/near-shallow-creek-rv-park/">Near Shallow Creek</a>
+        <a href="/events.json">JSON</a>
+        <a href="/llms.txt">llms.txt</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>Built as a public East Texas events information asset. Always verify details with the linked official source before attending.</p>
+    </footer>
+  </body>
+</html>

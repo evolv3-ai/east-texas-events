@@ -1,0 +1,23 @@
+{
+  "name": "east-texas-events",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && npm run validate:data && astro build",
+    "preview": "astro preview",
+    "validate:data": "tsx scripts/validate-data.ts",
+    "validate:data:json": "tsx scripts/validate-data.ts --json"
+  },
+  "dependencies": {
+    "astro": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}

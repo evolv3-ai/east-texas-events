@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EventCard from '@/components/EventCard.astro';
+import { getApprovedEvents } from '@/lib/events/data';
+import { itemListJsonLd } from '@/lib/events/jsonld';
+
+const events = getApprovedEvents();
+const jsonLd = itemListJsonLd(events);
+---
+<BaseLayout title="East Texas Events | Shallow Creek" description="Source-linked East Texas events for residents, visitors, families, organizers, and answer engines.">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <section class="hero">
+    <p class="eyebrow">Public East Texas events infrastructure</p>
+    <h1>East Texas events for locals, visitors, organizers, and answer engines</h1>
+    <p>
+      A source-linked, agent-friendly event guide launching first on ShallowCreek.com. Use it to find Longview, Kilgore, Tyler, Gladewater, and Marshall events — then verify details with the linked official source.
+    </p>
+    <div class="actions">
+      <a class="button" href="/events/near-shallow-creek-rv-park/">See events near Shallow Creek</a>
+      <a class="button secondary" href="/events.json">Fetch JSON feed</a>
+    </div>
+  </section>
+  <section>
+    <h2>Curated upcoming events</h2>
+    <p class="freshness">Last generated at build time. Seed events are for pipeline validation and must be verified before public launch.</p>
+    <div class="cards">
+      {events.map((event) => <EventCard event={event} />)}
+    </div>
+  </section>
+</BaseLayout>
