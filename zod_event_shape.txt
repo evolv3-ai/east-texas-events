@@ -1,0 +1,35 @@
+﻿import { z } from 'zod';
+
+export const ZodCalendarEvent = z.object({
+	id: z.string().optional(),
+	created_at: z.string().optional().describe("(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"),
+	updated_at: z.string().optional().describe("(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"),
+	calendar_id: z.string().optional().describe("(reference to CalendarCalendar)"),
+	subject: z.string().optional(),
+	start_at: z.string().optional().describe("(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"),
+	end_at: z.string().optional().describe("(ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)"),
+	is_all_day: z.boolean().optional(),
+	timezone: z.string().optional(),
+	notes: z.string().optional(),
+	location: z.string().optional(),
+	is_free: z.boolean().optional(),
+	is_private: z.boolean().optional(),
+	status: z.enum("CANCELED", "CONFIRMED", "TENTATIVE").optional(),
+	organizer: z.object({
+			user_id: z.string().optional().describe("(reference to HrisEmployee)"),
+			email: z.string().optional(),
+			name: z.string().optional(),
+			status: z.enum("ACCEPTED", "REJECTED", "TENTATIVE").optional(),
+			required: z.boolean().optional(),
+			is_cohost: z.boolean().optional()
+}).optional(),
+	attendees: z.array().optional(),
+	recurring_event_id: z.string().optional().describe("(reference to CalendarEvent)"),
+	recurrence: z.array().optional(),
+	web_url: z.string().optional(),
+	has_conference: z.boolean().optional(),
+	conference: z.array().optional(),
+	attachments: z.array().optional(),
+	send_notifications: z.boolean().optional(),
+
+});

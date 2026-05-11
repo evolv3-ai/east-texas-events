@@ -1,0 +1,13 @@
+Property,Acuity Scheduling,Apple iCloud,Cal.com,Calendly,Dialpad,Fathom,Fireflies,Google,Google Calendar,Google Meet,GoTO,Granola,HubSpot,lemcal,Microsoft Outlook,Microsoft Teams,Ring Central,Salesforce,SavvyCal,SimpleMeet.me,SquareUp,Update.ai,Webex,Zoho Calendar,Zoho Meeting,Zoom,Zoom Calendar
+calendar_calendar_updated,,,,,,,,X,X,X,,,,,,,,X,,,,,,X,,,
+calendar_calendar_created,,,,,,,,X,X,X,,,,,,,,X,,,,,,X,,,
+calendar_calendar_deleted,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,
+calendar_event_created,,,,X,X,X,,X,X,X,,,,,X,X,X,X,,,X,X,X,X,,,
+calendar_event_deleted,,,,X,,,,X,X,X,,,,,X,X,,,,,,,X,,,,
+calendar_event_updated,,,,,X,X,,X,X,X,,,,,X,X,X,X,,,X,X,X,X,,,X
+calendar_recording_created,,,,,,X,X,X,X,X,,X,,,,X,,,,,,X,X,,,,X
+calendar_recording_updated,,,,,,X,X,X,X,X,,X,,,,X,,,,,,X,X,,,,X
+calendar_recording_deleted,,,,,,,,,,,,,,,,,,,,,,,X,,,,
+calendar_webinar_created,,,,,,,,,,,,,,,,X,,,,,,,X,,,,
+calendar_webinar_updated,,,,,,,,,,,,,,,,X,,,,,,,X,,,,
+calendar_webinar_deleted,,,,,,,,,,,,,,,,X,,,,,,,X,,,,
