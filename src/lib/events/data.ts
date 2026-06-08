@@ -1,19 +1,26 @@
 import rawEvents from '@/data/events.seed.json';
 import { eventSchema, publicEventsFeedSchema, type CanonicalEvent, type PublicEventsFeed } from './schema';
 
-export function getApprovedEvents(): CanonicalEvent[] {
+export function isPublishable(event: CanonicalEvent, now: Date): boolean {
+  if (event.moderation.status !== 'approved') return false;
+  if (event.status === 'past') return false;
+  const ends = new Date(event.end_at ?? event.start_at);
+  return ends >= now;
+}
+
+export function getApprovedEvents(now: Date = new Date()): CanonicalEvent[] {
   return rawEvents
     .map((event) => eventSchema.parse(event))
-    .filter((event) => event.moderation.status === 'approved')
+    .filter((event) => isPublishable(event, now))
     .sort((a, b) => a.start_at.localeCompare(b.start_at));
 }
 
-export function getEventBySlug(slug: string): CanonicalEvent | undefined {
-  return getApprovedEvents().find((event) => event.slug === slug);
+export function getEventBySlug(slug: string, now: Date = new Date()): CanonicalEvent | undefined {
+  return getApprovedEvents(now).find((event) => event.slug === slug);
 }
 
-export function getEventsFeed(): PublicEventsFeed {
-  const events = getApprovedEvents();
+export function getEventsFeed(now: Date = new Date()): PublicEventsFeed {
+  const events = getApprovedEvents(now);
   const cities = [...new Set(events.map((event) => event.location.city))].sort();
   const categories = [...new Set(events.flatMap((event) => event.categories))].sort();
   const radius_tiers = [...new Set(events.map((event) => event.geo.radius_tier).filter((tier): tier is 15 | 50 => Boolean(tier)))].sort((a, b) => a - b);
@@ -21,7 +28,7 @@ export function getEventsFeed(): PublicEventsFeed {
 
   return publicEventsFeedSchema.parse({
     schema_version: 'events-feed.v0.1',
-    generated_at: new Date().toISOString(),
+    generated_at: now.toISOString(),
     timezone: 'America/Chicago',
     event_count: events.length,
     source_count,

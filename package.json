@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && npm run validate:data && astro build",
+    "build": "astro check && npm run validate:data && npm run test && astro build",
     "preview": "astro preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "validate:data": "tsx scripts/validate-data.ts",
     "validate:data:json": "tsx scripts/validate-data.ts --json"
   },
@@ -18,6 +20,7 @@
     "@astrojs/check": "latest",
     "@types/node": "latest",
     "tsx": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "vitest": "^4.1.8"
   }
 }

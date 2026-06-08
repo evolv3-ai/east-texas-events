@@ -1,5 +1,13 @@
 import type { CanonicalEvent } from './schema';
 
+const statusToSchemaOrg: Record<CanonicalEvent['status'], string> = {
+  scheduled: 'EventScheduled',
+  cancelled: 'EventCancelled',
+  postponed: 'EventPostponed',
+  tentative: 'EventScheduled',
+  past: 'EventScheduled',
+};
+
 export function eventToJsonLd(event: CanonicalEvent, site = 'https://www.shallowcreek.com') {
   const url = `${site}/events/${event.slug}/`;
   return {
@@ -10,7 +18,7 @@ export function eventToJsonLd(event: CanonicalEvent, site = 'https://www.shallow
     description: event.description ?? event.agent_summary,
     startDate: event.start_at,
     endDate: event.end_at,
-    eventStatus: `https://schema.org/${event.status === 'cancelled' ? 'EventCancelled' : 'EventScheduled'}`,
+    eventStatus: `https://schema.org/${statusToSchemaOrg[event.status]}`,
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     url,
     location: {
