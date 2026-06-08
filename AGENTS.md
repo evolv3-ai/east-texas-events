@@ -31,6 +31,11 @@ src/data/events.seed.json
 - Public feed only includes events with `moderation.status === 'approved'`.
 - The `docs/planning/` directory holds the Hermes planning trail (IMPLEMENTATION_PLAN, source dossiers, schema drafts, etc.) — do not load by default; consult only when explicitly relevant.
 
+## Project status
+
+- **Phase:** MVP. Seed events carry a `seed-fixture-verify-before-public-launch` risk flag — verify each against its `source_url` before public launch.
+- **Last reality check:** 2026-06-08 — 11/11 vision goals working; 5 minor gaps tracked in `docs/status/reality-check-2026-06-08.md`.
+
 ## Workflow
 
 See `.claude/rules/workflow.md` for the superpowers + GitNexus integration (brainstorm → plan → impact → TDD → verify → detect_changes).
