@@ -8,7 +8,7 @@ export function getStaticPaths() {
 }
 
 const { event } = Astro.props;
-const jsonLd = eventToJsonLd(event);
+const jsonLd = eventToJsonLd(event, Astro.site!.origin);
 ---
 <BaseLayout title={`${event.title} | East Texas Events`} description={event.agent_summary}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

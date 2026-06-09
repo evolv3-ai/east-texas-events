@@ -5,7 +5,7 @@ import { getApprovedEvents } from '@/lib/events/data';
 import { itemListJsonLd } from '@/lib/events/jsonld';
 
 const events = getApprovedEvents();
-const jsonLd = itemListJsonLd(events);
+const jsonLd = itemListJsonLd(events, Astro.site!.origin);
 ---
 <BaseLayout title="East Texas Events | Shallow Creek" description="Source-linked East Texas events for residents, visitors, families, organizers, and answer engines.">
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
