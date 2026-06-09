@@ -5,7 +5,7 @@ import { getApprovedEvents } from '@/lib/events/data';
 import { itemListJsonLd } from '@/lib/events/jsonld';
 
 const events = getApprovedEvents().filter((event) => event.geo.radius_tier === 15);
-const jsonLd = itemListJsonLd(events);
+const jsonLd = itemListJsonLd(events, Astro.site!.toString());
 ---
 <BaseLayout title="Events Near Shallow Creek RV Park" description="Source-linked events within the nearby East Texas radius around Shallow Creek RV Park.">
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
