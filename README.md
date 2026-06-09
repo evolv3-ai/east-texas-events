@@ -6,7 +6,7 @@ Static Astro site publishing a curated, RV-park-centered events feed. Serves bot
 
 ## Stack
 
-Astro · TypeScript · Zod · static build · hosted on shallowcreek.com
+Astro · TypeScript · Zod · static build · deploys to events.shallowcreek.com via Cloudflare Pages on every push to main
 
 ## Quickstart
 
