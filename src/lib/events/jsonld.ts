@@ -8,7 +8,7 @@ const statusToSchemaOrg: Record<CanonicalEvent['status'], string> = {
   past: 'EventScheduled',
 };
 
-export function eventToJsonLd(event: CanonicalEvent, site = 'https://www.shallowcreek.com') {
+export function eventToJsonLd(event: CanonicalEvent, site: string) {
   const url = `${site}/events/${event.slug}/`;
   return {
     '@context': 'https://schema.org',
@@ -52,7 +52,7 @@ export function eventToJsonLd(event: CanonicalEvent, site = 'https://www.shallow
   };
 }
 
-export function itemListJsonLd(events: CanonicalEvent[], site = 'https://www.shallowcreek.com') {
+export function itemListJsonLd(events: CanonicalEvent[], site: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
