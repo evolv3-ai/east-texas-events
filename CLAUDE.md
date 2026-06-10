@@ -33,8 +33,9 @@ src/data/events.seed.json
 
 ## Project status
 
-- **Phase:** MVP. Seed events carry a `seed-fixture-verify-before-public-launch` risk flag — verify each against its `source_url` before public launch.
-- **Last reality check:** 2026-06-08 — 11/11 vision goals working; 5 minor gaps tracked in `docs/status/reality-check-2026-06-08.md`.
+- **Phase:** MVP — live at https://events.shallowcreek.com since 2026-06-10 (Cloudflare Pages project `east-texas-events`; every push to `main` auto-builds and deploys).
+- **Data policy:** every approved event must be verified against its `source_url` before approval. `npm run build` runs `validate:data --release`, which fails the build if any feed-visible event still carries a `risk_flags` entry.
+- **Last reality check:** 2026-06-08 — 11/11 vision goals working; gaps tracked in `docs/status/reality-check-2026-06-08.md` (all closed as of 2026-06-10 except city/category pages, deferred until event volume justifies them).
 
 ## Workflow
 
