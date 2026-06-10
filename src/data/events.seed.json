@@ -1,13 +1,197 @@
 [
   {
+    "id": "evt_back_porch_kilgore_live_music_seed",
+    "slug": "back-porch-kilgore-live-music-seed",
+    "title": "Live Music at The Back Porch Kilgore",
+    "description": "Recurring live music programming at a Kilgore venue. This seed event proves the event detail, category, feed, and source-attribution pipeline.",
+    "agent_summary": "Kilgore live music seed listing for validating the public events pages, JSON feed, and source-linked event model.",
+    "why_go": "Useful for locals and visitors looking for nearby live music and nightlife options close to Shallow Creek.",
+    "best_for": [
+      "live music",
+      "date night",
+      "locals",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "Confirm performer, time, and cover charge with the venue before attending."
+    ],
+    "start_at": "2026-05-15T20:00:00-05:00",
+    "end_at": "2026-05-15T23:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "The Back Porch Kilgore",
+      "city": "Kilgore",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 8,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 15
+    },
+    "links": {
+      "web_url": "https://www.thebackporchkilgore.com/",
+      "source_url": "https://www.thebackporchkilgore.com/live-music"
+    },
+    "admission": {
+      "requires_ticket": false,
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "nightlife"
+    ],
+    "tags": [
+      "kilgore",
+      "music",
+      "venue"
+    ],
+    "rv_context": {
+      "family_friendly": false,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a quiet base after a Kilgore live music night."
+    },
+    "relevance": {
+      "score": 850,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "nearby live music",
+        "useful for locals and visitors"
+      ]
+    },
+    "source": {
+      "name": "The Back Porch Kilgore",
+      "type": "venue-site",
+      "source_url": "https://www.thebackporchkilgore.com/live-music",
+      "first_seen_at": "2026-05-10T20:00:00-05:00",
+      "last_seen_at": "2026-06-10T15:00:00-05:00",
+      "confidence": 0.55
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "human",
+      "reviewed_at": "2026-05-10T20:00:00-05:00",
+      "risk_flags": [
+        "seed-fixture-verify-before-public-launch"
+      ]
+    },
+    "created_at": "2026-05-10T20:00:00-05:00",
+    "updated_at": "2026-05-10T20:00:00-05:00"
+  },
+  {
+    "id": "evt_gladewater_roundup_rodeo_2026",
+    "slug": "gladewater-round-up-rodeo-2026",
+    "title": "Gladewater Round-Up Rodeo",
+    "description": "The 89th annual Gladewater Round-Up Rodeo, a PRCA rodeo with nightly performances Thursday through Saturday: gates at 6:00 PM, Mutton Bustin' at 7:45 PM, and rodeo kick-off at 8:15 PM. A free Handicapable Rodeo for families with disabilities runs Saturday morning 9:00-11:00 AM.",
+    "agent_summary": "Major annual PRCA rodeo in Gladewater with nightly performances June 11-13, 2026, useful for families, rodeo fans, and visitors staying near Kilgore or Longview.",
+    "why_go": "One of East Texas's longest-running rodeo traditions, minutes from Shallow Creek RV Park.",
+    "best_for": [
+      "families",
+      "rodeo fans",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "General admission $20 adults / $12 children 12 & under; reserved $26 / $15.",
+      "Veterans, military, and first responders half price Thursday.",
+      "Gates open 6:00 PM; rodeo starts 8:15 PM."
+    ],
+    "start_at": "2026-06-11T18:00:00-05:00",
+    "end_at": "2026-06-13T23:30:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Gladewater Rodeo Arena",
+      "address1": "2502 W. Upshur Avenue",
+      "city": "Gladewater",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 10,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 16
+    },
+    "links": {
+      "web_url": "https://gladewaterrodeo.com/",
+      "source_url": "https://gladewaterrodeo.com/",
+      "tickets_url": "https://dirtroadtickets.com/events/gladewater-round-up-rodeo-and-xtreme-bulls/"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 12,
+      "price_max": 26,
+      "availability": "available",
+      "purchase_url": "https://dirtroadtickets.com/events/gladewater-round-up-rodeo-and-xtreme-bulls/",
+      "currency": "USD"
+    },
+    "categories": [
+      "rodeo",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "gladewater",
+      "rodeo",
+      "prca",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 2,
+      "booking_prompt": "Stay at Shallow Creek RV Park, an easy drive from the Gladewater rodeo grounds."
+    },
+    "relevance": {
+      "score": 920,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "major annual regional event",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Gladewater Round-Up Rodeo",
+      "type": "official-event-site",
+      "source_url": "https://gladewaterrodeo.com/",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
     "id": "evt_great_texas_balloon_race_2026",
     "slug": "great-texas-balloon-race-longview-2026",
     "title": "Great Texas Balloon Race",
     "description": "A signature Longview hot-air balloon festival with balloon flights, evening glows, live entertainment, vendors, and family-friendly activities.",
     "agent_summary": "Signature Longview hot-air balloon festival useful for East Texas residents, visitors, families, and weekend trip planners.",
     "why_go": "One of East Texas's most recognizable annual events and a strong anchor for a weekend visit near Longview.",
-    "best_for": ["families", "visitors", "photography", "outdoor festivals"],
-    "trip_planning_notes": ["Verify daily schedule and weather-dependent balloon activity with the official source before leaving.", "Arrive early for parking and evening glow viewing."],
+    "best_for": [
+      "families",
+      "visitors",
+      "photography",
+      "outdoor festivals"
+    ],
+    "trip_planning_notes": [
+      "Verify daily schedule and weather-dependent balloon activity with the official source before leaving.",
+      "Arrive early for parking and evening glow viewing."
+    ],
     "start_at": "2026-06-12T17:00:00-05:00",
     "end_at": "2026-06-14T09:00:00-05:00",
     "timezone": "America/Chicago",
@@ -32,8 +216,16 @@
       "availability": "unknown",
       "currency": "USD"
     },
-    "categories": ["festivals", "family-friendly", "outdoor"],
-    "tags": ["balloons", "longview", "annual-event"],
+    "categories": [
+      "festivals",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "balloons",
+      "longview",
+      "annual-event"
+    ],
     "rv_context": {
       "family_friendly": true,
       "outdoor": true,
@@ -45,7 +237,12 @@
     "relevance": {
       "score": 950,
       "score_version": "mvp-0.1",
-      "reasons": ["within 15 miles", "major annual regional event", "family-friendly", "strong visitor intent"]
+      "reasons": [
+        "within 15 miles",
+        "major annual regional event",
+        "family-friendly",
+        "strong visitor intent"
+      ]
     },
     "source": {
       "name": "Great Texas Balloon Race",
@@ -65,14 +262,193 @@
     "updated_at": "2026-06-10T15:00:00-05:00"
   },
   {
+    "id": "evt_god_great_outdoors_expo_2026",
+    "slug": "god-and-the-great-outdoors-expo-longview-2026",
+    "title": "God & The Great Outdoors Expo",
+    "description": "Family-friendly outdoor expo featuring hunting, fishing, camping, and outdoor industry vendors at the Maude Cobb Convention Center.",
+    "agent_summary": "Outdoor lifestyle expo in Longview June 19-21, 2026 covering hunting, fishing, and camping vendors, a natural fit for RV travelers and outdoor families.",
+    "why_go": "Directly relevant to campers and RV travelers staying in East Texas.",
+    "best_for": [
+      "outdoor enthusiasts",
+      "families",
+      "campers"
+    ],
+    "trip_planning_notes": [
+      "Confirm daily hours and admission with the venue before attending."
+    ],
+    "start_at": "2026-06-19T15:00:00-05:00",
+    "end_at": "2026-06-21T17:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10501",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10501"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "expo",
+      "outdoor",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "hunting",
+      "fishing",
+      "camping"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Base your outdoor-expo weekend at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 870,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "outdoor-lifestyle audience fit",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10501",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.8
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_james_hooper_juneteenth_rodeo_2026",
+    "slug": "james-hooper-memorial-juneteenth-rodeo-longview-2026",
+    "title": "James Hooper Memorial Juneteenth Rodeo",
+    "description": "The 45th annual Juneteenth celebration featuring a full rodeo with all major events plus a concert, running 7 PM to midnight at the Longview Rodeo Arena.",
+    "agent_summary": "45th annual Juneteenth rodeo and concert in Longview on June 20, 2026, a signature regional celebration for families and rodeo fans.",
+    "why_go": "A 45-year East Texas Juneteenth tradition combining rodeo and live music in one night.",
+    "best_for": [
+      "families",
+      "rodeo fans",
+      "live music"
+    ],
+    "trip_planning_notes": [
+      "Presale tickets $25; $30 at the door; children under 6 free."
+    ],
+    "start_at": "2026-06-20T19:00:00-05:00",
+    "end_at": "2026-06-20T23:59:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Rodeo Arena, Longview Convention Complex",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9942",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9942"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 25,
+      "price_max": 30,
+      "availability": "available",
+      "currency": "USD"
+    },
+    "categories": [
+      "rodeo",
+      "live-music",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "juneteenth",
+      "rodeo",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Make Shallow Creek RV Park your base for a Longview Juneteenth rodeo night."
+    },
+    "relevance": {
+      "score": 900,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "45-year annual tradition",
+        "rodeo plus concert"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9942",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.85
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
     "id": "evt_texas_shakespeare_festival_2026",
     "slug": "texas-shakespeare-festival-kilgore-2026",
     "title": "Texas Shakespeare Festival",
     "description": "Professional summer theatre in Kilgore with rotating performances, educational programming, and regional arts tourism appeal.",
     "agent_summary": "Professional Kilgore theatre festival for East Texas residents, arts travelers, families, and culture-focused weekend planners.",
     "why_go": "A high-quality performing arts anchor close to Shallow Creek and useful for both locals and overnight visitors.",
-    "best_for": ["arts lovers", "date night", "families", "visitors"],
-    "trip_planning_notes": ["Check the official production calendar for show times and age suitability.", "Buy tickets early for preferred performances."],
+    "best_for": [
+      "arts lovers",
+      "date night",
+      "families",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "Check the official production calendar for show times and age suitability.",
+      "Buy tickets early for preferred performances."
+    ],
     "start_at": "2026-06-25T19:30:00-05:00",
     "end_at": "2026-07-26T22:00:00-05:00",
     "timezone": "America/Chicago",
@@ -99,8 +475,15 @@
       "purchase_url": "https://www.texasshakespeare.com/",
       "currency": "USD"
     },
-    "categories": ["performing-arts", "family-friendly"],
-    "tags": ["kilgore", "theatre", "summer"],
+    "categories": [
+      "performing-arts",
+      "family-friendly"
+    ],
+    "tags": [
+      "kilgore",
+      "theatre",
+      "summer"
+    ],
     "rv_context": {
       "family_friendly": true,
       "outdoor": false,
@@ -112,7 +495,12 @@
     "relevance": {
       "score": 920,
       "score_version": "mvp-0.1",
-      "reasons": ["within 15 miles", "ticketed arts event", "regional cultural authority", "rainy-day friendly"]
+      "reasons": [
+        "within 15 miles",
+        "ticketed arts event",
+        "regional cultural authority",
+        "rainy-day friendly"
+      ]
     },
     "source": {
       "name": "Texas Shakespeare Festival",
@@ -132,68 +520,756 @@
     "updated_at": "2026-06-10T15:00:00-05:00"
   },
   {
-    "id": "evt_back_porch_kilgore_live_music_seed",
-    "slug": "back-porch-kilgore-live-music-seed",
-    "title": "Live Music at The Back Porch Kilgore",
-    "description": "Recurring live music programming at a Kilgore venue. This seed event proves the event detail, category, feed, and source-attribution pipeline.",
-    "agent_summary": "Kilgore live music seed listing for validating the public events pages, JSON feed, and source-linked event model.",
-    "why_go": "Useful for locals and visitors looking for nearby live music and nightlife options close to Shallow Creek.",
-    "best_for": ["live music", "date night", "locals", "visitors"],
-    "trip_planning_notes": ["Confirm performer, time, and cover charge with the venue before attending."],
-    "start_at": "2026-05-15T20:00:00-05:00",
-    "end_at": "2026-05-15T23:00:00-05:00",
+    "id": "evt_herps_reptile_show_longview_2026",
+    "slug": "herps-exotic-reptile-pet-show-longview-2026",
+    "title": "HERPS Exotic Reptile & Pet Show",
+    "description": "Exotic reptile and pet show featuring reptiles, amphibians, feeders, invertebrates, supplies, and educational sections, with food trucks on site.",
+    "agent_summary": "Two-day exotic reptile and pet show in Longview June 27-28, 2026 with vendors, education sections, and food trucks, popular with families.",
+    "best_for": [
+      "families",
+      "pet lovers",
+      "kids"
+    ],
+    "trip_planning_notes": [
+      "Confirm admission pricing at the door; show runs 10 AM-4 PM daily."
+    ],
+    "start_at": "2026-06-27T10:00:00-05:00",
+    "end_at": "2026-06-28T16:00:00-05:00",
     "timezone": "America/Chicago",
     "status": "scheduled",
     "location": {
-      "name": "The Back Porch Kilgore",
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9790",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9790"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "expo",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "pets",
+      "reptiles"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Pair a reptile-show visit with a relaxed weekend at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 820,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "family-friendly",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9790",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.85
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_kilgore_fourth_of_july_2026",
+    "slug": "kilgore-fourth-of-july-extravaganza-2026",
+    "title": "Kilgore Fourth of July Extravaganza (America 250)",
+    "description": "Day-long Independence Day celebration for America's 250th anniversary: a patriotic parade hosted by the Daughters of the American Revolution, music by The Jukebox Heroes, food trucks, extended pool hours at Kilgore City Pool and Lazy S Splash Ranch until 8:30 PM, and fireworks at approximately 9:15 PM with a simulcast on KDOK 105.3 FM / 1240 AM.",
+    "agent_summary": "Kilgore's all-day July 4, 2026 celebration of America's 250th anniversary with a DAR parade, live music, extended pool hours, and a 9:15 PM fireworks show.",
+    "why_go": "A full small-town July 4th minutes from the park, capped by fireworks for America's 250th.",
+    "best_for": [
+      "families",
+      "visitors",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Fireworks begin at approximately 9:15 PM with radio simulcast.",
+      "Pools have extended hours until 8:30 PM."
+    ],
+    "start_at": "2026-07-04T09:30:00-05:00",
+    "end_at": "2026-07-04T22:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Downtown Kilgore and city parks",
       "city": "Kilgore",
       "region": "TX",
       "country": "US"
     },
     "geo": {
-      "distance_from_park_miles": 8.0,
+      "distance_from_park_miles": 8.5,
       "radius_tier": 15,
       "estimated_drive_time_minutes": 15
     },
     "links": {
-      "web_url": "https://www.thebackporchkilgore.com/",
-      "source_url": "https://www.thebackporchkilgore.com/live-music"
+      "web_url": "https://visitkilgore.com/fourth-of-july-extravaganza/",
+      "source_url": "https://visitkilgore.com/fourth-of-july-extravaganza/"
     },
     "admission": {
-      "requires_ticket": false,
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "family-friendly",
+      "fireworks"
+    ],
+    "tags": [
+      "kilgore",
+      "july-4th",
+      "america-250",
+      "fireworks"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 2,
+      "booking_prompt": "Book a July 4th stay at Shallow Creek RV Park and catch Kilgore's America 250 fireworks."
+    },
+    "relevance": {
+      "score": 930,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "major holiday celebration",
+        "America 250 anniversary year",
+        "free admission"
+      ]
+    },
+    "source": {
+      "name": "Visit Kilgore",
+      "type": "tourism-cvb",
+      "source_url": "https://visitkilgore.com/fourth-of-july-extravaganza/",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.85
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_longview_symphony_america250_2026",
+    "slug": "longview-symphony-america-250-concert-2026",
+    "title": "Longview Symphony: America 250 Concert",
+    "description": "Select Longview Symphony Orchestra musicians led by Conductor Greg Grabowski kick off a patriotic night celebrating America's 250th anniversary, part of a free community celebration organized by the City of Longview and Gregg County.",
+    "agent_summary": "Free July 4, 2026 patriotic concert by Longview Symphony musicians at Maude Cobb Convention Center, part of Longview's America 250 celebration.",
+    "best_for": [
+      "families",
+      "music lovers",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Part of Longview's larger July 4th celebration at Maude Cobb; check the city calendar for the full evening schedule."
+    ],
+    "start_at": "2026-07-04T18:00:00-05:00",
+    "end_at": "2026-07-04T23:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://longviewsymphony.org/concerts/america-250-concert-at-maude-cobb-convention-center/",
+      "source_url": "https://longviewsymphony.org/concerts/america-250-concert-at-maude-cobb-convention-center/"
+    },
+    "admission": {
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "family-friendly",
+      "live-music"
+    ],
+    "tags": [
+      "longview",
+      "symphony",
+      "july-4th",
+      "america-250"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Spend July 4th in Longview with Shallow Creek RV Park as your home base."
+    },
+    "relevance": {
+      "score": 880,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free community concert",
+        "America 250 anniversary year"
+      ]
+    },
+    "source": {
+      "name": "Longview Symphony",
+      "type": "official-event-site",
+      "source_url": "https://longviewsymphony.org/concerts/america-250-concert-at-maude-cobb-convention-center/",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.85
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_longview_pride_2026",
+    "slug": "longview-pride-2026",
+    "title": "Longview Pride",
+    "description": "Pride East Texas Longview's family-friendly celebration featuring vendors, food trucks, and performances, promoting equality, inclusion, and education. No admission charge.",
+    "agent_summary": "Free family-friendly Pride celebration in Longview on July 11, 2026 with vendors, food trucks, and performances at Maude Cobb Convention Center.",
+    "best_for": [
+      "community",
+      "families",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "Free admission; runs 3:00-8:00 PM."
+    ],
+    "start_at": "2026-07-11T15:00:00-05:00",
+    "end_at": "2026-07-11T20:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9791",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9791"
+    },
+    "admission": {
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "community",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "pride",
+      "community"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Stay at Shallow Creek RV Park for an easy trip to Longview Pride."
+    },
+    "relevance": {
+      "score": 830,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free community festival",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9791",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_east_texas_comic_con_2026",
+    "slug": "east-texas-comic-con-longview-2026",
+    "title": "East Texas Comic Con",
+    "description": "Two-day comic convention with special guest appearances, vendor and artist booths, panel discussions, and cosplay at the Longview Exhibit Center.",
+    "agent_summary": "Two-day comic convention in Longview July 18-19, 2026 with guests, vendors, panels, and cosplay, drawing fans from across East Texas.",
+    "best_for": [
+      "families",
+      "pop-culture fans",
+      "teens"
+    ],
+    "trip_planning_notes": [
+      "Confirm daily hours and ticket prices at easttexascomiccon.net before attending."
+    ],
+    "start_at": "2026-07-18T10:00:00-05:00",
+    "end_at": "2026-07-19T17:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://easttexascomiccon.net/",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10597"
+    },
+    "admission": {
+      "requires_ticket": true,
       "availability": "unknown",
       "currency": "USD"
     },
-    "categories": ["live-music", "nightlife"],
-    "tags": ["kilgore", "music", "venue"],
+    "categories": [
+      "expo",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "comic-con",
+      "cosplay"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 2,
+      "booking_prompt": "Make Shallow Creek RV Park your comic-con weekend base camp."
+    },
+    "relevance": {
+      "score": 850,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "regional draw",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10597",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.8
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_andy_grammer_belcher_2026",
+    "slug": "andy-grammer-belcher-center-longview-2026",
+    "title": "An Evening with Andy Grammer",
+    "description": "Multi-platinum pop artist Andy Grammer, known for 'Honey, I'm Good' and 'Keep Your Head Up' with over 3 billion streams, performs at the Belcher Center.",
+    "agent_summary": "Andy Grammer concert at Longview's Belcher Center on August 30, 2026 at 7:00 PM, tickets $49-$87.",
+    "best_for": [
+      "music lovers",
+      "date night",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Tickets $49-$87 via etix; buy early for better seats."
+    ],
+    "start_at": "2026-08-30T19:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/live/2026-andy-grammer.html",
+      "source_url": "https://www.belchercenter.com/live/2026-andy-grammer.html",
+      "tickets_url": "https://www.etix.com/ticket/p/82356676/an-evening-with-andy-grammer-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 49,
+      "price_max": 87,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/82356676/an-evening-with-andy-grammer-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "longview",
+      "concert",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Catch a Belcher Center show and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 890,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "national touring artist",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/live/2026-andy-grammer.html",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_gregg_county_fair_2026",
+    "slug": "gregg-county-fair-longview-2026",
+    "title": "Gregg County Fair",
+    "description": "The annual Gregg County Fair, sponsored by the Longview Jaycees, runs nine days at the Longview Fairgrounds and Exhibit Center with rides, exhibits, and entertainment.",
+    "agent_summary": "Nine-day Gregg County Fair in Longview September 11-19, 2026 with rides, exhibits, and entertainment at the Longview Fairgrounds.",
+    "why_go": "The area's biggest fall fair, an easy drive from the park for families and fair food fans.",
+    "best_for": [
+      "families",
+      "visitors",
+      "fair fans"
+    ],
+    "trip_planning_notes": [
+      "Daily schedules and pricing publish via the Longview Jaycees; verify hours before visiting."
+    ],
+    "start_at": "2026-09-11T16:00:00-05:00",
+    "end_at": "2026-09-19T22:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Fairgrounds and Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9877",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9877"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "longview",
+      "county-fair",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 2,
+      "booking_prompt": "Plan a fair-week getaway with Shallow Creek RV Park as your base."
+    },
+    "relevance": {
+      "score": 910,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "major annual regional event",
+        "nine-day run",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9877",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_trace_adkins_belcher_2026",
+    "slug": "trace-adkins-belcher-center-longview-2026",
+    "title": "Trace Adkins 30th Anniversary Tour",
+    "description": "Country music icon Trace Adkins, with 12 million albums sold and 40 hit singles, celebrates three decades since his debut album with a headline tour stop at the Belcher Center.",
+    "agent_summary": "Trace Adkins 30th anniversary tour concert at Longview's Belcher Center on September 12, 2026 at 7:00 PM, tickets $50-$120.",
+    "best_for": [
+      "country music fans",
+      "date night",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "Tickets $50-$120 via etix; buy early for better seats."
+    ],
+    "start_at": "2026-09-12T19:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/live/2026-trace-adkins.html",
+      "source_url": "https://www.belchercenter.com/live/2026-trace-adkins.html",
+      "tickets_url": "https://www.etix.com/ticket/p/30116668/trace-adkins-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 50,
+      "price_max": 120,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/30116668/trace-adkins-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "longview",
+      "country-music",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Pair a Trace Adkins show with a fall stay at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 890,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "national touring artist",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/live/2026-trace-adkins.html",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_barrels_brews_wine_fest_2026",
+    "slug": "barrels-and-brews-wine-fest-longview-2026",
+    "title": "Barrels & Brews Wine Fest",
+    "description": "Wine and brews festival at the Maude Cobb Convention Center benefiting the East Texas Alzheimer Alliance.",
+    "agent_summary": "Wine and craft-brew festival in Longview on September 19, 2026, 10 AM-5 PM, benefiting the East Texas Alzheimer Alliance.",
+    "best_for": [
+      "adults",
+      "wine lovers",
+      "date day"
+    ],
+    "trip_planning_notes": [
+      "Full details TBA on the city calendar; proceeds benefit the East Texas Alzheimer Alliance (etxalz.org)."
+    ],
+    "start_at": "2026-09-19T10:00:00-05:00",
+    "end_at": "2026-09-19T17:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9945",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9945"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "food-drink"
+    ],
+    "tags": [
+      "longview",
+      "wine",
+      "craft-beer",
+      "charity"
+    ],
     "rv_context": {
       "family_friendly": false,
       "outdoor": false,
       "rainy_day_friendly": true,
       "senior_friendly": true,
       "ideal_stay_length_days": 1,
-      "booking_prompt": "Use Shallow Creek RV Park as a quiet base after a Kilgore live music night."
+      "booking_prompt": "Make a wine-fest weekend of it with a stay at Shallow Creek RV Park."
     },
     "relevance": {
-      "score": 850,
+      "score": 800,
       "score_version": "mvp-0.1",
-      "reasons": ["within 15 miles", "nearby live music", "useful for locals and visitors"]
+      "reasons": [
+        "within 15 miles",
+        "regional festival",
+        "charity benefit"
+      ]
     },
     "source": {
-      "name": "The Back Porch Kilgore",
-      "type": "venue-site",
-      "source_url": "https://www.thebackporchkilgore.com/live-music",
-      "first_seen_at": "2026-05-10T20:00:00-05:00",
-      "last_seen_at": "2026-06-10T15:00:00-05:00",
-      "confidence": 0.55
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9945",
+      "first_seen_at": "2026-06-10T18:30:00-05:00",
+      "last_seen_at": "2026-06-10T18:30:00-05:00",
+      "confidence": 0.8
     },
     "moderation": {
       "status": "approved",
-      "reviewed_by": "human",
-      "reviewed_at": "2026-05-10T20:00:00-05:00",
-      "risk_flags": ["seed-fixture-verify-before-public-launch"]
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-10T18:30:00-05:00",
+      "risk_flags": []
     },
-    "created_at": "2026-05-10T20:00:00-05:00",
-    "updated_at": "2026-05-10T20:00:00-05:00"
+    "created_at": "2026-06-10T18:30:00-05:00",
+    "updated_at": "2026-06-10T18:30:00-05:00"
   }
 ]
