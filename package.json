@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && npm run validate:data && npm run test && astro build",
+    "build": "astro check && npm run validate:data:release && npm run test && astro build",
     "preview": "astro preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:data": "tsx scripts/validate-data.ts",
-    "validate:data:json": "tsx scripts/validate-data.ts --json"
+    "validate:data:json": "tsx scripts/validate-data.ts --json",
+    "validate:data:release": "tsx scripts/validate-data.ts --release"
   },
   "dependencies": {
     "astro": "latest",

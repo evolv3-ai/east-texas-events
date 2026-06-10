@@ -20,6 +20,18 @@ export function GET() {
           },
         },
       },
+      '/events.rss.xml': {
+        get: {
+          summary: 'RSS 2.0 feed of approved public East Texas events',
+          responses: { '200': { description: 'RSS 2.0 XML feed' } },
+        },
+      },
+      '/events.ics': {
+        get: {
+          summary: 'iCalendar feed of approved public East Texas events',
+          responses: { '200': { description: 'RFC 5545 iCalendar document' } },
+        },
+      },
       '/llms.txt': {
         get: {
           summary: 'Agent usage guide',

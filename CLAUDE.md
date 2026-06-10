@@ -9,7 +9,7 @@ Static Astro site publishing a curated, RV-park-centered events feed. Serves bot
 ```bash
 npm run dev               # local dev server
 npm run validate:data     # Zod-validate src/data/events.seed.json
-npm run build             # astro check + validate + build
+npm run build             # astro check + validate (release mode) + tests + build
 npm run preview           # preview production build
 ```
 
@@ -22,7 +22,7 @@ src/data/events.seed.json
   → src/pages/*                (HTML + .json + llms.txt endpoints)
 ```
 
-**Routes:** `/events`, `/events/[slug]`, `/events/near-shallow-creek-rv-park`, `/events.json`, `/openapi.json`, `/llms.txt`
+**Routes:** `/events`, `/events/[slug]`, `/events/near-shallow-creek-rv-park`, `/events.json`, `/events.rss.xml`, `/events.ics`, `/openapi.json`, `/llms.txt`
 
 ## Project rules
 

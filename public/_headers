@@ -13,3 +13,13 @@
   Cache-Control: public, max-age=300, s-maxage=300
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, OPTIONS
+
+/events.rss.xml
+  Cache-Control: public, max-age=300, s-maxage=300
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+
+/events.ics
+  Cache-Control: public, max-age=300, s-maxage=300
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
