@@ -8,12 +8,12 @@
     "why_go": "One of East Texas's most recognizable annual events and a strong anchor for a weekend visit near Longview.",
     "best_for": ["families", "visitors", "photography", "outdoor festivals"],
     "trip_planning_notes": ["Verify daily schedule and weather-dependent balloon activity with the official source before leaving.", "Arrive early for parking and evening glow viewing."],
-    "start_at": "2026-06-19T09:00:00-05:00",
-    "end_at": "2026-06-21T22:00:00-05:00",
+    "start_at": "2026-06-12T17:00:00-05:00",
+    "end_at": "2026-06-14T09:00:00-05:00",
     "timezone": "America/Chicago",
     "status": "scheduled",
     "location": {
-      "name": "Longview area",
+      "name": "Longview Convention Complex",
       "city": "Longview",
       "region": "TX",
       "country": "US"
@@ -24,8 +24,8 @@
       "estimated_drive_time_minutes": 22
     },
     "links": {
-      "web_url": "https://www.greattexasballoonrace.com/",
-      "source_url": "https://www.greattexasballoonrace.com/"
+      "web_url": "https://gtbr.net/",
+      "source_url": "https://gtbr.net/"
     },
     "admission": {
       "requires_ticket": true,
@@ -50,19 +50,19 @@
     "source": {
       "name": "Great Texas Balloon Race",
       "type": "official-event-site",
-      "source_url": "https://www.greattexasballoonrace.com/",
+      "source_url": "https://gtbr.net/",
       "first_seen_at": "2026-05-10T20:00:00-05:00",
-      "last_seen_at": "2026-05-10T20:00:00-05:00",
-      "confidence": 0.72
+      "last_seen_at": "2026-06-10T15:00:00-05:00",
+      "confidence": 0.9
     },
     "moderation": {
       "status": "approved",
       "reviewed_by": "human",
-      "reviewed_at": "2026-05-10T20:00:00-05:00",
-      "risk_flags": ["seed-fixture-verify-before-public-launch"]
+      "reviewed_at": "2026-06-10T15:00:00-05:00",
+      "risk_flags": []
     },
     "created_at": "2026-05-10T20:00:00-05:00",
-    "updated_at": "2026-05-10T20:00:00-05:00"
+    "updated_at": "2026-06-10T15:00:00-05:00"
   },
   {
     "id": "evt_texas_shakespeare_festival_2026",
@@ -78,7 +78,7 @@
     "timezone": "America/Chicago",
     "status": "scheduled",
     "location": {
-      "name": "Van Cliburn Auditorium",
+      "name": "TSF Performance Venue, Kilgore College",
       "city": "Kilgore",
       "region": "TX",
       "country": "US"
@@ -119,17 +119,17 @@
       "type": "official-event-site",
       "source_url": "https://www.texasshakespeare.com/",
       "first_seen_at": "2026-05-10T20:00:00-05:00",
-      "last_seen_at": "2026-05-10T20:00:00-05:00",
-      "confidence": 0.72
+      "last_seen_at": "2026-06-10T15:00:00-05:00",
+      "confidence": 0.85
     },
     "moderation": {
       "status": "approved",
       "reviewed_by": "human",
-      "reviewed_at": "2026-05-10T20:00:00-05:00",
-      "risk_flags": ["seed-fixture-verify-before-public-launch"]
+      "reviewed_at": "2026-06-10T15:00:00-05:00",
+      "risk_flags": []
     },
     "created_at": "2026-05-10T20:00:00-05:00",
-    "updated_at": "2026-05-10T20:00:00-05:00"
+    "updated_at": "2026-06-10T15:00:00-05:00"
   },
   {
     "id": "evt_back_porch_kilgore_live_music_seed",
@@ -156,8 +156,8 @@
       "estimated_drive_time_minutes": 15
     },
     "links": {
-      "web_url": "https://www.thebackporchstage.com/",
-      "source_url": "https://www.thebackporchstage.com/"
+      "web_url": "https://www.thebackporchkilgore.com/",
+      "source_url": "https://www.thebackporchkilgore.com/live-music"
     },
     "admission": {
       "requires_ticket": false,
@@ -180,11 +180,11 @@
       "reasons": ["within 15 miles", "nearby live music", "useful for locals and visitors"]
     },
     "source": {
-      "name": "The Back Porch Stage",
+      "name": "The Back Porch Kilgore",
       "type": "venue-site",
-      "source_url": "https://www.thebackporchstage.com/",
+      "source_url": "https://www.thebackporchkilgore.com/live-music",
       "first_seen_at": "2026-05-10T20:00:00-05:00",
-      "last_seen_at": "2026-05-10T20:00:00-05:00",
+      "last_seen_at": "2026-06-10T15:00:00-05:00",
       "confidence": 0.55
     },
     "moderation": {
