@@ -10,19 +10,20 @@ const jsonLd = itemListJsonLd(events, Astro.site!.origin);
 <BaseLayout title="East Texas Events | Shallow Creek" description="Source-linked East Texas events for residents, visitors, families, organizers, and answer engines.">
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <section class="hero">
-    <p class="eyebrow">Public East Texas events infrastructure</p>
-    <h1>East Texas events for locals, visitors, organizers, and answer engines</h1>
-    <p>
-      A source-linked, agent-friendly event guide launching first on ShallowCreek.com. Use it to find Longview, Kilgore, Tyler, Gladewater, and Marshall events — then verify details with the linked official source.
+    <p class="eyebrow">The Piney Woods event bill</p>
+    <h1>What's on in <em>East Texas</em>, checked against the source</h1>
+    <p class="lede">
+      Rodeos, festivals, concerts, and fairs around Longview, Kilgore, and Gladewater — every listing verified
+      against its official source before it appears here, and published for humans and answer engines alike.
     </p>
     <div class="actions">
-      <a class="button" href="/events/near-shallow-creek-rv-park/">See events near Shallow Creek</a>
-      <a class="button secondary" href="/events.json">Fetch JSON feed</a>
+      <a class="button" href="/events/near-shallow-creek-rv-park/">Events near Shallow Creek</a>
+      <a class="button secondary" href="/events.rss.xml">Subscribe via RSS</a>
     </div>
   </section>
   <section>
-    <h2>Curated upcoming events</h2>
-    <p class="freshness">Last generated at build time. Seed events are for pipeline validation and must be verified before public launch.</p>
+    <h2 class="section-title">Curated upcoming events</h2>
+    <p class="freshness">{events.length} source-verified events · regenerated with every site build.</p>
     <div class="cards">
       {events.map((event) => <EventCard event={event} />)}
     </div>

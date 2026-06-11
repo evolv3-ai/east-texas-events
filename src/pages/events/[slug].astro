@@ -9,44 +9,67 @@ export function getStaticPaths() {
 
 const { event } = Astro.props;
 const jsonLd = eventToJsonLd(event, Astro.site!.origin);
+
+const { is_free, price_min, price_max, requires_ticket } = event.admission;
+const admissionLine = is_free
+  ? 'Free admission.'
+  : price_min != null
+    ? `Tickets $${price_min}${price_max != null && price_max !== price_min ? `–$${price_max}` : ''}.`
+    : requires_ticket
+      ? 'Ticket or registration may be required.'
+      : 'Ticket requirement unknown or not required.';
+
+const lastSeen = new Intl.DateTimeFormat('en-US', {
+  timeZone: event.timezone ?? 'America/Chicago',
+  dateStyle: 'long',
+}).format(new Date(event.source.last_seen_at));
 ---
 <BaseLayout title={`${event.title} | East Texas Events`} description={event.agent_summary}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <article class="event-detail">
-    <p class="eyebrow">{event.location.city} · {event.categories.join(', ')}</p>
-    <h1>{event.title}</h1>
-    <p class="lede">{event.agent_summary}</p>
+    <header>
+      <p class="eyebrow">{event.location.city} · {event.categories.join(' · ')}</p>
+      <h1>{event.title}</h1>
+      <p class="lede">{event.agent_summary}</p>
+    </header>
 
     <section class="panel">
-      <h2>Event details</h2>
+      <h2>Ticket details</h2>
       <dl class="event-meta detail">
         <div><dt>When</dt><dd>{formatEventDate(event)}</dd></div>
         <div><dt>Where</dt><dd>{event.location.name ?? event.location.city}, {event.location.region}</dd></div>
-        <div><dt>Distance</dt><dd>{event.geo.distance_from_park_miles ?? '—'} miles from Shallow Creek RV Park</dd></div>
-        <div><dt>Tickets</dt><dd>{event.admission.requires_ticket ? 'Ticket or registration may be required.' : 'Ticket requirement unknown or not required.'}</dd></div>
-        <div><dt>Source confidence</dt><dd>{Math.round(event.source.confidence * 100)}%</dd></div>
+        <div><dt>From the park</dt><dd>{event.geo.distance_from_park_miles ?? '—'} miles · about {event.geo.estimated_drive_time_minutes ?? '—'} min</dd></div>
+        <div><dt>Admission</dt><dd>{admissionLine}</dd></div>
+        {event.links.tickets_url && <div><dt>Tickets</dt><dd><a href={event.links.tickets_url}>Buy tickets</a></dd></div>}
       </dl>
     </section>
 
-    <section>
-      <h2>Why go</h2>
-      <p>{event.why_go}</p>
-    </section>
+    {event.why_go && (
+      <section>
+        <h2>Why go</h2>
+        <p>{event.why_go}</p>
+      </section>
+    )}
 
-    <section>
-      <h2>Best for</h2>
-      <ul>{event.best_for.map((item) => <li>{item}</li>)}</ul>
-    </section>
+    {event.best_for.length > 0 && (
+      <section>
+        <h2>Best for</h2>
+        <ul>{event.best_for.map((item) => <li>{item}</li>)}</ul>
+      </section>
+    )}
 
-    <section>
-      <h2>Trip planning notes</h2>
-      <ul>{event.trip_planning_notes.map((note) => <li>{note}</li>)}</ul>
-    </section>
+    {event.trip_planning_notes.length > 0 && (
+      <section>
+        <h2>Trip planning notes</h2>
+        <ul>{event.trip_planning_notes.map((note) => <li>{note}</li>)}</ul>
+      </section>
+    )}
 
     <section class="panel">
       <h2>Source and freshness</h2>
       <p>Source: <a href={event.links.source_url}>{event.source.name}</a></p>
-      <p>Last seen: {event.source.last_seen_at}. Updated: {event.updated_at}.</p>
+      <p class="freshness-line">Last checked against the source on {lastSeen}.</p>
+      <p class="stamp">Source-linked ✓ {Math.round(event.source.confidence * 100)}% confidence</p>
       <p class="warning">Verify final time, price, location, and cancellation status with the official source before attending.</p>
     </section>
   </article>

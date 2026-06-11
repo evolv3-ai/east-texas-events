@@ -10,12 +10,14 @@ const jsonLd = itemListJsonLd(events, Astro.site!.origin);
 <BaseLayout title="Events Near Shallow Creek RV Park" description="Source-linked events within the nearby East Texas radius around Shallow Creek RV Park.">
   <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <section class="hero">
-    <p class="eyebrow">Near Shallow Creek RV Park</p>
-    <h1>Events near Shallow Creek RV Park</h1>
-    <p>
-      Nearby East Texas events within roughly 15 miles of Shallow Creek, useful for RV guests, locals, and weekend visitors.
+    <p class="eyebrow">Within 15 miles of the park</p>
+    <h1>Events near <em>Shallow Creek</em> RV Park</h1>
+    <p class="lede">
+      Nearby East Texas events an easy drive from your campsite — useful for RV guests, locals, and weekend visitors
+      planning around Longview, Kilgore, and Gladewater.
     </p>
   </section>
+  <p class="freshness">{events.length} nearby source-verified events.</p>
   <div class="cards">
     {events.map((event) => <EventCard event={event} />)}
   </div>

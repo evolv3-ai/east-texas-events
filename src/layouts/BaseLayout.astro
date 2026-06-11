@@ -10,22 +10,39 @@ const { title = 'East Texas Events', description = 'Source-linked East Texas eve
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,900&display=swap"
+    />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/events/">East Texas Events</a>
-      <nav>
-        <a href="/events/">Events</a>
-        <a href="/events/near-shallow-creek-rv-park/">Near Shallow Creek</a>
-        <a href="/events.json">JSON</a>
-        <a href="/llms.txt">llms.txt</a>
-      </nav>
+      <div class="header-inner">
+        <a class="brand" href="/events/"><span class="star">✶</span> East Texas Events <span class="star">✶</span></a>
+        <nav>
+          <a href="/events/">Events</a>
+          <a href="/events/near-shallow-creek-rv-park/">Near Shallow Creek</a>
+          <a href="/events.json">JSON</a>
+          <a href="/llms.txt">llms.txt</a>
+        </nav>
+      </div>
     </header>
     <main>
       <slot />
     </main>
     <footer class="site-footer">
-      <p>Built as a public East Texas events information asset. Always verify details with the linked official source before attending.</p>
+      <div class="footer-inner">
+        <p>Built as a public East Texas events information asset. Every listing links to its official source — always verify details there before attending.</p>
+        <div class="feeds">
+          <a href="/events.json">JSON feed</a>
+          <a href="/events.rss.xml">RSS</a>
+          <a href="/events.ics">iCalendar</a>
+          <a href="/openapi.json">OpenAPI</a>
+          <a href="/llms.txt">llms.txt</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

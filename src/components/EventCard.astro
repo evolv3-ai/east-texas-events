@@ -1,18 +1,52 @@
 ---
 import type { CanonicalEvent } from '@/lib/events/schema';
-import { formatEventDate } from '@/lib/events/data';
 
 interface Props { event: CanonicalEvent }
 const { event } = Astro.props;
+
+const tz = event.timezone ?? 'America/Chicago';
+const start = new Date(event.start_at);
+const part = (date: Date, options: Intl.DateTimeFormatOptions) =>
+  new Intl.DateTimeFormat('en-US', { timeZone: tz, ...options }).format(date);
+
+const month = part(start, { month: 'short' });
+const day = part(start, { day: 'numeric' });
+const weekday = part(start, { weekday: 'short' });
+
+const end = event.end_at ? new Date(event.end_at) : undefined;
+const isMultiDay = end && part(end, { month: 'short', day: 'numeric' }) !== part(start, { month: 'short', day: 'numeric' });
+const thru = isMultiDay ? `thru ${part(end!, { month: 'short', day: 'numeric' })}` : undefined;
+
+const startTime = part(start, { hour: 'numeric', minute: '2-digit' }).replace(':00', '');
+
+const { is_free, price_min, price_max } = event.admission;
+const price = is_free
+  ? 'free'
+  : price_min != null
+    ? `$${price_min}${price_max != null && price_max !== price_min ? `–$${price_max}` : ''}`
+    : undefined;
+
+const distance = event.geo.distance_from_park_miles;
 ---
 <article class="event-card">
-  <p class="eyebrow">{event.location.city} · {event.categories.join(', ')}</p>
-  <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
-  <p>{event.agent_summary}</p>
-  <dl class="event-meta">
-    <div><dt>When</dt><dd>{formatEventDate(event)}</dd></div>
-    <div><dt>Where</dt><dd>{event.location.name ?? event.location.city}</dd></div>
-    <div><dt>Distance</dt><dd>{event.geo.distance_from_park_miles ?? '—'} miles from Shallow Creek</dd></div>
-    <div><dt>Source</dt><dd><a href={event.links.source_url}>Official/source page</a></dd></div>
-  </dl>
+  <div class="event-stub" aria-hidden="true">
+    <span class="month">{month}</span>
+    <span class="day">{day}</span>
+    <span class="weekday">{weekday}</span>
+    {thru && <span class="thru">{thru}</span>}
+  </div>
+  <div class="event-body">
+    <p class="event-kicker">
+      <span>{event.location.city}</span>
+      {event.categories.slice(0, 2).map((category) => <span class="tag">{category}</span>)}
+    </p>
+    <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
+    <p class="summary">{event.agent_summary}</p>
+    <ul class="event-facts">
+      <li><span class="glyph">✶</span> {startTime}</li>
+      <li><span class="glyph">✶</span> {event.location.name ?? event.location.city}</li>
+      {distance != null && <li><span class="glyph">✶</span> {distance} mi from the park</li>}
+      {price && (price === 'free' ? <li><span class="free">Free</span></li> : <li><span class="glyph">✶</span> {price}</li>)}
+    </ul>
+  </div>
 </article>

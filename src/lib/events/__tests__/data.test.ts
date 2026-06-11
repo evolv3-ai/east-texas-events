@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getApprovedEvents, isPublishable } from '../data';
+import { formatEventDate, getApprovedEvents, isPublishable } from '../data';
 import { makeEvent } from './factories';
 
 const NOW = new Date('2026-06-08T12:00:00Z');
@@ -38,6 +38,23 @@ describe('isPublishable', () => {
 
   it('keeps postponed events visible', () => {
     expect(isPublishable(makeEvent({ status: 'postponed', start_at: FUTURE_ISO }), NOW)).toBe(true);
+  });
+});
+
+describe('formatEventDate', () => {
+  it('formats a single-day event as one date with time', () => {
+    const event = makeEvent({ start_at: '2026-06-20T19:00:00-05:00', end_at: '2026-06-20T23:59:00-05:00' });
+    expect(formatEventDate(event)).toBe('Jun 20, 2026, 7:00 PM');
+  });
+
+  it('formats a multi-day event as a date range', () => {
+    const event = makeEvent({ start_at: '2026-06-11T18:00:00-05:00', end_at: '2026-06-13T23:30:00-05:00' });
+    expect(formatEventDate(event)).toBe('Jun 11, 2026, 6:00 PM – Jun 13, 2026');
+  });
+
+  it('formats an event without end_at as one date with time', () => {
+    const event = makeEvent({ start_at: '2026-08-30T19:00:00-05:00' });
+    expect(formatEventDate(event)).toBe('Aug 30, 2026, 7:00 PM');
   });
 });
 

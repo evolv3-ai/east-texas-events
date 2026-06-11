@@ -38,9 +38,14 @@ export function getEventsFeed(now: Date = new Date()): PublicEventsFeed {
 }
 
 export function formatEventDate(event: CanonicalEvent): string {
-  return new Intl.DateTimeFormat('en-US', {
-    dateStyle: 'medium',
-    timeStyle: event.end_at ? 'short' : 'short',
-    timeZone: event.timezone,
-  }).format(new Date(event.start_at));
+  const timeZone = event.timezone;
+  const start = new Date(event.start_at);
+  const startLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone }).format(start);
+  if (!event.end_at) return startLabel;
+
+  const end = new Date(event.end_at);
+  const dayOf = (date: Date) => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone }).format(date);
+  if (dayOf(start) === dayOf(end)) return startLabel;
+
+  return `${startLabel} – ${dayOf(end)}`;
 }
