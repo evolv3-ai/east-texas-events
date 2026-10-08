@@ -1,7 +1,219 @@
 {
   "version": 1,
-  "base_url": null,
-  "schedule": null,
-  "venues": {},
-  "events": {}
+  "base_url": "https://e-tex.events",
+  "schedule": "calendar",
+  "venues": {
+    "belcher center at letourneau university|2100 s. mobberly ave|longview": {
+      "id": "iE5S5G",
+      "subdomain": "belcher",
+      "hash": "afaa05a71b93af1f"
+    },
+    "caldwell zoo|2203 martin luther king blvd.|tyler": {
+      "id": "RnaEY1",
+      "subdomain": "caldwell",
+      "hash": "defb7281779efff8"
+    },
+    "historic downtown kilgore||kilgore": {
+      "id": "43tpQn",
+      "subdomain": "historic",
+      "hash": "848a7a96aaacb4c8"
+    },
+    "longview exhibit center|1123 jaycee drive|longview": {
+      "id": "78gnEl",
+      "subdomain": "longview",
+      "hash": "d28e00dd5c24cc16"
+    },
+    "maude cobb convention center|100 grand blvd.|longview": {
+      "id": "cluSua",
+      "subdomain": "maude",
+      "hash": "1e750182dc5e04f5"
+    },
+    "rusk county depot museum & history center|514 n. high st|henderson": {
+      "id": "ufDIos",
+      "subdomain": "rusk",
+      "hash": "fd99f3e180133413"
+    },
+    "tyler rose garden center|420 rose park drive|tyler": {
+      "id": "L3iWDZ",
+      "subdomain": "tyler",
+      "hash": "e87a4864f18e9e8e"
+    },
+    "upshur county courthouse square and yamboree park|courthouse square, downtown gilmer|gilmer": {
+      "id": "sqFNnu",
+      "subdomain": "upshur",
+      "hash": "aa46238cb9ba3676"
+    },
+    "ut tyler cowan center|3900 university blvd, fac 1120|tyler": {
+      "id": "qK0VK6",
+      "subdomain": "ut",
+      "hash": "ffd9afc3c45cf08a"
+    },
+    "van cliburn auditorium, kilgore college|1000-1198 brook dr|kilgore": {
+      "id": "vTfSO4",
+      "subdomain": "van",
+      "hash": "665f72d848f1f871"
+    },
+    "w. l. dodson auditorium, kilgore college|817 nolen st|kilgore": {
+      "id": "LmiWDZ",
+      "subdomain": "w",
+      "hash": "49ba40fa9a8c0cfb"
+    },
+    "woodruff education center|220 n. henderson blvd|kilgore": {
+      "id": "tOoBG9",
+      "subdomain": "woodruff",
+      "hash": "9abf32c51c4c9af6"
+    }
+  },
+  "events": {
+    "evt_a_christmas_story_musical_belcher_2026": {
+      "id": "Tk4KdD",
+      "url": "https://e-tex.events/belcher/a-christmas-story-the-musical/Tk4KdD",
+      "hash": "859eb137e1926c22",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_beetlejuice_cowan_center_2026": {
+      "id": "FSwoDC",
+      "url": "https://e-tex.events/ut/beetlejuice-the-musical/FSwoDC",
+      "hash": "db84b14af56de4e6",
+      "sub_schedule": null
+    },
+    "evt_boo_at_the_zoo_caldwell_2026": {
+      "id": "tOoBG9",
+      "url": "https://e-tex.events/caldwell/boo-at-the-zoo-at-caldwell-zoo/tOoBG9",
+      "hash": "496c379773463c7d",
+      "sub_schedule": null
+    },
+    "evt_cardboard_cove_longview_2026": {
+      "id": "LmiWDZ",
+      "url": "https://e-tex.events/longview/cardboard-cove-longview/LmiWDZ",
+      "hash": "eb6985115fdab68e",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_christmas_in_the_pineywoods_2026": {
+      "id": "rPvdgc",
+      "url": "https://e-tex.events/maude/christmas-in-the-pineywoods/rPvdgc",
+      "hash": "ccbdda257137fa9b",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_dolly_parton_smoky_mountain_christmas_carol_2026": {
+      "id": "WRcyGZ",
+      "url": "https://e-tex.events/ut/dolly-partons-smoky-mountain-christmas-carol/WRcyGZ",
+      "hash": "e50ca76419345df9",
+      "sub_schedule": null
+    },
+    "evt_east_texas_yamboree_2026": {
+      "id": "qK0VK6",
+      "url": "https://e-tex.events/upshur/89th-annual-east-texas-yamboree/qK0VK6",
+      "hash": "121b4a0d01a6f559",
+      "sub_schedule": null
+    },
+    "evt_foreigner_cowan_center_2026": {
+      "id": "iE5S5G",
+      "url": "https://e-tex.events/ut/foreigner-at-the-ut-tyler-cowan-center/iE5S5G",
+      "hash": "9bff361277e2aeb2",
+      "sub_schedule": null
+    },
+    "evt_harvest_festival_livestock_show_2026": {
+      "id": "cluSua",
+      "url": "https://e-tex.events/maude/harvest-festival-livestock-show/cluSua",
+      "hash": "849b467e12fb74b6",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_heritage_syrup_festival_2026": {
+      "id": "gi1PpQ",
+      "url": "https://e-tex.events/rusk/37th-annual-heritage-syrup-festival/gi1PpQ",
+      "hash": "4485b5254f46684b",
+      "sub_schedule": null
+    },
+    "evt_jim_gaffigan_belcher_2026": {
+      "id": "smFNnu",
+      "url": "https://e-tex.events/belcher/jim-gaffigan-everything-is-wonderful/smFNnu",
+      "hash": "4bc372343a407b34",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_kilgore_oktoberfest_2026": {
+      "id": "78gnEl",
+      "url": "https://e-tex.events/historic/kilgore-oktoberfest/78gnEl",
+      "hash": "9ebc4571a0a5bb13",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_kristin_chenoweth_etso_cowan_2026": {
+      "id": "RnaEY1",
+      "url": "https://e-tex.events/ut/an-evening-with-kristin-chenoweth-featuring-the-east-texas-symphony-orchestra/RnaEY1",
+      "hash": "f7fd2ac060753ce2",
+      "sub_schedule": null
+    },
+    "evt_longview_jaycees_trade_days_oct_2026": {
+      "id": "hPXmor",
+      "url": "https://e-tex.events/longview/longview-jaycees-trade-days-october/hPXmor",
+      "hash": "a52259710f6c7444",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_longview_sports_card_tcg_show_oct_2026": {
+      "id": "L3iWDZ",
+      "url": "https://e-tex.events/longview/longview-sports-card-and-tcg-card-show/L3iWDZ",
+      "hash": "e157504f1d5c991e",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_lso_american_tapestry_2026": {
+      "id": "43tpQn",
+      "url": "https://e-tex.events/belcher/longview-symphony-american-tapestry/43tpQn",
+      "hash": "735e1b1995a2f9ce",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_lso_home_for_the_holidays_2026": {
+      "id": "CiULIn",
+      "url": "https://e-tex.events/belcher/longview-symphony-home-for-the-holidays/CiULIn",
+      "hash": "a555d50e9e69ce05",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_mannheim_steamroller_christmas_cowan_2026": {
+      "id": "fYAD3s",
+      "url": "https://e-tex.events/ut/mannheim-steamroller-christmas-by-chip-davis/fYAD3s",
+      "hash": "d96fd6c67f3e8047",
+      "sub_schedule": null
+    },
+    "evt_nutcracker_magical_christmas_ballet_belcher_2026": {
+      "id": "GyETvB",
+      "url": "https://e-tex.events/belcher/nutcracker-magical-christmas-ballet/GyETvB",
+      "hash": "3663f7fd8f038ab4",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_oak_ridge_boys_cowan_center_2026": {
+      "id": "EgbsFr",
+      "url": "https://e-tex.events/ut/the-oak-ridge-boys/EgbsFr",
+      "hash": "c5609fcb795e3b76",
+      "sub_schedule": null
+    },
+    "evt_rangerette_christmas_show_2026": {
+      "id": "VopZTj",
+      "url": "https://e-tex.events/w/rangerette-christmas-show/VopZTj",
+      "hash": "d15bbf51438ebf9d",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_texas_rose_festival_2026": {
+      "id": "sqFNnu",
+      "url": "https://e-tex.events/tyler/93rd-annual-texas-rose-festival/sqFNnu",
+      "hash": "b478a0f2bba96d64",
+      "sub_schedule": null
+    },
+    "evt_tsf_eurydice_2026": {
+      "id": "jKN2Ro",
+      "url": "https://e-tex.events/van/texas-shakespeare-festival-eurydice/jKN2Ro",
+      "hash": "00c496bc81a6a3f5",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_tsf_festival_of_trees_2026": {
+      "id": "ufDIos",
+      "url": "https://e-tex.events/woodruff/texas-shakespeare-festival-festival-of-trees/ufDIos",
+      "hash": "7c0518337aae1260",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_zach_williams_belcher_2026": {
+      "id": "vTfSO4",
+      "url": "https://e-tex.events/belcher/zach-williams-revival-nights-tour/vTfSO4",
+      "hash": "f7c1c58c17153567",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    }
+  }
 }
