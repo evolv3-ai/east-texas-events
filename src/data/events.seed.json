@@ -3181,7 +3181,7 @@
     },
     "admission": {
       "requires_ticket": true,
-      "price_min": 5,
+      "price_min": 10,
       "price_max": 20,
       "availability": "available",
       "purchase_url": "https://www.tix.com/ticket-sales/TexasShakespeare/4442",
