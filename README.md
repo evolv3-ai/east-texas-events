@@ -44,6 +44,38 @@ Public feed only includes events with `moderation.status === 'approved'`. Curren
 | `/openapi.json` | OpenAPI 3.1 description of the JSON surfaces |
 | `/llms.txt` | Plain-text usage guide for AI agents |
 
+## Event Schedule sync
+
+`scripts/sync-eventschedule.ts` pushes the seed file one way to a self-hosted [Event Schedule](https://eventschedule.com/) install, which is the display engine for e-tex.events. The repo stays the system of record; nothing is read back.
+
+```bash
+npm run sync:eventschedule -- --dry-run            # plan only, writes nothing (offline without credentials)
+npm run sync:eventschedule                         # live: needs ES_BASE_URL and ES_API_KEY
+npm run sync:eventschedule -- --archive            # also sync past events
+npm run sync:eventschedule -- --dry-run --json     # machine-readable report
+```
+
+| Variable | Purpose |
+|---|---|
+| `ES_BASE_URL` | Origin of the install, for example `https://e-tex.events` |
+| `ES_API_KEY` | API key of the account that owns the curator schedule (expires yearly) |
+| `ES_SCHEDULE` | Curator schedule path, default `calendar` |
+| `ES_CONTACT_EMAIL` | Email set on venue schedules, default the curator schedule's own |
+| `ES_PUBLIC_URL` | Public origin written into the static files, default `ES_BASE_URL` |
+
+What a run does:
+
+- **Sends** only events that are approved, carry no `risk_flags`, are not cancelled and have not ended. Past events are sent only with `--archive`, and a synced event is left in place once it passes.
+- **Removes** an event it previously sent when that event is no longer approved, gains a risk flag, is cancelled, or leaves the seed file. Events it did not create are never touched.
+- **Venues** are Event Schedule schedules. Each is created once with its address and an email (without an email Event Schedule serves the venue page, and every event at it, as `noindex`).
+- **Sub-schedule:** events in the 15-mile radius tier are filed under "Near Shallow Creek RV Park".
+- **ID map:** `src/data/eventschedule-ids.json` pairs seed IDs with Event Schedule's and is bound to one install. If it is lost, events and venues are matched by name and start time rather than duplicated.
+- **Static files:** `events.json`, `llms.txt`, `openapi.json` and `sitemap-index.xml` are written to `dist-eventschedule/` (`--out` to change) for the deployment to serve at the site root.
+
+The field mapping is in `src/lib/eventschedule/mapping.ts`. The curator schedule itself (path, timezone, email, categories) is set up once in Event Schedule's admin panel; the sync refuses to run against a schedule that is not a curator.
+
+`.github/workflows/sync.yml` runs the sync on every push to `main` and daily, commits the ID map back when it changes, and uploads the static files as the `eventschedule-static` artifact. It skips with a notice until the `ES_BASE_URL` and `ES_API_KEY` repository secrets exist.
+
 ## Where to look
 
 - `CLAUDE.md` — canonical project rules and architectural invariants (agent-facing, but readable by humans)

@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "validate:data": "tsx scripts/validate-data.ts",
     "validate:data:json": "tsx scripts/validate-data.ts --json",
-    "validate:data:release": "tsx scripts/validate-data.ts --release"
+    "validate:data:release": "tsx scripts/validate-data.ts --release",
+    "sync:eventschedule": "tsx scripts/sync-eventschedule.ts"
   },
   "dependencies": {
     "astro": "latest",
