@@ -106,6 +106,8 @@ export interface SyncOptions {
   now: Date;
   archive: boolean;
   dryRun: boolean;
+  /** Called after every write that changes the ID map, so an interrupted run loses no ID. */
+  saveIdMap?: (idMap: IdMap) => void;
 }
 
 export interface SyncResult {
@@ -127,8 +129,14 @@ const slugify = (value: string) =>
     .replace(/^-|-$/g, '');
 
 export async function runSync(options: SyncOptions): Promise<SyncResult> {
-  const { events, api, baseUrl, schedulePath, now, archive, dryRun } = options;
+  const { events, api, baseUrl, schedulePath, now, archive, dryRun, saveIdMap } = options;
   if (!api && !dryRun) throw new Error('an Event Schedule API client is required unless this is a dry run');
+
+  // The ID map is keyed by seed id, so two entries sharing one would fight over a single page.
+  const duplicateIds = [...new Set(events.map((event) => event.id).filter((id, index, ids) => ids.indexOf(id) !== index))];
+  if (duplicateIds.length > 0) {
+    throw new Error(`duplicate ids in the seed file, nothing was sent: ${duplicateIds.join(', ')}`);
+  }
 
   const idMap = structuredClone(options.idMap);
   if (idMap.base_url && baseUrl && idMap.base_url !== baseUrl) {
@@ -139,6 +147,11 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
   }
   if (idMap.schedule && idMap.schedule !== schedulePath) {
     throw new Error(`the ID map belongs to schedule "${idMap.schedule}" but the sync was pointed at "${schedulePath}"`);
+  }
+
+  if (!dryRun) {
+    idMap.base_url = baseUrl;
+    idMap.schedule = schedulePath;
   }
 
   const report: SyncReport = {
@@ -213,6 +226,7 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
       if (!dryRun) {
         await api!.deleteEvent(mapped.id);
         delete idMap.events[removal.id];
+        saveIdMap?.(idMap);
       }
       record({ event_id: removal.id, title: removal.title, action: 'delete', es_id: mapped.id, url: mapped.url, reason: removal.reason });
     } catch (error) {
@@ -262,6 +276,7 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
       }
       const saved = action === 'create' ? await api.createVenue(body) : await api.updateVenue(known!.subdomain, body);
       idMap.venues[key] = { id: saved.id, subdomain: saved.subdomain, hash };
+      saveIdMap?.(idMap);
       report.venues.push({ key, name: spec.name, action, es_id: saved.id, subdomain: saved.subdomain });
     } catch (error) {
       failedVenues.set(key, message(error));
@@ -315,16 +330,13 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
       if (recreate) await api!.deleteEvent(mapped!.id);
       const saved = existingId ? await api!.updateEvent(existingId, payload) : await api!.createEvent(schedulePath, payload);
       idMap.events[event.id] = { id: saved.id, url: saved.url, hash, sub_schedule: subScheduleSlug ?? null };
+      saveIdMap?.(idMap);
       record({ ...base, action, es_id: saved.id, url: saved.url });
     } catch (error) {
       record({ ...base, action: 'error', es_id: existingId, reason: message(error) });
     }
   }
 
-  if (!dryRun) {
-    idMap.base_url = baseUrl;
-    idMap.schedule = schedulePath;
-  }
   report.ok = report.errors.length === 0;
   return { idMap, report, upcoming };
 }

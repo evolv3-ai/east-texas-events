@@ -376,6 +376,41 @@ describe('runSync', () => {
     expect(api.calls).toEqual([]);
   });
 
+  it('refuses a seed in which two entries share an id, before sending anything', async () => {
+    const api = new FakeApi();
+    const first = await runSync(options(api, [upcoming({ start_at: PAST })], emptyIdMap(), { archive: true }));
+    api.calls = [];
+    const copied = [upcoming({ start_at: PAST }), upcoming({ slug: 'show-2026' })];
+
+    await expect(runSync(options(api, copied, first.idMap))).rejects.toThrow(/duplicate ids in the seed file.*evt_show/);
+    await expect(runSync(options(undefined, copied, first.idMap, { dryRun: true }))).rejects.toThrow(/duplicate ids/);
+    expect(api.calls).toEqual([]);
+  });
+
+  it('hands over the ID map after every write, so a run cut short has lost no ID', async () => {
+    const api = new FakeApi();
+    const saves: Array<{ after: string; map: IdMap }> = [];
+    const saveIdMap = (map: IdMap) => saves.push({ after: api.calls[api.calls.length - 1], map: structuredClone(map) });
+    const two = upcoming({ id: 'evt_two', slug: 'two', title: 'Two' });
+
+    await runSync(options(api, [upcoming(), two], emptyIdMap(), { saveIdMap }));
+    expect(saves.map((save) => [save.after, Object.keys(save.map.venues).length, Object.keys(save.map.events)])).toEqual([
+      ['createVenue Belcher Center', 1, []],
+      ['createEvent Show', 1, ['evt_show']],
+      ['createEvent Two', 1, ['evt_show', 'evt_two']],
+    ]);
+    expect(saves[0].map).toMatchObject({ base_url: 'https://es.test', schedule: 'calendar' });
+
+    const full = saves[2].map;
+    saves.length = 0;
+    await runSync(options(api, [two], full, { saveIdMap }));
+    expect(saves.map((save) => [save.after, Object.keys(save.map.events)])).toEqual([[`deleteEvent ${full.events.evt_show.id}`, ['evt_two']]]);
+
+    saves.length = 0;
+    await runSync(options(api, [upcoming(), two], emptyIdMap(), { saveIdMap, dryRun: true }));
+    expect(saves).toEqual([]);
+  });
+
   it('carries on past a failed event, reports it, and keeps what did succeed', async () => {
     const api = new FakeApi();
     api.failCreateFor = 'Show';

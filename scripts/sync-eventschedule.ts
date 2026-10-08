@@ -4,7 +4,7 @@ import rawEvents from '../src/data/events.seed.json';
 import { eventSchema } from '../src/lib/events/schema';
 import { EventScheduleClient } from '../src/lib/eventschedule/client';
 import { buildStaticFiles } from '../src/lib/eventschedule/static';
-import { emptyIdMap, idMapSchema, runSync, serializeIdMap, type SyncReport } from '../src/lib/eventschedule/sync';
+import { emptyIdMap, idMapSchema, runSync, serializeIdMap, type IdMap, type SyncReport } from '../src/lib/eventschedule/sync';
 
 const SCHEDULE_PATH = 'calendar';
 const ID_MAP_FILE = 'src/data/eventschedule-ids.json';
@@ -81,6 +81,16 @@ async function main(): Promise<void> {
   const api = baseUrl && apiKey ? new EventScheduleClient({ baseUrl, apiKey }) : undefined;
   const now = new Date();
 
+  // Saved after every write, not once at the end: every ID in it names something that now
+  // exists, and a run that is cut short must not leave any of them unrecorded.
+  let idMapWritten = false;
+  const saveIdMap = (map: IdMap) => {
+    const serialized = serializeIdMap(map);
+    if (existsSync(idMapFile) && readFileSync(idMapFile, 'utf8') === serialized) return;
+    writeFileSync(idMapFile, serialized);
+    idMapWritten = true;
+  };
+
   const result = await runSync({
     events,
     idMap,
@@ -91,16 +101,13 @@ async function main(): Promise<void> {
     now,
     archive: flag('--archive'),
     dryRun,
+    saveIdMap,
   });
 
   const written: string[] = [];
   if (!dryRun) {
-    // Saved even after partial failure: every ID in it names an event that now exists.
-    const serialized = serializeIdMap(result.idMap);
-    if (!existsSync(idMapFile) || readFileSync(idMapFile, 'utf8') !== serialized) {
-      writeFileSync(idMapFile, serialized);
-      written.push(path.relative(process.cwd(), idMapFile));
-    }
+    saveIdMap(result.idMap);
+    if (idMapWritten) written.push(path.relative(process.cwd(), idMapFile));
 
     const files = buildStaticFiles({
       events: result.upcoming,

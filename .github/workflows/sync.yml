@@ -64,8 +64,27 @@ jobs:
         if: steps.config.outputs.ready == 'true'
         run: npm ci
 
+      # The committed ID map is the only record of what the sync created. A run that creates
+      # events and then cannot push the map would create them all again next time, so nothing
+      # is sent unless the push is known to be possible.
+      - name: Check the ID map can be pushed
+        if: steps.config.outputs.ready == 'true' && inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! git push --dry-run origin "HEAD:$GITHUB_REF_NAME"; then
+            echo "::error title=Sync stopped::This workflow cannot push to $GITHUB_REF_NAME, so the ID map could not be saved. Nothing was sent to Event Schedule."
+            exit 1
+          fi
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY/branches/$GITHUB_REF_NAME" --jq .protected)" != "false" ]; then
+            echo "::error title=Sync stopped::$GITHUB_REF_NAME is a protected branch (or its protection could not be read), so the push of the ID map may be rejected. Nothing was sent to Event Schedule."
+            exit 1
+          fi
+
+      # Stops short of the job timeout so the ID map is still committed below.
       - name: Sync events
         if: steps.config.outputs.ready == 'true'
+        timeout-minutes: 25
         env:
           DRY_RUN: ${{ inputs.dry_run }}
           ARCHIVE: ${{ inputs.archive }}
@@ -75,7 +94,8 @@ jobs:
           if [ "$ARCHIVE" = "true" ]; then args+=(--archive); fi
           npm run sync:eventschedule -- "${args[@]}"
 
-      # Runs after a partly failed sync too: every ID in the map names an event that now exists.
+      # Runs after a failed, timed-out or cancelled sync too: the script saves the map after every
+      # write, and every ID in it names an event that now exists.
       # [skip ci] keeps this commit from triggering a Cloudflare Pages build of the old site.
       - name: Commit the ID map
         if: always() && steps.config.outputs.ready == 'true'
