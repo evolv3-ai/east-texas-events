@@ -1,0 +1,5 @@
+# The build only needs the entrypoint and the nginx config. Keeping everything else out of the
+# build context means a local .env (real secrets) can never be sent to the Docker daemon.
+*
+!docker-entrypoint.sh
+!nginx.conf

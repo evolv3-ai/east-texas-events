@@ -1,0 +1,57 @@
+# Reverse proxy for the Event Schedule stack. Values in {$...} come from .env through
+# docker-compose.yml.
+{
+	servers {
+		# Cloudflare sits in front of this host. Only requests arriving from these ranges may say
+		# who the real visitor is; from anyone else the connecting address is used, so a visitor
+		# who reaches the server directly cannot forge an identity.
+		trusted_proxies static {$EDGE_TRUSTED_PROXIES}
+		trusted_proxies_strict
+		client_ip_headers CF-Connecting-IP X-Forwarded-For
+	}
+}
+
+# A bare hostname (e-tex.events) gets a Let's Encrypt certificate and an HTTP->HTTPS redirect
+# automatically. A plain-HTTP address such as ":80" turns both off, for local runs.
+{$SITE_ADDRESS} {
+	encode zstd gzip
+
+	# Event Schedule sends "/" to its login page. Visitors should land on the calendar.
+	redir / /calendar 302
+
+	# Files we publish ourselves. These three always come from ./static, never from the app:
+	# the app ships an llms.txt and llms-full.txt that describe the Event Schedule product, not
+	# this site. A file missing from ./static is a 404 rather than a fall-through to those.
+	@agent_files path /llms.txt /llms-full.txt /events.json
+	handle @agent_files {
+		root * /srv/static
+		header Access-Control-Allow-Origin *
+		header Cache-Control "public, max-age=300"
+		file_server
+	}
+
+	# Anything else placed in ./static (a sitemap index, for example) is served in preference
+	# to the app without another change here.
+	@static_file file {
+		root /srv/static
+		try_files {path}
+	}
+	handle @static_file {
+		root * /srv/static
+		header Cache-Control "public, max-age=300"
+		file_server
+	}
+
+	handle {
+		reverse_proxy web:80 {
+			# One address, the real visitor's, in every header the app reads. The app rate-limits
+			# per address and reads CF-Connecting-IP without checking who sent it, so both are
+			# set here from the address Caddy has already validated against trusted_proxies.
+			header_up X-Forwarded-For {client_ip}
+			header_up CF-Connecting-IP {client_ip}
+			# Do not advertise the nginx and PHP versions.
+			header_down -Server
+			header_down -X-Powered-By
+		}
+	}
+}

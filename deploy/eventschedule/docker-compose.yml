@@ -1,0 +1,136 @@
+# Event Schedule for e-tex.events: Caddy (TLS) -> nginx -> php-fpm, MariaDB, and a scheduler.
+# Settings and secrets come from .env (see .env.example and init-env.sh). Only the proxy
+# publishes ports; nothing else is reachable from outside the Docker network.
+
+# Fixes the names of the containers and volumes (etex-eventschedule_dbdata, ..._storage)
+# whatever directory this file is checked out into.
+name: etex-eventschedule
+
+# The Event Schedule release this stack runs. Change it only through the upgrade procedure in
+# README.md: the Dockerfile's APP_COMMIT has to change with it.
+x-app-build: &app-build
+  context: .
+  dockerfile: Dockerfile
+  target: app
+  args:
+    APP_REF: v1.0.135
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  app:
+    build: *app-build
+    image: etex-eventschedule-app:v1.0.135
+    env_file: .env
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      # env_file hands over every line of .env; the app has no use for the database root password.
+      DB_ROOT_PASSWORD: ""
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - storage:/var/www/html/storage
+    entrypoint: ["/usr/local/bin/docker-entrypoint.sh"]
+    command: ["php-fpm", "-F"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 9000"]
+      interval: 5s
+      timeout: 3s
+      retries: 60
+    logging: *logging
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web
+      args:
+        APP_REF: v1.0.135
+    image: etex-eventschedule-web:v1.0.135
+    depends_on:
+      app:
+        condition: service_healthy
+    # Nginx only needs runtime-uploaded files; avoid masking bundled code
+    volumes:
+      - storage:/var/www/html/storage:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/up"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    logging: *logging
+
+  db:
+    image: mariadb:11.8
+    environment:
+      MARIADB_DATABASE: ${DB_DATABASE:?set DB_DATABASE in .env}
+      MARIADB_USER: ${DB_USERNAME:?set DB_USERNAME in .env}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env (run ./init-env.sh)}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?set DB_ROOT_PASSWORD in .env (run ./init-env.sh)}
+      # Lets a newer 11.x image upgrade the system tables of an existing data directory.
+      MARIADB_AUTO_UPGRADE: "1"
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 3s
+      retries: 40
+    restart: unless-stopped
+    logging: *logging
+
+  scheduler:
+    build: *app-build
+    image: etex-eventschedule-app:v1.0.135
+    # Waits for app, whose entrypoint runs the database migrations.
+    depends_on:
+      app:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      # env_file hands over every line of .env; the app has no use for the database root password.
+      DB_ROOT_PASSWORD: ""
+    # Run as the php-fpm user so files written to the shared storage volume are owned by
+    # www-data (matching the app service), not root.
+    user: "www-data"
+    command: ["sh", "-lc", "while :; do php artisan schedule:run --verbose --no-interaction || true; sleep 60; done"]
+    restart: unless-stopped
+    volumes:
+      - storage:/var/www/html/storage
+    logging: *logging
+
+  proxy:
+    image: caddy:2.10-alpine
+    depends_on:
+      web:
+        condition: service_healthy
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?set SITE_ADDRESS in .env}
+      EDGE_TRUSTED_PROXIES: ${EDGE_TRUSTED_PROXIES:?set EDGE_TRUSTED_PROXIES in .env}
+    ports:
+      - "${PROXY_HTTP_BIND:-80}:80"
+      - "${PROXY_HTTPS_BIND:-443}:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./static:/srv/static:ro
+      # Certificates and ACME account. Losing this volume only costs a re-issue.
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    logging: *logging
+
+volumes:
+  dbdata:
+  storage:
+  caddy_data:
+  caddy_config:
