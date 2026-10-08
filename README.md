@@ -82,6 +82,7 @@ If a run creates events and the push of the ID map then fails, the next run no l
 
 - `CLAUDE.md` — canonical project rules and architectural invariants (agent-facing, but readable by humans)
 - `.claude/rules/workflow.md` — contribution workflow (superpowers + GitNexus)
+- `deploy/eventschedule/README.md` — the self-hosted Event Schedule stack for e-tex.events (separate from this site and its build)
 - `docs/planning/IMPLEMENTATION_PLAN.md` — original Hermes build plan
 - `docs/planning/agent-first-events-api-product-spec.md` — product spec
 - `docs/planning/` — supporting research dossiers, source lists, schema drafts
