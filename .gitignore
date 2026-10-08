@@ -26,3 +26,6 @@ npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Static files written by scripts/sync-eventschedule.ts
+dist-eventschedule/

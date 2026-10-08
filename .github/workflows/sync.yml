@@ -1,0 +1,120 @@
+name: Sync to Event Schedule
+
+# One-way push of approved, flag-free seed events to the Event Schedule install.
+# Needs two repository secrets: ES_BASE_URL (for example https://e-tex.events) and ES_API_KEY.
+# Optional repository variable: ES_CONTACT_EMAIL.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 06:17 Central in summer, 05:17 in winter. Past events drop out of events.json daily.
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Report what would change without writing anything
+        type: boolean
+        default: false
+      archive:
+        description: Also sync past events
+        type: boolean
+        default: false
+
+# Two runs against one install would race on the ID map, so they run one at a time,
+# and each starts from the branch head to read the map the run before it committed.
+concurrency:
+  group: eventschedule-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ES_BASE_URL: ${{ secrets.ES_BASE_URL }}
+      ES_API_KEY: ${{ secrets.ES_API_KEY }}
+      ES_CONTACT_EMAIL: ${{ vars.ES_CONTACT_EMAIL }}
+    steps:
+      - name: Check configuration
+        id: config
+        run: |
+          if [ -z "$ES_BASE_URL" ] || [ -z "$ES_API_KEY" ]; then
+            echo "::notice title=Sync skipped::The ES_BASE_URL and ES_API_KEY repository secrets are not both set, so nothing was sent to Event Schedule."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.config.outputs.ready == 'true'
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        if: steps.config.outputs.ready == 'true'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.config.outputs.ready == 'true'
+        run: npm ci
+
+      # The committed ID map is the only record of what the sync created. A run that creates
+      # events and then cannot push the map would create them all again next time, so nothing
+      # is sent unless the push is known to be possible.
+      - name: Check the ID map can be pushed
+        if: steps.config.outputs.ready == 'true' && inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! { git fetch origin "$GITHUB_REF_NAME" && git push --dry-run origin "FETCH_HEAD:refs/heads/$GITHUB_REF_NAME"; }; then
+            echo "::error title=Sync stopped::This workflow cannot push to $GITHUB_REF_NAME, so the ID map could not be saved. Nothing was sent to Event Schedule."
+            exit 1
+          fi
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY/branches/$GITHUB_REF_NAME" --jq .protected)" != "false" ]; then
+            echo "::error title=Sync stopped::$GITHUB_REF_NAME is a protected branch (or its protection could not be read), so the push of the ID map may be rejected. Nothing was sent to Event Schedule."
+            exit 1
+          fi
+
+      # Stops short of the job timeout so the ID map is still committed below.
+      - name: Sync events
+        if: steps.config.outputs.ready == 'true'
+        timeout-minutes: 25
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          ARCHIVE: ${{ inputs.archive }}
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ "$ARCHIVE" = "true" ]; then args+=(--archive); fi
+          npm run sync:eventschedule -- "${args[@]}"
+
+      # Runs after a failed, timed-out or cancelled sync too: the script saves the map after every
+      # write, and every ID in it names an event that now exists.
+      # [skip ci] keeps this commit from triggering a Cloudflare Pages build of the old site.
+      - name: Commit the ID map
+        if: always() && steps.config.outputs.ready == 'true'
+        run: |
+          if git diff --quiet -- src/data/eventschedule-ids.json; then
+            echo "ID map unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/eventschedule-ids.json
+          git commit -m "chore(sync): update Event Schedule ID map [skip ci]"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
+      - name: Upload static agent files
+        if: always() && steps.config.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: eventschedule-static
+          path: dist-eventschedule/
+          if-no-files-found: ignore
