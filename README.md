@@ -59,9 +59,7 @@ npm run sync:eventschedule -- --dry-run --json     # machine-readable report
 |---|---|
 | `ES_BASE_URL` | Origin of the install, for example `https://e-tex.events` |
 | `ES_API_KEY` | API key of the account that owns the curator schedule (expires yearly) |
-| `ES_SCHEDULE` | Curator schedule path, default `calendar` |
 | `ES_CONTACT_EMAIL` | Email set on venue schedules, default the curator schedule's own |
-| `ES_PUBLIC_URL` | Public origin written into the static files, default `ES_BASE_URL` |
 
 What a run does:
 
@@ -69,10 +67,10 @@ What a run does:
 - **Removes** an event it previously sent when that event is no longer approved, gains a risk flag, is cancelled, or leaves the seed file. Events it did not create are never touched.
 - **Venues** are Event Schedule schedules. Each is created once with its address and an email (without an email Event Schedule serves the venue page, and every event at it, as `noindex`).
 - **Sub-schedule:** events in the 15-mile radius tier are filed under "Near Shallow Creek RV Park".
-- **ID map:** `src/data/eventschedule-ids.json` pairs seed IDs with Event Schedule's and is bound to one install. If it is lost, events and venues are matched by name and start time rather than duplicated.
-- **Static files:** `events.json`, `llms.txt`, `openapi.json` and `sitemap-index.xml` are written to `dist-eventschedule/` (`--out` to change) for the deployment to serve at the site root.
+- **ID map:** `src/data/eventschedule-ids.json` pairs seed IDs with Event Schedule's and is bound to one install. An event or venue belongs to the sync only while the map names it, so anything missing from the map is created.
+- **Static files:** `events.json`, `llms.txt`, `openapi.json` and `sitemap-index.xml` are written to `dist-eventschedule/` for the deployment to serve at the site root. `events.json` keeps an approved event that is cancelled, with its `cancelled` status, even though its Event Schedule page is removed.
 
-The field mapping is in `src/lib/eventschedule/mapping.ts`. The curator schedule itself (path, timezone, email, categories) is set up once in Event Schedule's admin panel; the sync refuses to run against a schedule that is not a curator.
+The field mapping is in `src/lib/eventschedule/mapping.ts`. The curator schedule itself (path `calendar`, timezone, email, categories) is set up once in Event Schedule's admin panel; the sync refuses to run against a schedule that is not a curator.
 
 `.github/workflows/sync.yml` runs the sync on every push to `main` and daily, commits the ID map back when it changes, and uploads the static files as the `eventschedule-static` artifact. It skips with a notice until the `ES_BASE_URL` and `ES_API_KEY` repository secrets exist.
 

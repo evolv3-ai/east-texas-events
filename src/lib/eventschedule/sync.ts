@@ -74,7 +74,7 @@ export interface EventResult {
 export interface VenueResult {
   key: string;
   name: string;
-  action: 'create' | 'adopt' | 'update' | 'unchanged' | 'error';
+  action: 'create' | 'update' | 'unchanged' | 'error';
   es_id?: string;
   subdomain?: string;
   reason?: string;
@@ -111,7 +111,7 @@ export interface SyncOptions {
 export interface SyncResult {
   idMap: IdMap;
   report: SyncReport;
-  /** Seed events that are approved, flag-free and current: what the static files describe. */
+  /** Seed events that are approved, flag-free and current, cancelled ones included: what the static files describe. */
   upcoming: CanonicalEvent[];
 }
 
@@ -125,8 +125,6 @@ const slugify = (value: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
-const sameText = (a: string | null | undefined, b: string | null | undefined) =>
-  (a ?? '').trim().toLowerCase() === (b ?? '').trim().toLowerCase();
 
 export async function runSync(options: SyncOptions): Promise<SyncResult> {
   const { events, api, baseUrl, schedulePath, now, archive, dryRun } = options;
@@ -136,7 +134,7 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
   if (idMap.base_url && baseUrl && idMap.base_url !== baseUrl) {
     throw new Error(
       `the ID map belongs to ${idMap.base_url} but ES_BASE_URL is ${baseUrl}; IDs from one install mean nothing on another. ` +
-        'Use --id-map to point at a different map, or reset the map if the install was replaced.',
+        'Reset the map if the install was replaced.',
     );
   }
   if (idMap.schedule && idMap.schedule !== schedulePath) {
@@ -162,13 +160,14 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
   };
 
   const classified = events.map((event) => ({ event, ...classifyEvent(event, { now, archive }) }));
-  const eligible = classified.filter((entry) => entry.disposition !== 'remove').map((entry) => entry.event);
-  const gateErrors = collectFeedErrors(eligible, { release: true });
+  const toSync = classified.filter((entry) => entry.disposition === 'sync').map((entry) => entry.event);
+  const upcoming = events
+    .filter((event) => event.moderation.risk_flags.length === 0 && isPublishable(event, now))
+    .sort((a, b) => a.start_at.localeCompare(b.start_at));
+  const gateErrors = collectFeedErrors([...new Set([...toSync, ...upcoming])], { release: true });
   if (gateErrors.length > 0) {
     throw new Error(`release gate failed, nothing was sent:\n${gateErrors.map((error) => `- ${error}`).join('\n')}`);
   }
-  const toSync = classified.filter((entry) => entry.disposition === 'sync').map((entry) => entry.event);
-  const upcoming = eligible.filter((event) => isPublishable(event, now)).sort((a, b) => a.start_at.localeCompare(b.start_at));
 
   // --- Remote state -------------------------------------------------------------------------
   let categories: EventScheduleCategory[] = [];
@@ -197,8 +196,6 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
     ]);
   }
   const remoteEventIds = new Set(remoteEvents.map((event) => event.id));
-  const remoteEventByIdentity = new Map(remoteEvents.map((event) => [`${event.name}|${event.starts_at}`, event]));
-  const claimedEventIds = new Set(Object.values(idMap.events).map((entry) => entry.id));
 
   // --- Removals -----------------------------------------------------------------------------
   const seedIds = new Set(events.map((event) => event.id));
@@ -256,18 +253,14 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
     const hash = hashOf(body);
     const mapped = idMap.venues[key];
     const known = mapped && (!api || remoteVenueById.has(mapped.id)) ? mapped : undefined;
-    const adoptable = known
-      ? undefined
-      : remoteVenues.find((venue) => sameText(venue.name, spec.name) && sameText(venue.address1, spec.address1) && sameText(venue.city, spec.city));
-    const action: VenueResult['action'] = known ? (known.hash === hash ? 'unchanged' : 'update') : adoptable ? 'adopt' : 'create';
+    const action: VenueResult['action'] = known ? (known.hash === hash ? 'unchanged' : 'update') : 'create';
 
     try {
       if (!api || dryRun || action === 'unchanged') {
-        const existing = known ?? adoptable;
-        report.venues.push({ key, name: spec.name, action, es_id: existing?.id, subdomain: existing?.subdomain });
+        report.venues.push({ key, name: spec.name, action, es_id: known?.id, subdomain: known?.subdomain });
         continue;
       }
-      const saved = action === 'create' ? await api.createVenue(body) : await api.updateVenue((known ?? adoptable)!.subdomain, body);
+      const saved = action === 'create' ? await api.createVenue(body) : await api.updateVenue(known!.subdomain, body);
       idMap.venues[key] = { id: saved.id, subdomain: saved.subdomain, hash };
       report.venues.push({ key, name: spec.name, action, es_id: saved.id, subdomain: saved.subdomain });
     } catch (error) {
@@ -311,22 +304,17 @@ export async function runSync(options: SyncOptions): Promise<SyncResult> {
     // An event can be removed from a sub-schedule only by recreating it: the API reads the
     // `schedule` field when present and leaves the filing alone when it is absent.
     const recreate = Boolean(mapped?.sub_schedule && !subScheduleSlug);
-    // A create whose ID never reached the committed map (a failed write-back) must not be
-    // repeated, so an unclaimed remote event with the same name and start is taken over.
-    const twin = mapped ? undefined : remoteEventByIdentity.get(`${payload.name}|${payload.starts_at}`);
-    const adopted = twin && !claimedEventIds.has(twin.id) ? twin : undefined;
-    const existingId = recreate ? undefined : (mapped?.id ?? adopted?.id);
+    const existingId = recreate ? undefined : mapped?.id;
     const action: EventAction = existingId ? 'update' : 'create';
 
     try {
       if (dryRun) {
-        record({ ...base, action, es_id: existingId, url: mapped?.url ?? adopted?.url });
+        record({ ...base, action, es_id: existingId, url: mapped?.url });
         continue;
       }
       if (recreate) await api!.deleteEvent(mapped!.id);
       const saved = existingId ? await api!.updateEvent(existingId, payload) : await api!.createEvent(schedulePath, payload);
       idMap.events[event.id] = { id: saved.id, url: saved.url, hash, sub_schedule: subScheduleSlug ?? null };
-      claimedEventIds.add(saved.id);
       record({ ...base, action, es_id: saved.id, url: saved.url });
     } catch (error) {
       record({ ...base, action: 'error', es_id: existingId, reason: message(error) });

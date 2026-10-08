@@ -2,7 +2,7 @@ name: Sync to Event Schedule
 
 # One-way push of approved, flag-free seed events to the Event Schedule install.
 # Needs two repository secrets: ES_BASE_URL (for example https://e-tex.events) and ES_API_KEY.
-# Optional repository variables: ES_SCHEDULE, ES_CONTACT_EMAIL, ES_PUBLIC_URL.
+# Optional repository variable: ES_CONTACT_EMAIL.
 
 on:
   push:
@@ -21,7 +21,8 @@ on:
         type: boolean
         default: false
 
-# Two runs against one install would race on the ID map.
+# Two runs against one install would race on the ID map, so they run one at a time,
+# and each starts from the branch head to read the map the run before it committed.
 concurrency:
   group: eventschedule-sync
   cancel-in-progress: false
@@ -36,9 +37,7 @@ jobs:
     env:
       ES_BASE_URL: ${{ secrets.ES_BASE_URL }}
       ES_API_KEY: ${{ secrets.ES_API_KEY }}
-      ES_SCHEDULE: ${{ vars.ES_SCHEDULE }}
       ES_CONTACT_EMAIL: ${{ vars.ES_CONTACT_EMAIL }}
-      ES_PUBLIC_URL: ${{ vars.ES_PUBLIC_URL }}
     steps:
       - name: Check configuration
         id: config
@@ -52,6 +51,8 @@ jobs:
 
       - uses: actions/checkout@v4
         if: steps.config.outputs.ready == 'true'
+        with:
+          ref: ${{ github.ref_name }}
 
       - uses: actions/setup-node@v4
         if: steps.config.outputs.ready == 'true'

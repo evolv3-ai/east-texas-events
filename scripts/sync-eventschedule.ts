@@ -6,6 +6,10 @@ import { EventScheduleClient } from '../src/lib/eventschedule/client';
 import { buildStaticFiles } from '../src/lib/eventschedule/static';
 import { emptyIdMap, idMapSchema, runSync, serializeIdMap, type SyncReport } from '../src/lib/eventschedule/sync';
 
+const SCHEDULE_PATH = 'calendar';
+const ID_MAP_FILE = 'src/data/eventschedule-ids.json';
+const OUT_DIR = 'dist-eventschedule';
+
 const USAGE = `Usage: tsx scripts/sync-eventschedule.ts [options]
 
 One-way sync of approved, flag-free seed events to an Event Schedule install.
@@ -14,30 +18,19 @@ Options:
   --dry-run          Report what would change; write nothing anywhere
   --json             Print the report as JSON
   --archive          Also sync past events (off by default)
-  --schedule <path>  Curator schedule path (default: $ES_SCHEDULE or "calendar")
-  --id-map <file>    ID map file (default: src/data/eventschedule-ids.json)
-  --out <dir>        Directory for events.json, llms.txt, openapi.json and
-                     sitemap-index.xml (default: dist-eventschedule)
   --help             Show this help
 
 Environment:
   ES_BASE_URL        Origin of the install, for example https://e-tex.events
   ES_API_KEY         API key of the account that owns the curator schedule
-  ES_SCHEDULE        Curator schedule path
   ES_CONTACT_EMAIL   Email set on venue schedules (default: the curator schedule's)
-  ES_PUBLIC_URL      Public origin used in the static files (default: ES_BASE_URL)
 
+The curator schedule is "${SCHEDULE_PATH}", the ID map is ${ID_MAP_FILE}, and events.json,
+llms.txt, openapi.json and sitemap-index.xml are written to ${OUT_DIR}/.
 A dry run without ES_BASE_URL and ES_API_KEY plans from the ID map alone.`;
 
 const args = process.argv.slice(2);
 const flag = (name: string) => args.includes(name);
-function option(name: string): string | undefined {
-  const index = args.indexOf(name);
-  if (index === -1) return undefined;
-  const value = args[index + 1];
-  if (!value || value.startsWith('--')) fail(`${name} needs a value`, 2);
-  return value;
-}
 
 const jsonMode = flag('--json');
 
@@ -76,9 +69,8 @@ async function main(): Promise<void> {
   const dryRun = flag('--dry-run');
   const baseUrl = process.env.ES_BASE_URL?.replace(/\/+$/, '') || null;
   const apiKey = process.env.ES_API_KEY || null;
-  const schedulePath = option('--schedule') ?? (process.env.ES_SCHEDULE || 'calendar');
-  const idMapFile = path.resolve(option('--id-map') ?? 'src/data/eventschedule-ids.json');
-  const outDir = path.resolve(option('--out') ?? 'dist-eventschedule');
+  const idMapFile = path.resolve(ID_MAP_FILE);
+  const outDir = path.resolve(OUT_DIR);
 
   if (!dryRun && !(baseUrl && apiKey)) {
     fail('ES_BASE_URL and ES_API_KEY are required for a live sync (use --dry-run to plan without them)', 2);
@@ -94,7 +86,7 @@ async function main(): Promise<void> {
     idMap,
     api,
     baseUrl,
-    schedulePath,
+    schedulePath: SCHEDULE_PATH,
     contactEmail: process.env.ES_CONTACT_EMAIL || undefined,
     now,
     archive: flag('--archive'),
@@ -113,8 +105,8 @@ async function main(): Promise<void> {
     const files = buildStaticFiles({
       events: result.upcoming,
       idMap: result.idMap,
-      publicUrl: process.env.ES_PUBLIC_URL || baseUrl!,
-      schedulePath,
+      publicUrl: baseUrl!,
+      schedulePath: SCHEDULE_PATH,
       now,
     });
     mkdirSync(outDir, { recursive: true });

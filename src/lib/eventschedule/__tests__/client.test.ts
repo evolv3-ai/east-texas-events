@@ -9,7 +9,7 @@ interface Recorded {
 }
 
 /** A client on a fake clock: sleeping advances time instead of waiting. */
-function harness(responses: Array<() => Response>, maxWritesPerMinute = 20) {
+function harness(responses: Array<() => Response>, maxWritesPerMinute?: number) {
   const requests: Recorded[] = [];
   const sleeps: number[] = [];
   let clock = 1_000_000;
@@ -67,12 +67,12 @@ describe('EventScheduleClient', () => {
     expect(requests[0].headers['Content-Type']).toBe('application/json');
   });
 
-  it('holds the 21st write until the first is a minute old', async () => {
+  it('stays under 20 writes a minute by default, holding the 20th until the first is a minute old', async () => {
     const { client, sleeps } = harness([json({ data: {} })]);
-    for (let index = 0; index < 20; index += 1) await client.updateEvent(`e${index}`, {} as never);
+    for (let index = 0; index < 19; index += 1) await client.updateEvent(`e${index}`, {} as never);
     expect(sleeps).toEqual([]);
 
-    await client.updateEvent('e20', {} as never);
+    await client.updateEvent('e19', {} as never);
     expect(sleeps).toEqual([60_000]);
   });
 

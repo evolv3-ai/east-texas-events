@@ -3,6 +3,7 @@ import { makeEvent } from '../../events/__tests__/factories';
 import type { CanonicalEvent } from '../../events/schema';
 import type { EventScheduleApi, RemoteEvent, RemoteGroup, RemoteSchedule, VenueBody } from '../client';
 import type { EventSchedulePayload } from '../mapping';
+import { buildEventsJson } from '../static';
 import { classifyEvent, emptyIdMap, runSync, serializeIdMap, type IdMap, type SyncOptions } from '../sync';
 
 const NOW = new Date('2026-10-07T12:00:00Z');
@@ -20,8 +21,6 @@ class FakeApi implements EventScheduleApi {
     name: 'Calendar',
     email: 'hello@es.test',
     timezone: 'America/Chicago',
-    address1: null,
-    city: null,
     groups: [],
   };
   venues: RemoteSchedule[] = [];
@@ -47,8 +46,6 @@ class FakeApi implements EventScheduleApi {
       name: body.name,
       email: body.email,
       timezone: null,
-      address1: body.address1 ?? null,
-      city: body.city,
     };
     this.venues.push(venue);
     this.venueBodies.set(id, body);
@@ -79,13 +76,13 @@ class FakeApi implements EventScheduleApi {
     this.calls.push(`createEvent ${payload.name}`);
     if (payload.name === this.failCreateFor) throw new Error('POST /events/calendar -> 500: Server Error');
     const id = `evt${this.nextId++}`;
-    const event = { id, url: `https://es.test/v/${id}`, name: payload.name, starts_at: payload.starts_at, payload };
+    const event = { id, url: `https://es.test/v/${id}`, payload };
     this.events.set(id, event);
     return event;
   }
   async updateEvent(id: string, payload: EventSchedulePayload) {
     this.calls.push(`updateEvent ${id}`);
-    const event = { ...this.events.get(id)!, name: payload.name, starts_at: payload.starts_at, payload };
+    const event = { ...this.events.get(id)!, payload };
     this.events.set(id, event);
     return event;
   }
@@ -212,9 +209,33 @@ describe('runSync', () => {
 
   it('leaves events it did not create alone', async () => {
     const api = new FakeApi();
-    api.events.set('manual1', { id: 'manual1', url: '', name: 'Added by hand', starts_at: '2026-12-01 00:00:00', payload: {} as EventSchedulePayload });
+    api.events.set('manual1', { id: 'manual1', url: '', payload: { name: 'Added by hand' } as EventSchedulePayload });
     await runSync(options(api, [], emptyIdMap()));
     expect(api.events.has('manual1')).toBe(true);
+  });
+
+  it('never takes over an event or venue it did not create, even one with the same name and start time', async () => {
+    const reference = new FakeApi();
+    await runSync(options(reference, [upcoming()], emptyIdMap()));
+    const twinPayload = [...reference.events.values()][0].payload;
+    const twinVenueBody = [...reference.venueBodies.values()][0];
+
+    const api = new FakeApi();
+    api.events.set('manual1', { id: 'manual1', url: 'https://es.test/v/manual1', payload: twinPayload });
+    api.venues.push({ id: 'manualVenue', subdomain: 'belcher-by-hand', url: '', type: 'venue', name: 'Belcher Center', email: null, timezone: null });
+    api.venueBodies.set('manualVenue', twinVenueBody);
+
+    const first = await runSync(options(api, [upcoming()], emptyIdMap()));
+    expect(api.calls).toEqual(['createVenue Belcher Center', 'createEvent Show']);
+    expect(first.idMap.events.evt_show.id).not.toBe('manual1');
+    expect(Object.values(first.idMap.venues)[0].id).not.toBe('manualVenue');
+
+    api.calls = [];
+    await runSync(options(api, [upcoming({ title: 'Show (new time)' })], first.idMap));
+    await runSync(options(api, [], first.idMap));
+    expect(api.calls).toEqual([`updateEvent ${first.idMap.events.evt_show.id}`, `deleteEvent ${first.idMap.events.evt_show.id}`]);
+    expect(api.events.get('manual1')?.payload).toBe(twinPayload);
+    expect(api.venueBodies.get('manualVenue')).toBe(twinVenueBody);
   });
 
   it('skips past events unless archive mode is on, and leaves a synced one in place once it has passed', async () => {
@@ -263,19 +284,6 @@ describe('runSync', () => {
     const api = new FakeApi();
     await runSync(options(api, [upcoming(), upcoming({ id: 'evt_two', slug: 'two', title: 'Two' })], emptyIdMap()));
     expect(api.calls.filter((call) => call.startsWith('createVenue'))).toHaveLength(1);
-  });
-
-  it('adopts an existing venue and an existing event instead of duplicating them when the map was lost', async () => {
-    const api = new FakeApi();
-    await runSync(options(api, [upcoming()], emptyIdMap()));
-    const existingEvent = [...api.events.keys()][0];
-    api.calls = [];
-    const again = await runSync(options(api, [upcoming()], emptyIdMap()));
-
-    expect(api.calls).toEqual(['updateVenue belcher', `updateEvent ${existingEvent}`]);
-    expect(api.events.size).toBe(1);
-    expect(again.idMap.events.evt_show.id).toBe(existingEvent);
-    expect(again.report.venues[0].action).toBe('adopt');
   });
 
   it('creates the event again when its mapped copy was deleted on Event Schedule', async () => {
@@ -352,6 +360,22 @@ describe('runSync', () => {
     expect(api.calls).toEqual([]);
   });
 
+  it('does not let a past entry that is never sent stop the sync', async () => {
+    const api = new FakeApi();
+    const weakPast = upcoming({ id: 'evt_weak', slug: 'weak', start_at: PAST });
+    weakPast.source.confidence = 0.2;
+    const lastYear = upcoming({ id: 'evt_show_2025', start_at: PAST });
+    const seed = [weakPast, lastYear, upcoming()];
+
+    const { report } = await runSync(options(api, seed, emptyIdMap()));
+    expect(report.ok).toBe(true);
+    expect(api.calls).toEqual(['createVenue Belcher Center', 'createEvent Show']);
+
+    api.calls = [];
+    await expect(runSync(options(api, seed, emptyIdMap(), { archive: true }))).rejects.toThrow(/release gate failed/);
+    expect(api.calls).toEqual([]);
+  });
+
   it('carries on past a failed event, reports it, and keeps what did succeed', async () => {
     const api = new FakeApi();
     api.failCreateFor = 'Show';
@@ -370,6 +394,30 @@ describe('runSync', () => {
     const past = upcoming({ id: 'evt_past', slug: 'past', start_at: PAST });
     const { upcoming: list } = await runSync(options(new FakeApi(), [upcoming(), flagged, past], emptyIdMap(), { archive: true }));
     expect(list.map((event) => event.id)).toEqual(['evt_show']);
+  });
+});
+
+describe('cancelled events', () => {
+  it('takes the page down but keeps the event, with its cancelled status, in events.json', async () => {
+    const api = new FakeApi();
+    const other = upcoming({ id: 'evt_two', slug: 'two', title: 'Two' });
+    const first = await runSync(options(api, [upcoming(), other], emptyIdMap()));
+    api.calls = [];
+    const second = await runSync(options(api, [upcoming({ status: 'cancelled' }), other], first.idMap));
+
+    expect(api.calls).toEqual([`deleteEvent ${first.idMap.events.evt_show.id}`]);
+    expect(second.idMap.events.evt_show).toBeUndefined();
+
+    const feed = JSON.parse(
+      buildEventsJson({ events: second.upcoming, idMap: second.idMap, publicUrl: 'https://es.test', schedulePath: 'calendar', now: NOW }),
+    );
+    expect(feed.events.map((event: CanonicalEvent) => [event.id, event.status])).toEqual(
+      expect.arrayContaining([
+        ['evt_show', 'cancelled'],
+        ['evt_two', 'scheduled'],
+      ]),
+    );
+    expect(Object.keys(feed.calendar.event_pages)).toEqual(['evt_two']);
   });
 });
 

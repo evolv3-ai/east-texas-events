@@ -3,7 +3,7 @@ import { NEAR_PARK_SUB_SCHEDULE } from './mapping';
 import type { IdMap } from './sync';
 
 export interface StaticSiteOptions {
-  /** Approved, flag-free, current events: the same set the sync keeps on Event Schedule. */
+  /** Approved, flag-free, current events. Cancelled ones are included, though the sync takes their pages down. */
   events: CanonicalEvent[];
   idMap: IdMap;
   /** Public origin of the Event Schedule install, for example https://e-tex.events. */

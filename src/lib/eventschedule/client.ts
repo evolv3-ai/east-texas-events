@@ -14,16 +14,12 @@ export interface RemoteSchedule {
   name: string;
   email: string | null;
   timezone: string | null;
-  address1: string | null;
-  city: string | null;
   groups?: RemoteGroup[];
 }
 
 export interface RemoteEvent {
   id: string;
   url: string;
-  name: string;
-  starts_at: string;
 }
 
 export interface VenueBody {
@@ -101,7 +97,7 @@ export class EventScheduleClient implements EventScheduleApi {
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/+$/, '');
     this.apiKey = options.apiKey;
-    this.maxWritesPerMinute = options.maxWritesPerMinute ?? 20;
+    this.maxWritesPerMinute = options.maxWritesPerMinute ?? 19;
     this.maxRetries = options.maxRetries ?? 5;
     this.fetchImpl = options.fetch ?? fetch;
     this.sleep = options.sleep ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
