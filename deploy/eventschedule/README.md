@@ -10,7 +10,7 @@ of that site's build.
 | `docker-compose.yml` | `proxy` (Caddy, TLS) → `web` (nginx) → `app` (php-fpm), plus `db` (MariaDB) and `scheduler` |
 | `Dockerfile`, `docker-entrypoint.sh`, `nginx.conf` | Our copies of the upstream Docker files; each file's header lists what differs |
 | `Caddyfile` | Certificate, `/` → `/calendar`, our own `/llms.txt` and `/events.json`, visitor address handling |
-| `static/` | Files the proxy serves instead of the app. The two here are placeholders until the event sync job generates them |
+| `static/` | The files the proxy serves instead of the app, each one named in `Caddyfile`. The two here are placeholders until the event sync job generates them |
 | `.env.example`, `init-env.sh` | Every setting, documented; and the script that creates `.env` with generated secrets |
 | `create-admin.sh` | Creates the one admin account and prints its API key |
 | `backup.sh` | Nightly database and storage backup |
@@ -36,13 +36,18 @@ Cloudflare.
    ```
    Copy `.env` to the secret store now. A backup cannot be read without the `APP_KEY` in it.
    Then edit `.env` and fill in the `MAIL_*` settings; until you do, no email is delivered.
-4. Build and start. The first build takes several minutes:
+4. Build and start everything except the proxy, so nothing is reachable from outside yet. The
+   first build takes several minutes:
    ```bash
-   docker compose up -d --build
+   docker compose up -d --build web scheduler
    docker compose ps          # app, web and db should say "healthy"
    ```
-5. **Create the admin account straight away** (next section). Until one exists, the first
-   person to find the sign-up page owns the install.
+5. **Create the admin account before opening the site** (next section). Until one exists, the
+   first person to find the sign-up page owns the install.
+6. Start the proxy, which opens ports 80 and 443:
+   ```bash
+   docker compose up -d
+   ```
 
 ### TLS and Cloudflare
 
@@ -62,7 +67,9 @@ visitor address Cloudflare reports only when the request really comes from one o
 ```
 
 It asks for a password, creates the account, makes it the instance admin and prints an API key
-on the last line. The key is shown once and expires after a year: put it in the secret store and
+on the last line. If the account is created but making it admin fails, the script still prints
+the key, along with the one command to run again; the script itself cannot be rerun, because
+sign-up is already closed. The key is shown once and expires after a year: put it in the secret store and
 put the renewal on a calendar. A new key comes from **Settings → Developers** after signing in.
 Sign-up closes as soon as this account exists.
 
@@ -193,8 +200,9 @@ SESSION_SECURE_COOKIE=false
 ```
 
 ```bash
-docker compose up -d --build
+docker compose up -d --build web scheduler
 ./create-admin.sh you@example.com "Your Name"
+docker compose up -d
 ES_API_KEY=... ./smoke_test.py --base-url http://localhost:18480
 docker compose down -v --rmi local     # removes containers, data and the built images
 ```

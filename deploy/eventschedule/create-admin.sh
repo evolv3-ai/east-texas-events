@@ -3,10 +3,10 @@
 #
 #   ./create-admin.sh owner@example.com "Full Name"
 #
-# Run it on the server straight after the first `docker compose up`, before the site is
-# reachable from outside: until an account exists, whoever registers first owns the install.
+# Run it on the server after the first `docker compose up -d --build web scheduler` and before
+# the proxy is started: until an account exists, whoever registers first owns the install.
 # The request goes from the app container to nginx inside the Docker network, so it works
-# before DNS and TLS are in place. The password is prompted for and passed on stdin; it never
+# without the proxy, DNS or TLS. The password is prompted for and passed on stdin; it never
 # appears in the process list or the shell history.
 set -euo pipefail
 
@@ -50,8 +50,16 @@ api_key="$(printf '%s' "$password" | docker compose exec -T \
   ')"
 
 # Registering through the API creates the account but only the web sign-up form grants admin.
-docker compose exec -T app php artisan app:make-admin "$email" >&2
+admin_status=0
+docker compose exec -T app php artisan app:make-admin "$email" >&2 || admin_status=$?
 
-echo "create-admin: $email is the instance admin. Sign in at /login." >&2
+if [ "$admin_status" -eq 0 ]; then
+  echo "create-admin: $email is the instance admin. Sign in at /login." >&2
+else
+  echo "create-admin: the account $email exists but could not be made the instance admin." >&2
+  echo "create-admin: do not run this script again; sign-up is closed. Run this instead:" >&2
+  echo "  docker compose exec -T app php artisan app:make-admin \"$email\"" >&2
+fi
 echo "create-admin: the API key below is shown once and expires in a year. Put it in the secret store." >&2
 printf '%s\n' "$api_key"
+exit "$admin_status"
