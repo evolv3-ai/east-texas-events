@@ -69,9 +69,9 @@ visitor address Cloudflare reports only when the request really comes from one o
 It asks for a password, creates the account, makes it the instance admin and prints an API key
 on the last line. If the account is created but making it admin fails, the script still prints
 the key, along with the one command to run again; the script itself cannot be rerun, because
-sign-up is already closed. The key is shown once and expires after a year: put it in the secret store and
-put the renewal on a calendar. A new key comes from **Settings → Developers** after signing in.
-Sign-up closes as soon as this account exists.
+sign-up is already closed. The key is shown once and expires after a year: put it in the secret
+store and put the renewal on a calendar. A new key comes from **Settings → Developers** after
+signing in. Sign-up closes as soon as this account exists.
 
 ## Calendar schedule, its path, and emails
 
