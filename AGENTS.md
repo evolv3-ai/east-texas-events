@@ -33,7 +33,7 @@ src/data/events.seed.json
 
 ## Project status
 
-- **Phase:** MVP. Seed events carry a `seed-fixture-verify-before-public-launch` risk flag — verify each against its `source_url` before public launch.
+- **Phase:** MVP. Every feed-visible event is verified against its `source_url` before approval; `npm run build` fails if one still carries a `risk_flags` entry.
 - **Last reality check:** 2026-06-08 — 11/11 vision goals working; 5 minor gaps tracked in `docs/status/reality-check-2026-06-08.md`.
 
 ## Workflow
