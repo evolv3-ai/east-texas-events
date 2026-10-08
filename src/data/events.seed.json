@@ -1271,5 +1271,2333 @@
     },
     "created_at": "2026-06-10T18:30:00-05:00",
     "updated_at": "2026-06-10T18:30:00-05:00"
+  },
+  {
+    "id": "evt_longview_jaycees_trade_days_oct_2026",
+    "slug": "longview-jaycees-trade-days-october-2026",
+    "title": "Longview Jaycees Trade Days (October)",
+    "description": "Monthly indoor trade days at the Longview Exhibit Center where vendors of all kinds buy, sell, trade, and swap. Admission and parking are free.",
+    "agent_summary": "Free monthly trade days market at the Longview Exhibit Center, Saturday October 10 (9 AM-4 PM) and Sunday October 11 (10 AM-4 PM), 2026.",
+    "best_for": [
+      "bargain hunters",
+      "visitors",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Saturday 9 AM-4 PM; Sunday 10 AM-4 PM.",
+      "Admission and parking are free.",
+      "Held the second weekend of every month except September; info line 903-753-4478."
+    ],
+    "start_at": "2026-10-10T09:00:00-05:00",
+    "end_at": "2026-10-11T16:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9513",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9513"
+    },
+    "admission": {
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "markets",
+      "community",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "trade-days",
+      "flea-market",
+      "monthly"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "rv_parking_notes": "The city listing says parking is free; it does not mention RV or oversize parking.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Browse Longview's trade days and head back to Shallow Creek RV Park with your finds."
+    },
+    "relevance": {
+      "score": 800,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free admission",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9513",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_kilgore_oktoberfest_2026",
+    "slug": "kilgore-oktoberfest-2026",
+    "title": "Kilgore Oktoberfest",
+    "description": "Kilgore Main Street's free German-meets-Texas street festival in Historic Downtown Kilgore, with food, live music, a beer garden near the Texan Theater, family activities, and a Best Dressed contest.",
+    "agent_summary": "Free Oktoberfest street festival in Historic Downtown Kilgore on Saturday, October 10, 2026, 11 AM-7 PM, with German-inspired food, live music, a beer garden, and family activities.",
+    "why_go": "A free, walkable downtown festival about 15 minutes from the park.",
+    "best_for": [
+      "families",
+      "visitors",
+      "craft beer fans",
+      "live music"
+    ],
+    "trip_planning_notes": [
+      "Free admission; 11 AM-7 PM.",
+      "REEL East Texas runs the beer garden near the Texan Theater; a $50 VIP pass includes a commemorative stein, a themed meal, five beers, and shaded seating.",
+      "Dirndl or lederhosen gets you into the Best Dressed competition."
+    ],
+    "start_at": "2026-10-10T11:00:00-05:00",
+    "end_at": "2026-10-10T19:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Historic Downtown Kilgore",
+      "city": "Kilgore",
+      "region": "TX",
+      "postal_code": "75662",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 8.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 15
+    },
+    "links": {
+      "web_url": "https://visitkilgore.com/kilgore-oktoberfest/",
+      "source_url": "https://visitkilgore.com/kilgore-oktoberfest/"
+    },
+    "admission": {
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "food-drink",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "kilgore",
+      "oktoberfest",
+      "downtown",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Stay at Shallow Creek RV Park and spend Saturday at Kilgore's Oktoberfest, minutes away."
+    },
+    "relevance": {
+      "score": 900,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free admission",
+        "annual downtown festival",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Visit Kilgore",
+      "type": "tourism-cvb",
+      "source_url": "https://visitkilgore.com/kilgore-oktoberfest/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_lso_american_tapestry_2026",
+    "slug": "longview-symphony-american-tapestry-2026",
+    "title": "Longview Symphony: American Tapestry",
+    "description": "The Longview Symphony Orchestra marks the nation's 250th anniversary with a program of orchestral masterworks at the Belcher Center.",
+    "agent_summary": "Longview Symphony Orchestra America 250 concert at the Belcher Center in Longview on Saturday, October 10, 2026 at 7:00 PM; tickets $25-$50.",
+    "best_for": [
+      "music lovers",
+      "date night",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:00 PM; the Longview Symphony lists doors at 6:00 PM and an end time of 9:00 PM.",
+      "Tickets $25-$50 via etix."
+    ],
+    "start_at": "2026-10-10T19:00:00-05:00",
+    "end_at": "2026-10-10T21:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/community-events/2026-lso-americantapestry.html",
+      "source_url": "https://www.belchercenter.com/community-events/2026-lso-americantapestry.html",
+      "tickets_url": "https://www.etix.com/ticket/p/97309284/lso-american-tapestry-concert-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 25,
+      "price_max": 50,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/97309284/lso-american-tapestry-concert-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "live-music",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "symphony",
+      "america-250",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Pair a symphony night at the Belcher Center with a stay at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 870,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "regional orchestra",
+        "America 250 anniversary year",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/community-events/2026-lso-americantapestry.html",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_foreigner_cowan_center_2026",
+    "slug": "foreigner-cowan-center-tyler-2026",
+    "title": "Foreigner at the UT Tyler Cowan Center",
+    "description": "Classic rock band Foreigner (\"Juke Box Hero,\" \"Cold As Ice,\" \"Hot Blooded\") plays the UT Tyler Cowan Center.",
+    "agent_summary": "Foreigner in concert at the UT Tyler Cowan Center in Tyler on Saturday, October 10, 2026 at 7:30 PM; ticketed.",
+    "best_for": [
+      "music lovers",
+      "classic rock fans",
+      "date night"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:30 PM.",
+      "Tickets via etix or the Cowan Center box office, 903-566-7424; check the venue page for current prices and availability."
+    ],
+    "start_at": "2026-10-10T19:30:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://cowancenter.org/shows/foreigner/",
+      "source_url": "https://cowancenter.org/shows/foreigner/",
+      "tickets_url": "https://www.etix.com/ticket/p/64360576/foreignercelebrating-fifty-years-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://www.etix.com/ticket/p/64360576/foreignercelebrating-fifty-years-tyler-ut-tyler-cowan-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "tyler",
+      "concert",
+      "classic-rock",
+      "cowan-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Make it a Tyler concert night and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 780,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "national touring artist",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "UT Tyler Cowan Center",
+      "type": "venue-site",
+      "source_url": "https://cowancenter.org/shows/foreigner/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_east_texas_yamboree_2026",
+    "slug": "east-texas-yamboree-gilmer-2026",
+    "title": "89th Annual East Texas Yamboree",
+    "description": "One of the oldest continuous festivals in Texas, held in Gilmer since 1935 to honor Upshur County's sweet potato. Four days of carnival rides, livestock shows, two parades, a quilt show, gospel stage, fiddlers' contest, barn dance, and nightly street dances on the courthouse square.",
+    "agent_summary": "The 89th East Texas Yamboree in Gilmer, October 14-17, 2026: carnival, livestock shows, School Parade (Fri 11 AM), Queen's Parade (Sat 11 AM), street dances, and exhibits around the courthouse square and Yamboree Park.",
+    "why_go": "A signature East Texas harvest festival that the official site says draws nearly 100,000 visitors.",
+    "best_for": [
+      "families",
+      "visitors",
+      "fair fans",
+      "live music"
+    ],
+    "trip_planning_notes": [
+      "Carnival opens 6 PM Wednesday and noon Thursday-Saturday on the courthouse square, closing at midnight.",
+      "Parades on the courthouse square: School/Youth Parade Friday 11 AM, Queen's Parade Saturday 11 AM.",
+      "Carnival deals: half-price rides Wednesday, $25 unlimited Thursday, $30-$35 unlimited Friday and Saturday.",
+      "Street Dance at the Bandstand 8:30 PM Thursday-Saturday; Barn Dance 6:30 PM Saturday at the Yamboree Event Center, 181 Bob Glaze Dr.",
+      "Outside exhibits, livestock, and the Exhibit Building are at Yamboree Park on Hwy 271 N."
+    ],
+    "start_at": "2026-10-14T07:00:00-05:00",
+    "end_at": "2026-10-17T23:59:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Upshur County Courthouse Square and Yamboree Park",
+      "address1": "Courthouse Square, Downtown Gilmer",
+      "city": "Gilmer",
+      "region": "TX",
+      "postal_code": "75644",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 23,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 30
+    },
+    "links": {
+      "web_url": "https://yamboree.com/",
+      "source_url": "https://yamboree.com/"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "family-friendly",
+      "outdoor",
+      "live-music"
+    ],
+    "tags": [
+      "gilmer",
+      "yamboree",
+      "carnival",
+      "parade",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 2,
+      "booking_prompt": "Base at Shallow Creek RV Park for Yamboree week; Gilmer is about half an hour north."
+    },
+    "relevance": {
+      "score": 890,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "major annual regional event",
+        "four-day run",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "East Texas Yamboree",
+      "type": "official-event-site",
+      "source_url": "https://yamboree.com/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_texas_rose_festival_2026",
+    "slug": "texas-rose-festival-tyler-2026",
+    "title": "93rd Annual Texas Rose Festival",
+    "description": "Tyler's signature festival since 1933, themed \"Celebrations through the Seasons\": the Rose Presentation and rose display at the Rose Garden Center, the Queen's Coronation, the Rose Parade, the Queen's Tea in the Tyler Municipal Rose Garden, and an arts and crafts fair at Bergfeld Park.",
+    "agent_summary": "The 93rd Texas Rose Festival in Tyler, October 15-18, 2026: free rose display at the Rose Garden Center, Coronation Friday at the Cowan Center, Rose Parade Saturday 9 AM, free Queen's Tea Saturday 1-3 PM, and an arts and crafts fair Saturday and Sunday.",
+    "why_go": "The Rose Parade, the Queen's Tea, and a 14-acre rose garden in bloom, with most public events free.",
+    "best_for": [
+      "families",
+      "visitors",
+      "garden lovers",
+      "photography"
+    ],
+    "trip_planning_notes": [
+      "Rose display at the Rose Garden Center is free: Thursday-Saturday 9 AM-5 PM, Sunday noon-4 PM.",
+      "Rose Parade Saturday, October 17 at 9:00 AM, heading west from Glenwood Blvd. and Front St.; the parade route is free, stadium seating is $10.",
+      "Queen's Tea Saturday 1-3 PM in the Tyler Municipal Rose Garden, free and open to the public.",
+      "Coronation Friday, October 16 at the Cowan Center, 3900 University Blvd.: 2:00 PM matinee ($15-$50) and 7:00 PM evening ($30-$85).",
+      "Arts & Crafts Fair at Bergfeld Park, 1510 S College: Saturday 9 AM-5 PM, Sunday 11 AM-5 PM."
+    ],
+    "start_at": "2026-10-15T09:00:00-05:00",
+    "end_at": "2026-10-18T17:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Tyler Rose Garden Center",
+      "address1": "420 Rose Park Drive",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75702",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 30,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 40
+    },
+    "links": {
+      "web_url": "https://www.texasrosefestival.org/",
+      "source_url": "https://www.texasrosefestival.org/",
+      "tickets_url": "https://www.texasrosefestival.org/"
+    },
+    "admission": {
+      "price_min": 0,
+      "price_max": 85,
+      "availability": "available",
+      "purchase_url": "https://www.texasrosefestival.org/",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "family-friendly",
+      "outdoor",
+      "performing-arts"
+    ],
+    "tags": [
+      "tyler",
+      "roses",
+      "parade",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 2,
+      "booking_prompt": "Make Shallow Creek RV Park your base for Rose Festival weekend in Tyler."
+    },
+    "relevance": {
+      "score": 880,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "major annual regional event",
+        "four-day run",
+        "free public events"
+      ]
+    },
+    "source": {
+      "name": "Texas Rose Festival",
+      "type": "official-event-site",
+      "source_url": "https://www.texasrosefestival.org/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_longview_sports_card_tcg_show_oct_2026",
+    "slug": "longview-sports-card-and-tcg-show-october-2026",
+    "title": "Longview Sports Card and TCG Card Show",
+    "description": "Free-admission card show at the Longview Exhibit Center with sports cards, memorabilia, Pokemon, Magic, and One Piece trading card collectibles, sponsored by For the Collectors and 903 Card Shop.",
+    "agent_summary": "Free sports card and trading card game show at the Longview Exhibit Center on Saturday, October 17, 2026, 10 AM-4 PM.",
+    "best_for": [
+      "collectors",
+      "kids",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Free admission; 10 AM-4 PM.",
+      "Contact: Tom Tippet, 903-470-7072."
+    ],
+    "start_at": "2026-10-17T10:00:00-05:00",
+    "end_at": "2026-10-17T16:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10842",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10842"
+    },
+    "admission": {
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "expo",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "trading-cards",
+      "sports-cards",
+      "collectibles"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Hunt for cards in Longview, then relax back at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 760,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free admission",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10842",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_harvest_festival_livestock_show_2026",
+    "slug": "harvest-festival-and-livestock-show-longview-2026",
+    "title": "Harvest Festival & Livestock Show",
+    "description": "Junior livestock show and sale for 4-H and FFA members from Gregg, Harrison, Upshur, Rusk, and Smith counties, with Home Economics and Ag Mechanics shows, at the Longview Convention Complex Ag Pavilions and Maude Cobb Convention Center. Open free of charge to the public.",
+    "agent_summary": "Free-to-watch junior livestock show for area 4-H and FFA members at the Longview Convention Complex, October 21-24, 2026, ending with the Saturday sale of champions.",
+    "best_for": [
+      "families",
+      "kids",
+      "agriculture fans"
+    ],
+    "trip_planning_notes": [
+      "Open to the public free of charge.",
+      "Official schedule: broiler show Wednesday 9 AM, swine judging Thursday 9 AM, lamb and goat judging Friday 8 AM, steer judging Friday 3 PM, heifer and steer jackpot shows Saturday 8:30 AM.",
+      "Public viewing of the Home Economics divisions starts at 2:00 PM Thursday.",
+      "Sale and exhibition of champions Saturday at 6:00 PM at Maude Cobb Convention Center.",
+      "The city calendar lists October 21-24; the organizer's schedule adds a one-day rabbit show on Tuesday, October 20."
+    ],
+    "start_at": "2026-10-21T09:00:00-05:00",
+    "end_at": "2026-10-24T23:59:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10579",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10579"
+    },
+    "admission": {
+      "is_free": true,
+      "availability": "not_applicable",
+      "currency": "USD"
+    },
+    "categories": [
+      "community",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "longview",
+      "livestock-show",
+      "4-h",
+      "ffa",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "See East Texas 4-H and FFA exhibitors show their animals, a short drive from Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 800,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free admission",
+        "annual regional youth event"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10579",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_kristin_chenoweth_etso_cowan_2026",
+    "slug": "kristin-chenoweth-with-east-texas-symphony-tyler-2026",
+    "title": "An Evening with Kristin Chenoweth, Featuring the East Texas Symphony Orchestra",
+    "description": "Emmy and Tony Award-winning actress and singer Kristin Chenoweth performs with the East Texas Symphony Orchestra at the UT Tyler Cowan Center, part of the Queens of Broadway series.",
+    "agent_summary": "Kristin Chenoweth with the East Texas Symphony Orchestra at the UT Tyler Cowan Center in Tyler on Saturday, October 24, 2026 at 7:30 PM; ticketed.",
+    "best_for": [
+      "music lovers",
+      "theatre fans",
+      "date night"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:30 PM.",
+      "Tickets via etix or the Cowan Center box office, 903-566-7424; check the venue page for current prices and availability."
+    ],
+    "start_at": "2026-10-24T19:30:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://cowancenter.org/shows/an-evening-with-kristin-chenoweth/",
+      "source_url": "https://cowancenter.org/shows/an-evening-with-kristin-chenoweth/",
+      "tickets_url": "https://www.etix.com/ticket/p/66171361/an-evening-of-kristin-chenoweth-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://www.etix.com/ticket/p/66171361/an-evening-of-kristin-chenoweth-tyler-ut-tyler-cowan-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "live-music"
+    ],
+    "tags": [
+      "tyler",
+      "broadway",
+      "symphony",
+      "cowan-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Enjoy a Broadway-caliber night in Tyler and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "national touring artist",
+        "regional orchestra",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "UT Tyler Cowan Center",
+      "type": "venue-site",
+      "source_url": "https://cowancenter.org/shows/an-evening-with-kristin-chenoweth/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_boo_at_the_zoo_caldwell_2026",
+    "slug": "boo-at-the-zoo-caldwell-zoo-tyler-2026",
+    "title": "Boo at the Zoo at Caldwell Zoo",
+    "description": "Caldwell Zoo's Halloween tradition in Tyler, held on Halloween Day with activities running all day until 4:00 PM.",
+    "agent_summary": "Boo at the Zoo at Caldwell Zoo in Tyler on Saturday, October 31, 2026, all day until 4:00 PM; rain date Sunday, November 1 only if Saturday is rained out.",
+    "best_for": [
+      "families",
+      "kids",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "Activities run all day until 4:00 PM; the zoo's posted hours are 9:00 AM-5:00 PM.",
+      "Sunday, November 1 is the rain day, used only if Saturday is rained out.",
+      "The event page does not list event pricing; check the zoo's ticket page before you go."
+    ],
+    "start_at": "2026-10-31T09:00:00-05:00",
+    "end_at": "2026-10-31T16:00:00-05:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Caldwell Zoo",
+      "address1": "2203 Martin Luther King Blvd.",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75702",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://caldwellzoo.org/boo-at-the-zoo-2026/",
+      "source_url": "https://caldwellzoo.org/boo-at-the-zoo-2026/",
+      "tickets_url": "https://caldwellzoo.org/tickets"
+    },
+    "admission": {
+      "availability": "unknown",
+      "purchase_url": "https://caldwellzoo.org/tickets",
+      "currency": "USD"
+    },
+    "categories": [
+      "family-friendly",
+      "outdoor",
+      "holiday"
+    ],
+    "tags": [
+      "tyler",
+      "halloween",
+      "zoo",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "pet_friendly": false,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Spend Halloween at the zoo in Tyler and head home to Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 800,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "holiday event",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Caldwell Zoo",
+      "type": "venue-site",
+      "source_url": "https://caldwellzoo.org/boo-at-the-zoo-2026/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.85
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_tsf_festival_of_trees_2026",
+    "slug": "texas-shakespeare-festival-of-trees-kilgore-2026",
+    "title": "Texas Shakespeare Festival: Festival of Trees",
+    "description": "The TSF Foundation's third annual Festival of Trees: decorated trees, wreaths, and holiday decor, artisan vendors, children's choirs, and a Teddy Bear Picnic at the Woodruff Education Center in Kilgore, benefiting the Texas Shakespeare Festival.",
+    "agent_summary": "Holiday Festival of Trees in Kilgore, November 5-7, 2026: ticketed Preview Party Thursday 6-7:30 PM ($20), then free admission Friday and Saturday 10:30 AM-7 PM.",
+    "best_for": [
+      "families",
+      "holiday shoppers",
+      "arts lovers"
+    ],
+    "trip_planning_notes": [
+      "Preview Party Thursday, November 5, 6:00-7:30 PM, $20 ticket.",
+      "Friday and Saturday 10:30 AM-7:00 PM, free admission.",
+      "Children's Teddy Bear Picnic Saturday at 10:30 AM, free."
+    ],
+    "start_at": "2026-11-05T18:00:00-06:00",
+    "end_at": "2026-11-07T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Woodruff Education Center",
+      "address1": "220 N. Henderson Blvd",
+      "city": "Kilgore",
+      "region": "TX",
+      "postal_code": "75662",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 8.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 15
+    },
+    "links": {
+      "web_url": "https://www.texasshakespeare.com/festival-of-trees",
+      "source_url": "https://www.texasshakespeare.com/festival-of-trees",
+      "tickets_url": "https://www.texasshakespeare.com/purchase-tickets"
+    },
+    "admission": {
+      "requires_ticket": false,
+      "price_min": 0,
+      "price_max": 20,
+      "availability": "available",
+      "purchase_url": "https://www.texasshakespeare.com/purchase-tickets",
+      "currency": "USD"
+    },
+    "categories": [
+      "holiday",
+      "family-friendly",
+      "community"
+    ],
+    "tags": [
+      "kilgore",
+      "christmas",
+      "texas-shakespeare-festival",
+      "fundraiser"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Kick off the holidays at Kilgore's Festival of Trees, minutes from Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "free main event",
+        "rainy-day friendly",
+        "holiday event"
+      ]
+    },
+    "source": {
+      "name": "Texas Shakespeare Festival",
+      "type": "official-event-site",
+      "source_url": "https://www.texasshakespeare.com/festival-of-trees",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_zach_williams_belcher_2026",
+    "slug": "zach-williams-revival-nights-belcher-center-2026",
+    "title": "Zach Williams: Revival Nights Tour",
+    "description": "Zach Williams (\"Chain Breaker,\" \"Rescue Story\") brings the Revival Nights Tour to the Belcher Center with Cochren & Co. and opener Christian Hohn.",
+    "agent_summary": "Zach Williams Revival Nights Tour with Cochren & Co. and Christian Hohn at the Belcher Center in Longview on Thursday, November 5, 2026 at 7:00 PM; tickets $27.75-$157.75.",
+    "best_for": [
+      "music lovers",
+      "families",
+      "faith community"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:00 PM.",
+      "Tickets $27.75-$157.75 via etix; box office 903-233-3080."
+    ],
+    "start_at": "2026-11-05T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/live/2026-zach-williams.html",
+      "source_url": "https://www.belchercenter.com/live/2026-zach-williams.html",
+      "tickets_url": "https://www.etix.com/ticket/p/36751478/zach-williams-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 27.75,
+      "price_max": 157.75,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/36751478/zach-williams-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "longview",
+      "concert",
+      "christian-music",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Catch a Belcher Center show and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 870,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "national touring artist",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/live/2026-zach-williams.html",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_cardboard_cove_longview_2026",
+    "slug": "cardboard-cove-longview-2026",
+    "title": "Cardboard Cove (Longview)",
+    "description": "Trading card collector's show in Bays A and B of the Longview Exhibit Center with 100 tables of trading card vendors, celebrity voice actors Kara Edwards (Dragon Ball Z) and Tyson Rinehart (One Piece), and interactive scavenger hunts.",
+    "agent_summary": "Trading card show with 100 vendor tables and anime voice-actor guests at the Longview Exhibit Center on Saturday, November 7, 2026, 11 AM-5 PM; $5 online, $9 at the door.",
+    "best_for": [
+      "collectors",
+      "pop-culture fans",
+      "teens",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "11 AM-5 PM in Exhibit Center Bays A and B.",
+      "$5 in advance at PoweredByCardboard.com or OnTreasure.com; $9 at the box office on November 7."
+    ],
+    "start_at": "2026-11-07T11:00:00-06:00",
+    "end_at": "2026-11-07T17:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10876",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10876",
+      "tickets_url": "https://www.poweredbycardboard.com/"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 5,
+      "price_max": 9,
+      "availability": "available",
+      "purchase_url": "https://www.poweredbycardboard.com/",
+      "currency": "USD"
+    },
+    "categories": [
+      "expo",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "trading-cards",
+      "anime",
+      "collectibles"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Spend a Saturday at Cardboard Cove and wind down at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "low-cost admission",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10876",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_very_derrick_christmas_kilgore_2026",
+    "slug": "a-very-derrick-christmas-kilgore-2026",
+    "title": "A Very Derrick Christmas",
+    "description": "Kilgore kicks off the holiday season by lighting the oil derricks in Historic Downtown Kilgore.",
+    "agent_summary": "Kilgore's holiday kickoff and lighting of the downtown oil derricks on Thursday, November 12, 2026, starting at 5:00 PM in Historic Downtown Kilgore.",
+    "why_go": "Kilgore lights its downtown oil derricks to open the holiday season, about 15 minutes from the park.",
+    "best_for": [
+      "families",
+      "visitors",
+      "photography",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Starts at 5:00 PM; the Visit Kilgore calendar lists the event through 8:00 PM.",
+      "The listing gives no admission price or detailed program; check Visit Kilgore closer to the date."
+    ],
+    "start_at": "2026-11-12T17:00:00-06:00",
+    "end_at": "2026-11-12T20:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Historic Downtown Kilgore",
+      "city": "Kilgore",
+      "region": "TX",
+      "postal_code": "75662",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 8.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 15
+    },
+    "links": {
+      "web_url": "https://visitkilgore.com/events/",
+      "source_url": "https://visitkilgore.com/events/"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "holiday",
+      "family-friendly",
+      "outdoor",
+      "community"
+    ],
+    "tags": [
+      "kilgore",
+      "christmas",
+      "derricks",
+      "downtown",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Watch Kilgore's derricks light up for Christmas, about 15 minutes from Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 880,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "signature local holiday tradition",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Visit Kilgore",
+      "type": "tourism-cvb",
+      "source_url": "https://visitkilgore.com/events/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.8
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_beetlejuice_cowan_center_2026",
+    "slug": "beetlejuice-the-musical-cowan-center-tyler-2026",
+    "title": "Beetlejuice: The Musical",
+    "description": "The Broadway musical based on Tim Burton's film comes to the UT Tyler Cowan Center as part of its Broadway Series.",
+    "agent_summary": "Touring Broadway production of Beetlejuice: The Musical at the UT Tyler Cowan Center in Tyler on Thursday, November 12, 2026 at 7:30 PM; ticketed.",
+    "best_for": [
+      "theatre fans",
+      "date night",
+      "teens"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:30 PM; runs 2 hours 30 minutes with a 15-minute intermission.",
+      "The venue notes strong language and mature references.",
+      "Tickets via etix or the Cowan Center box office, 903-566-7424; check the venue page for current prices and availability."
+    ],
+    "start_at": "2026-11-12T19:30:00-06:00",
+    "end_at": "2026-11-12T22:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://cowancenter.org/shows/beetlejuice-the-musical/",
+      "source_url": "https://cowancenter.org/shows/beetlejuice-the-musical/",
+      "tickets_url": "https://www.etix.com/ticket/p/72873000/beetlejuice-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://www.etix.com/ticket/p/72873000/beetlejuice-tyler-ut-tyler-cowan-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts"
+    ],
+    "tags": [
+      "tyler",
+      "broadway",
+      "musical",
+      "cowan-center"
+    ],
+    "rv_context": {
+      "family_friendly": false,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "See a touring Broadway show in Tyler and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 780,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "touring Broadway production",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "UT Tyler Cowan Center",
+      "type": "venue-site",
+      "source_url": "https://cowancenter.org/shows/beetlejuice-the-musical/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_heritage_syrup_festival_2026",
+    "slug": "heritage-syrup-festival-henderson-2026",
+    "title": "37th Annual Heritage Syrup Festival",
+    "description": "Old-time ribbon cane syrup making with antique mule-powered equipment at the Rusk County Depot Museum, plus folk-art demonstrations (blacksmithing, basket weaving, quilting, woodcarving), antique tractors and cars, and more than 150 arts-and-crafts booths and live music six blocks away on Heritage Square in downtown Henderson.",
+    "agent_summary": "Heritage Syrup Festival in Henderson on Saturday, November 14, 2026, 9 AM-5 PM: mule-powered cane syrup making, folk arts, antique tractors, 150+ craft booths, and live music at the Depot Museum and downtown Heritage Square.",
+    "why_go": "A nearly 40-year-old folk festival built around live cane syrup making.",
+    "best_for": [
+      "families",
+      "visitors",
+      "history buffs",
+      "craft shoppers"
+    ],
+    "trip_planning_notes": [
+      "Festival hours 9 AM-5 PM; events at the Depot Museum run 10 AM-4 PM.",
+      "Hayride shuttles run between the Depot Museum complex and downtown Heritage Square, six blocks apart.",
+      "The Depot Museum lists free admission with donations accepted; the festival page does not list a separate festival price."
+    ],
+    "start_at": "2026-11-14T09:00:00-06:00",
+    "end_at": "2026-11-14T17:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Rusk County Depot Museum & History Center",
+      "address1": "514 N. High St",
+      "city": "Henderson",
+      "region": "TX",
+      "postal_code": "75652",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 27,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 35
+    },
+    "links": {
+      "web_url": "https://www.ruskcountyhistory.org/syrup-festival",
+      "source_url": "https://www.ruskcountyhistory.org/syrup-festival"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "festivals",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "henderson",
+      "syrup-festival",
+      "folk-arts",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Day-trip to Henderson's Syrup Festival from Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 850,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "major annual regional event",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Rusk County Depot Museum & History Center",
+      "type": "official-event-site",
+      "source_url": "https://www.ruskcountyhistory.org/syrup-festival",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_nutcracker_magical_christmas_ballet_belcher_2026",
+    "slug": "nutcracker-magical-christmas-ballet-belcher-center-2026",
+    "title": "NUTCRACKER! Magical Christmas Ballet",
+    "description": "Touring Nutcracker production with an international cast, puppetry, and hand-crafted costumes and sets, set to Tchaikovsky's score, at the Belcher Center.",
+    "agent_summary": "NUTCRACKER! Magical Christmas Ballet at the Belcher Center in Longview on Tuesday, November 17, 2026 at 7:00 PM; tickets $39.50-$89.50.",
+    "best_for": [
+      "families",
+      "kids",
+      "arts lovers",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:00 PM.",
+      "Tickets $39.50-$89.50 via etix; box office 903-233-3080."
+    ],
+    "start_at": "2026-11-17T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/community-events/2026-nutcracker.html",
+      "source_url": "https://www.belchercenter.com/community-events/2026-nutcracker.html",
+      "tickets_url": "https://www.etix.com/ticket/p/45324480/nutcrackermagical-christmas-ballet-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 39.5,
+      "price_max": 89.5,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/45324480/nutcrackermagical-christmas-ballet-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "family-friendly",
+      "holiday"
+    ],
+    "tags": [
+      "longview",
+      "ballet",
+      "nutcracker",
+      "christmas",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Make the Nutcracker a holiday outing and stay at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 860,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "holiday classic",
+        "ticketed venue event",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/community-events/2026-nutcracker.html",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_christmas_in_the_pineywoods_2026",
+    "slug": "christmas-in-the-pineywoods-longview-2026",
+    "title": "Christmas in the Pineywoods",
+    "description": "The Junior League of Longview's second annual three-day holiday shopping event at the Maude Cobb Convention Center, with more than 80 specialty boutiques and merchants offering seasonal decorations, housewares, artwork, gourmet foods, and gifts.",
+    "agent_summary": "Junior League of Longview holiday shopping market with 80+ merchants at the Maude Cobb Convention Center, November 19-21, 2026; ticketed entry.",
+    "best_for": [
+      "holiday shoppers",
+      "adults",
+      "visitors"
+    ],
+    "trip_planning_notes": [
+      "Girls' Night Out first-look shopping and silent auction Thursday 5:30-8:30 PM.",
+      "General shopping Friday and Saturday 9:00 AM-4:30 PM.",
+      "Entry is by ticket; the city listing said tickets would be on sale soon, so check longview.jl.org for prices."
+    ],
+    "start_at": "2026-11-19T17:30:00-06:00",
+    "end_at": "2026-11-21T16:30:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10015",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10015",
+      "tickets_url": "https://longview.jl.org/"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://longview.jl.org/",
+      "currency": "USD"
+    },
+    "categories": [
+      "markets",
+      "holiday",
+      "community"
+    ],
+    "tags": [
+      "longview",
+      "christmas",
+      "shopping",
+      "junior-league"
+    ],
+    "rv_context": {
+      "family_friendly": false,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Get your holiday shopping done in Longview with Shallow Creek RV Park as your base."
+    },
+    "relevance": {
+      "score": 820,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "holiday shopping event",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10015",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_jim_gaffigan_belcher_2026",
+    "slug": "jim-gaffigan-everything-is-wonderful-belcher-center-2026",
+    "title": "Jim Gaffigan: Everything is Wonderful!",
+    "description": "Comedian Jim Gaffigan brings his Everything is Wonderful stand-up tour to the Belcher Center.",
+    "agent_summary": "Jim Gaffigan stand-up at the Belcher Center in Longview on Thursday, November 19, 2026 at 7:00 PM; tickets $40.75-$190.75.",
+    "best_for": [
+      "comedy fans",
+      "date night",
+      "adults"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:00 PM.",
+      "Tickets $40.75-$190.75 via etix; box office 903-233-3080.",
+      "Security screening with hand-held metal detectors and bag checks; the venue encourages leaving bags at home and arriving early."
+    ],
+    "start_at": "2026-11-19T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/live/2026-jim-gaffigan.html",
+      "source_url": "https://www.belchercenter.com/live/2026-jim-gaffigan.html",
+      "tickets_url": "https://www.etix.com/ticket/p/72955973/jim-gaffiganeverything-is-wonderful-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 40.75,
+      "price_max": 190.75,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/72955973/jim-gaffiganeverything-is-wonderful-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "comedy",
+      "performing-arts"
+    ],
+    "tags": [
+      "longview",
+      "comedy",
+      "stand-up",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Laugh with Jim Gaffigan in Longview and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 890,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "national touring artist",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/live/2026-jim-gaffigan.html",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_oak_ridge_boys_cowan_center_2026",
+    "slug": "the-oak-ridge-boys-cowan-center-tyler-2026",
+    "title": "The Oak Ridge Boys",
+    "description": "The Oak Ridge Boys (\"Elvira,\" \"Bobbie Sue\") bring their four-part harmonies to the UT Tyler Cowan Center as part of the BIG Country series.",
+    "agent_summary": "The Oak Ridge Boys in concert at the UT Tyler Cowan Center in Tyler on Thursday, November 19, 2026 at 7:30 PM; ticketed.",
+    "best_for": [
+      "country music fans",
+      "music lovers",
+      "date night"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:30 PM.",
+      "Tickets via etix or the Cowan Center box office, 903-566-7424; check the venue page for current prices and availability."
+    ],
+    "start_at": "2026-11-19T19:30:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://cowancenter.org/shows/the-oak-ridge-boys/",
+      "source_url": "https://cowancenter.org/shows/the-oak-ridge-boys/",
+      "tickets_url": "https://www.etix.com/ticket/p/68672635/the-oak-ridge-boys-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://www.etix.com/ticket/p/68672635/the-oak-ridge-boys-tyler-ut-tyler-cowan-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "tyler",
+      "concert",
+      "country-music",
+      "cowan-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Hear the Oak Ridge Boys in Tyler and overnight at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 780,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "national touring artist",
+        "ticketed venue event"
+      ]
+    },
+    "source": {
+      "name": "UT Tyler Cowan Center",
+      "type": "venue-site",
+      "source_url": "https://cowancenter.org/shows/the-oak-ridge-boys/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_dolly_parton_smoky_mountain_christmas_carol_2026",
+    "slug": "dolly-partons-smoky-mountain-christmas-carol-tyler-2026",
+    "title": "Dolly Parton's Smoky Mountain Christmas Carol",
+    "description": "National tour of the musical with music and lyrics by Dolly Parton, resetting A Christmas Carol in a 1930s Smoky Mountains mining town, at the UT Tyler Cowan Center.",
+    "agent_summary": "Dolly Parton's Smoky Mountain Christmas Carol at the UT Tyler Cowan Center in Tyler on Saturday, November 28, 2026 at 3:00 PM (Thanksgiving weekend matinee); ticketed.",
+    "best_for": [
+      "families",
+      "theatre fans",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Showtime 3:00 PM on the Saturday after Thanksgiving.",
+      "Tickets via etix or the Cowan Center box office, 903-566-7424; check the venue page for current prices and availability."
+    ],
+    "start_at": "2026-11-28T15:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://cowancenter.org/shows/dolly-partons-smoky-mountain-christmas-carol/",
+      "source_url": "https://cowancenter.org/shows/dolly-partons-smoky-mountain-christmas-carol/",
+      "tickets_url": "https://www.etix.com/ticket/p/93502791/dolly-partons-smoky-mountain-christmas-carol-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://www.etix.com/ticket/p/93502791/dolly-partons-smoky-mountain-christmas-carol-tyler-ut-tyler-cowan-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "family-friendly",
+      "holiday"
+    ],
+    "tags": [
+      "tyler",
+      "broadway",
+      "musical",
+      "christmas",
+      "cowan-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Add a holiday matinee in Tyler to a Thanksgiving-weekend stay at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "touring Broadway production",
+        "holiday weekend",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "UT Tyler Cowan Center",
+      "type": "venue-site",
+      "source_url": "https://cowancenter.org/shows/dolly-partons-smoky-mountain-christmas-carol/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_tsf_eurydice_2026",
+    "slug": "texas-shakespeare-festival-eurydice-kilgore-2026",
+    "title": "Texas Shakespeare Festival: Eurydice",
+    "description": "The Texas Shakespeare Festival and Kilgore College Theatre co-produce Sarah Ruhl's Eurydice, the Orpheus myth retold through its heroine, with professional and student actors directed by Matthew Simpson.",
+    "agent_summary": "Sarah Ruhl's Eurydice, a Texas Shakespeare Festival and Kilgore College co-production, at Van Cliburn Auditorium in Kilgore, December 3-6, 2026; tickets $20, students $10.",
+    "best_for": [
+      "arts lovers",
+      "date night",
+      "students"
+    ],
+    "trip_planning_notes": [
+      "Performances: Thursday and Friday at 10:00 AM and 7:30 PM, Saturday at 2:00 PM and 7:30 PM, Sunday at 2:00 PM.",
+      "Tickets $20 for TSF patrons, $10 students, $5 for groups of 10 or more.",
+      "Group reservations: 903-983-8613 or info@texasshakespeare.com."
+    ],
+    "start_at": "2026-12-03T10:00:00-06:00",
+    "end_at": "2026-12-06T16:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Van Cliburn Auditorium, Kilgore College",
+      "address1": "1000-1198 Brook Dr",
+      "city": "Kilgore",
+      "region": "TX",
+      "postal_code": "75662",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 8.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 15
+    },
+    "links": {
+      "web_url": "https://www.texasshakespeare.com/eurydice",
+      "source_url": "https://www.texasshakespeare.com/eurydice",
+      "tickets_url": "https://www.tix.com/ticket-sales/TexasShakespeare/4442"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 5,
+      "price_max": 20,
+      "availability": "available",
+      "purchase_url": "https://www.tix.com/ticket-sales/TexasShakespeare/4442",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts"
+    ],
+    "tags": [
+      "kilgore",
+      "theatre",
+      "texas-shakespeare-festival",
+      "kilgore-college"
+    ],
+    "rv_context": {
+      "family_friendly": false,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Stay nearby at Shallow Creek RV Park for an easy Kilgore theatre night."
+    },
+    "relevance": {
+      "score": 850,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "regional cultural authority",
+        "low-cost tickets",
+        "rainy-day friendly"
+      ]
+    },
+    "source": {
+      "name": "Texas Shakespeare Festival",
+      "type": "official-event-site",
+      "source_url": "https://www.texasshakespeare.com/eurydice",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_lso_home_for_the_holidays_2026",
+    "slug": "longview-symphony-home-for-the-holidays-2026",
+    "title": "Longview Symphony: Home for the Holidays",
+    "description": "The Longview Symphony Orchestra's family holiday concert with favorite carols, the Greater Longview Children's Choir, special guests, and Santa.",
+    "agent_summary": "Longview Symphony Orchestra holiday concert with the Greater Longview Children's Choir at the Belcher Center in Longview on Friday, December 4, 2026 at 7:00 PM; tickets $25-$50.",
+    "best_for": [
+      "families",
+      "music lovers",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:00 PM.",
+      "Tickets $25-$50 via etix."
+    ],
+    "start_at": "2026-12-04T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/community-events/2026-lso-holidays.html",
+      "source_url": "https://www.belchercenter.com/community-events/2026-lso-holidays.html",
+      "tickets_url": "https://www.etix.com/ticket/p/82906207/lso-home-for-the-holidays-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 25,
+      "price_max": 50,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/82906207/lso-home-for-the-holidays-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "live-music",
+      "family-friendly",
+      "holiday"
+    ],
+    "tags": [
+      "longview",
+      "symphony",
+      "christmas",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Start the season with the symphony and a stay at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 870,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "regional orchestra",
+        "holiday concert",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/community-events/2026-lso-holidays.html",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_rangerette_christmas_show_2026",
+    "slug": "rangerette-christmas-show-kilgore-2026",
+    "title": "Rangerette Christmas Show",
+    "description": "The Kilgore College Rangerettes' Broadway-style holiday show, an annual tradition since 2011, featuring the Rangerettes with the Kilgore High School Hi-Steppers, Kilgore-area dance studios, and guest performers. Back in the newly remodeled Dodson Auditorium for 2026.",
+    "agent_summary": "Kilgore College Rangerettes Christmas Show at Dodson Auditorium in Kilgore on Sunday, December 6, 2026, with shows at 2:00 PM and 5:00 PM; all seats reserved at $25.",
+    "why_go": "A hometown holiday tradition since 2011 from the Kilgore College Rangerettes.",
+    "best_for": [
+      "families",
+      "dance fans",
+      "visitors",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Two shows: 2:00 PM and 5:00 PM; the house opens at 1:15 PM and 4:15 PM.",
+      "All seats reserved, $25 each, non-refundable; tickets are sold only through the Rangerettes' online ticketing system and were due on sale in October.",
+      "Print your tickets or show them on your phone."
+    ],
+    "start_at": "2026-12-06T14:00:00-06:00",
+    "end_at": "2026-12-06T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "W. L. Dodson Auditorium, Kilgore College",
+      "address1": "817 Nolen St",
+      "city": "Kilgore",
+      "region": "TX",
+      "postal_code": "75662",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 8.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 15
+    },
+    "links": {
+      "web_url": "https://www.rangerette.com/events/christmas-show",
+      "source_url": "https://www.rangerette.com/events/christmas-show",
+      "tickets_url": "https://www.rangerette.com/events/christmas-show"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 25,
+      "price_max": 25,
+      "availability": "available",
+      "purchase_url": "https://www.rangerette.com/events/christmas-show",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "family-friendly",
+      "holiday"
+    ],
+    "tags": [
+      "kilgore",
+      "rangerettes",
+      "christmas",
+      "dance",
+      "annual-event"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "See the Rangerettes' Christmas Show, minutes from Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 890,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "signature local tradition",
+        "holiday event",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Kilgore College Rangerettes",
+      "type": "official-event-site",
+      "source_url": "https://www.rangerette.com/events/christmas-show",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_a_christmas_story_musical_belcher_2026",
+    "slug": "a-christmas-story-the-musical-belcher-center-2026",
+    "title": "A Christmas Story, The Musical",
+    "description": "The touring stage musical of the 1983 film, from the songwriting team behind Dear Evan Hansen, follows Ralphie Parker's quest for a Red Ryder air rifle.",
+    "agent_summary": "A Christmas Story, The Musical at the Belcher Center in Longview on Thursday, December 10, 2026 at 7:00 PM; tickets $48-$89.",
+    "best_for": [
+      "families",
+      "theatre fans",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Showtime 7:00 PM.",
+      "Tickets $48-$89 via etix; box office 903-233-3080."
+    ],
+    "start_at": "2026-12-10T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Belcher Center at LeTourneau University",
+      "address1": "2100 S. Mobberly Ave",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75602",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 13.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 20
+    },
+    "links": {
+      "web_url": "https://www.belchercenter.com/live/2026-christmas-story.html",
+      "source_url": "https://www.belchercenter.com/live/2026-christmas-story.html",
+      "tickets_url": "https://www.etix.com/ticket/p/93612872/a-christmas-story-the-musical-longview-belcher-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "price_min": 48,
+      "price_max": 89,
+      "availability": "available",
+      "purchase_url": "https://www.etix.com/ticket/p/93612872/a-christmas-story-the-musical-longview-belcher-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "performing-arts",
+      "family-friendly",
+      "holiday"
+    ],
+    "tags": [
+      "longview",
+      "musical",
+      "christmas",
+      "belcher-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Bring the family to A Christmas Story and stay at Shallow Creek RV Park."
+    },
+    "relevance": {
+      "score": 870,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "touring Broadway production",
+        "holiday classic",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "Belcher Center",
+      "type": "venue-site",
+      "source_url": "https://www.belchercenter.com/live/2026-christmas-story.html",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
+  },
+  {
+    "id": "evt_mannheim_steamroller_christmas_cowan_2026",
+    "slug": "mannheim-steamroller-christmas-cowan-center-tyler-2026",
+    "title": "Mannheim Steamroller Christmas by Chip Davis",
+    "description": "The long-running holiday tour: 15 musicians playing more than 20 instruments on Mannheim Steamroller's Christmas classics, with multimedia effects, at the UT Tyler Cowan Center.",
+    "agent_summary": "Mannheim Steamroller Christmas by Chip Davis at the UT Tyler Cowan Center in Tyler on Saturday, December 19, 2026 at 3:00 PM; ticketed.",
+    "best_for": [
+      "families",
+      "music lovers",
+      "holiday travelers"
+    ],
+    "trip_planning_notes": [
+      "Showtime 3:00 PM matinee.",
+      "Tickets via etix or the Cowan Center box office, 903-566-7424; check the venue page for current prices and availability."
+    ],
+    "start_at": "2026-12-19T15:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://cowancenter.org/shows/mannheim-steamroller-christmas-by-chip-davis/",
+      "source_url": "https://cowancenter.org/shows/mannheim-steamroller-christmas-by-chip-davis/",
+      "tickets_url": "https://www.etix.com/ticket/p/43124026/mannheim-steamroller-christmas-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "requires_ticket": true,
+      "availability": "unknown",
+      "purchase_url": "https://www.etix.com/ticket/p/43124026/mannheim-steamroller-christmas-tyler-ut-tyler-cowan-center",
+      "currency": "USD"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts",
+      "family-friendly",
+      "holiday"
+    ],
+    "tags": [
+      "tyler",
+      "concert",
+      "christmas",
+      "cowan-center"
+    ],
+    "rv_context": {
+      "family_friendly": true,
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "senior_friendly": true,
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Cap a pre-Christmas weekend at Shallow Creek RV Park with a holiday matinee in Tyler."
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "national touring artist",
+        "holiday concert",
+        "family-friendly"
+      ]
+    },
+    "source": {
+      "name": "UT Tyler Cowan Center",
+      "type": "venue-site",
+      "source_url": "https://cowancenter.org/shows/mannheim-steamroller-christmas-by-chip-davis/",
+      "first_seen_at": "2026-10-07T21:30:00-05:00",
+      "last_seen_at": "2026-10-07T21:30:00-05:00",
+      "confidence": 0.9
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-10-07T21:30:00-05:00",
+      "risk_flags": []
+    },
+    "created_at": "2026-10-07T21:30:00-05:00",
+    "updated_at": "2026-10-07T21:30:00-05:00"
   }
 ]
