@@ -76,7 +76,7 @@ The field mapping is in `src/lib/eventschedule/mapping.ts`. The curator schedule
 
 ### Duplicate events on the calendar
 
-If a run creates events and the push of the ID map then fails, the next run no longer knows those events are its own and creates them again, so the calendar shows each twice. The sync never touches the unowned copies. To clean up, delete them in the Event Schedule admin panel (the copies whose URLs are not in `src/data/eventschedule-ids.json`), then re-run the workflow.
+If a run creates events and the push of the ID map then fails, the next run no longer knows those events are its own and creates them again, so the calendar shows each twice. A run cancelled or timed out while a create request was in flight has the same effect on at most one event or venue. The sync never touches the unowned copies. To clean up, delete them in the Event Schedule admin panel (the copies whose URLs are not in `src/data/eventschedule-ids.json`), then re-run the workflow.
 
 ## Where to look
 

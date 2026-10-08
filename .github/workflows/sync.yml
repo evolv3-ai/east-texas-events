@@ -72,7 +72,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if ! git push --dry-run origin "HEAD:$GITHUB_REF_NAME"; then
+          if ! { git fetch origin "$GITHUB_REF_NAME" && git push --dry-run origin "FETCH_HEAD:refs/heads/$GITHUB_REF_NAME"; }; then
             echo "::error title=Sync stopped::This workflow cannot push to $GITHUB_REF_NAME, so the ID map could not be saved. Nothing was sent to Event Schedule."
             exit 1
           fi
