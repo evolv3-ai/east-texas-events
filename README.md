@@ -2,7 +2,7 @@
 
 Static Astro site publishing a curated, RV-park-centered events feed. Serves both human (HTML) and agent (JSON / OpenAPI / `llms.txt`) surfaces from a single seed file.
 
-**Status:** MVP. Seed events carry a `seed-fixture-verify-before-public-launch` risk flag — verify each against its `source_url` before public launch.
+**Status:** MVP. Every feed-visible event is verified against its `source_url` before approval; `npm run build` fails if one still carries a `risk_flags` entry.
 
 ## Stack
 
