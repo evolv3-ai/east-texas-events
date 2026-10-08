@@ -10,6 +10,7 @@ const statusToSchemaOrg: Record<CanonicalEvent['status'], string> = {
 
 export function eventToJsonLd(event: CanonicalEvent, site: string) {
   const url = `${site}/events/${event.slug}/`;
+  const price = event.admission.price_min ?? (event.admission.is_free === true ? 0 : undefined);
   return {
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -44,9 +45,8 @@ export function eventToJsonLd(event: CanonicalEvent, site: string) {
     offers: event.admission.purchase_url || event.links.tickets_url ? {
       '@type': 'Offer',
       url: event.admission.purchase_url ?? event.links.tickets_url,
-      priceCurrency: event.admission.currency,
       availability: event.admission.availability === 'sold_out' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
-      price: event.admission.price_min ?? 0,
+      ...(price === undefined ? {} : { price, priceCurrency: event.admission.currency }),
     } : undefined,
     isAccessibleForFree: event.admission.is_free,
   };

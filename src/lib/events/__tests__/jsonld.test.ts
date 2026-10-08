@@ -20,6 +20,34 @@ describe('eventToJsonLd', () => {
     expect(jsonld.url).toBe(`https://test.example.com/events/${event.slug}/`);
     expect(jsonld['@id']).toBe(`https://test.example.com/events/${event.slug}/#event`);
   });
+
+  const ticketsUrl = 'https://example.com/tickets';
+
+  it('states price 0 for a free event with a ticket link', () => {
+    const jsonld = eventToJsonLd(
+      makeEvent({ admission: { is_free: true, availability: 'available', currency: 'USD', purchase_url: ticketsUrl } }),
+      'https://test.example.com',
+    );
+    expect(jsonld.offers).toMatchObject({ url: ticketsUrl, price: 0, priceCurrency: 'USD' });
+  });
+
+  it('states price_min for a priced event', () => {
+    const jsonld = eventToJsonLd(
+      makeEvent({ admission: { price_min: 25, price_max: 50, availability: 'available', currency: 'USD', purchase_url: ticketsUrl } }),
+      'https://test.example.com',
+    );
+    expect(jsonld.offers).toMatchObject({ url: ticketsUrl, price: 25, priceCurrency: 'USD' });
+  });
+
+  it('omits price and priceCurrency when the price is unknown but keeps the ticket url', () => {
+    const jsonld = eventToJsonLd(
+      makeEvent({ admission: { requires_ticket: true, availability: 'unknown', currency: 'USD', purchase_url: ticketsUrl } }),
+      'https://test.example.com',
+    );
+    expect(jsonld.offers).toMatchObject({ '@type': 'Offer', url: ticketsUrl });
+    expect(jsonld.offers).not.toHaveProperty('price');
+    expect(jsonld.offers).not.toHaveProperty('priceCurrency');
+  });
 });
 
 describe('itemListJsonLd', () => {
