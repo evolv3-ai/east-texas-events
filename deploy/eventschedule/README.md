@@ -9,8 +9,8 @@ of that site's build.
 |---|---|
 | `docker-compose.yml` | `proxy` (Caddy, TLS) → `web` (nginx) → `app` (php-fpm), plus `db` (MariaDB) and `scheduler` |
 | `Dockerfile`, `docker-entrypoint.sh`, `nginx.conf` | Our copies of the upstream Docker files; each file's header lists what differs |
-| `Caddyfile` | Certificate, `/` → `/calendar`, our own `/llms.txt` and `/events.json`, visitor address handling |
-| `static/` | The files the proxy serves instead of the app, each one named in `Caddyfile`. The two here are placeholders until the event sync job generates them |
+| `Caddyfile` | Certificate, `/` → `/calendar`, our four generated agent files, visitor address handling |
+| `static/` | The files the proxy serves instead of the app, each one named in `Caddyfile`. Runtime releases and an atomic `current` symlink; no placeholder feeds are committed |
 | `.env.example`, `init-env.sh` | Every setting, documented; and the script that creates `.env` with generated secrets |
 | `create-admin.sh` | Creates the one admin account and prints its API key |
 | `backup.sh` | Nightly database and storage backup |
@@ -107,6 +107,124 @@ It is managed in the Cloudflare dashboard under the `e-tex.events` zone, **Email
 Routing**, or through the `/zones/{zone_id}/email/routing/...` API. A new destination address
 must be verified from a link Cloudflare emails to it before any rule can forward to it. This
 covers inbound mail only; the `MAIL_*` settings above still decide how the app sends mail.
+
+## Automated publication of agent files
+
+The sync workflow now publishes `events.json`, `llms.txt`, `openapi.json` and
+`sitemap-index.xml` after a successful live sync and successful ID-map persistence.
+It validates every file against the same approved seed data and ID map, and checks the
+successful sync report for every active event. Dry runs and runs outside `main` never publish.
+A failed sync can still save its partial ID map, but cannot replace the public release.
+
+The GitHub artifact remains available for inspection. It is not the deployment mechanism:
+the runner uploads the four files and checksums over SSH, verifies the transfer on the server,
+and atomically changes `static/current`. Caddy keeps the parent directory mounted, so it sees
+the switch without restarting. The runner then checks all four ordinary public URLs for
+status, content type, CORS and exact bytes. A failed public check rolls back the pointer and
+fails the job. Older run IDs cannot overwrite newer releases. A failed release requires a new
+Actions attempt; it cannot be silently reactivated.
+
+### One-time setup and migration (review before production)
+
+1. Test this branch with `npm ci`, `npm run build`, the Python regression command below and
+   `bash deploy/eventschedule/test-proxy.sh` from the repository root. The proxy test needs
+   Docker; it runs Caddy alone against temporary fixtures, without connecting to production.
+2. On the Event Schedule host, create a dedicated unprivileged SSH account, for example
+   `etex-publisher`. Give it write access only to this deployment's `static` directory and
+   read/traverse access to its parents. Do not grant sudo, Docker-group membership, database
+   credentials or write access to the application. Use a dedicated SSH key; disable forwarding
+   and PTY for that key with `restrict` in `authorized_keys`. Shell access and SFTP are needed
+   for the checksum/activation script and `scp`. The host needs Bash, GNU coreutils and `flock`
+   (Ubuntu's `util-linux`). The static directory and release directories must be mode 755;
+   published files are set to 644 for the read-only Caddy mount.
+3. Configure these repository secrets and variables. Verify the host key out of band through
+   the server console; do not trust an unverified `ssh-keyscan` result.
+
+   - Secret `ES_BASE_URL`: `https://e-tex.events` (existing).
+   - Secret `ES_API_KEY`: existing Event Schedule owner API key.
+   - Secret `ES_SSH_HOST`: SSH-reachable origin hostname or IPv4 address, not the proxied web hostname.
+   - Secret `ES_SSH_USER`: dedicated deployment account.
+   - Secret `ES_SSH_KEY`: its OpenSSH private key.
+   - Secret `ES_SSH_KNOWN_HOSTS`: pinned OpenSSH known-hosts entry for `ES_SSH_HOST` on port 22.
+   - Variable `ES_STATIC_ROOT`: `/opt/east-texas-events/deploy/eventschedule/static` (adjust to the real checkout).
+   - Variable `ES_CONTACT_EMAIL`: optional existing contact setting.
+
+4. Install the reviewed Caddyfile on the server and validate it:
+
+   ```bash
+   docker compose exec -T proxy caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+   docker compose exec -T proxy caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile
+   ```
+
+   If updating the host file replaced its inode, recreate only the proxy instead so the file
+   bind mount reads the new configuration: `docker compose up -d --force-recreate proxy`.
+   Do not replace the `static` parent directory. Remove the old tracked placeholder files as
+   part of the reviewed checkout update. The new configuration intentionally returns 404 until
+   the first validated release exists; schedule this short migration window. Existing calendar
+   and API routes continue through the app.
+5. After merge, run **Sync to Event Schedule** on `main` with `dry_run=false`. Inspect the
+   **Deploy and verify public agent files** step. Confirm `static/current` points to
+   `releases/<run-id>-<attempt>`, then run the read-only smoke check below. This establishes the
+   first usable release; no committed sample feed is used as a fallback.
+
+Missing deployment configuration is an error before any synchronization writes. Configuration
+presence does not guarantee SSH reachability; a later SSH failure fails the job, keeps the saved
+ID map and leaves the previous release active. Fix access and rerun the workflow.
+
+### Read-only checks and freshness
+
+From the repo root, using the generated bundle from the same run and its matching ID map:
+
+```bash
+ES_BASE_URL=https://e-tex.events npm run verify:eventschedule -- --public
+python deploy/eventschedule/smoke_test.py --base-url https://e-tex.events --static-only
+```
+
+The first command compares exact generated bytes and seed/map consistency. The second needs
+only Python and checks public file shape, counts, mapping coverage, placeholder text and a
+48-hour freshness limit without an API key or writes. Use the read-only check in external
+uptime monitoring as well: a workflow that never starts cannot report its own missed run.
+Files more than five minutes in the future are rejected. Timestamp age is the publication age,
+not a claim that every upstream event source was reverified on that date.
+
+An empty upcoming feed stops automatic publication and requires curation. If there truly are
+no upcoming events, dispatch once with `allow_empty=true`; this acknowledges emptiness but does
+not bypass seed/map, freshness or exact-byte checks. Use `--allow-empty` for the corresponding
+manual checks. Scheduled runs remain strict, so an exhausted seed cannot silently stay green.
+Cancelled events retain the existing behavior: present in JSON, without an active event page.
+Past mapped events remain in history but are not counted as upcoming.
+
+### Rollback and retention
+
+Automatic rollback only changes `current` if it still points to the failed release. It never
+reverts event API changes or the ID map. To roll back the current bundle manually as the
+publisher, from this directory:
+
+```bash
+bash activate-static.sh rollback /opt/east-texas-events/deploy/eventschedule/static <run-id>-<attempt>
+```
+
+The release records its previous pointer. On failure of the first release, rollback removes
+`current`, leaving an honest 404. A broken or lost SSH connection can prevent rollback; the
+workflow stays failed and an operator must check the pointer and public files. Do not describe
+an unverified release as healthy. Retained directories are small and deliberately not deleted
+automatically; remove old releases only after checking that neither `current` nor the current
+release's `.previous` points to them. Do not reset `.latest-release` when cleaning up.
+
+## Deployment regression tests
+
+From the repository root:
+
+```bash
+npm test
+python -m unittest discover -s deploy/eventschedule -p test_smoke_static.py
+bash deploy/eventschedule/test-proxy.sh
+```
+
+The shell regression tests use real temporary directories, checksums, symlinks and locks. The
+Caddy test verifies all four routes, MIME types, CORS, revalidation headers, atomic switching and
+404 behavior through the actual production Caddyfile. CI runs these checks for every PR without
+production credentials. For a local Caddy binary, set `CADDY_BIN=/path/to/caddy` on the proxy test.
 
 ## Smoke test
 
