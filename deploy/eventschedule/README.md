@@ -35,7 +35,8 @@ Cloudflare.
    ./init-env.sh
    ```
    Copy `.env` to the secret store now. A backup cannot be read without the `APP_KEY` in it.
-   Then edit `.env` and fill in the `MAIL_*` settings; until you do, no email is delivered.
+   Then edit `.env` and fill in the `MAIL_*` settings; until you do, no email is sent. (Mail
+   *to* the `@e-tex.events` addresses is a separate thing; see "Inbound mail" below.)
 4. Build and start everything except the proxy, so nothing is reachable from outside yet. The
    first build takes several minutes:
    ```bash
@@ -92,6 +93,20 @@ sending only a `venue_name` with an event, which creates a venue nobody owns. To
 ```bash
 curl -s https://e-tex.events/calendar | grep -o '<meta name="robots"[^>]*>'
 ```
+
+## Inbound mail for the @e-tex.events addresses
+
+The admin login and the public contact address (shown on the calendar and copied onto every
+venue the sync creates) are both `@e-tex.events` addresses, and neither is a mailbox. Both are
+Cloudflare Email Routing custom addresses on the `e-tex.events` zone, forwarded to one private
+destination mailbox; the actual addresses are in the deployment record in the secret store, not
+in this repository. Enabling Email Routing added the zone's MX records and an SPF `TXT` record;
+there was no other mail setup on the zone before.
+
+It is managed in the Cloudflare dashboard under the `e-tex.events` zone, **Email → Email
+Routing**, or through the `/zones/{zone_id}/email/routing/...` API. A new destination address
+must be verified from a link Cloudflare emails to it before any rule can forward to it. This
+covers inbound mail only; the `MAIL_*` settings above still decide how the app sends mail.
 
 ## Smoke test
 
