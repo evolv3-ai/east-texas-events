@@ -1,7 +1,7 @@
 name: Sync to Event Schedule
 
 # One-way push of approved, flag-free seed events to the Event Schedule install.
-# Needs two repository secrets: ES_BASE_URL (for example https://e-tex.events) and ES_API_KEY.
+# API and SSH deployment secrets are documented in deploy/eventschedule/README.md.
 # Optional repository variable: ES_CONTACT_EMAIL.
 
 on:
@@ -14,6 +14,10 @@ on:
     inputs:
       dry_run:
         description: Report what would change without writing anything
+        type: boolean
+        default: false
+      allow_empty:
+        description: Explicitly allow publishing an empty upcoming feed
         type: boolean
         default: false
       archive:
@@ -32,8 +36,9 @@ permissions:
 
 jobs:
   sync:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     env:
       ES_BASE_URL: ${{ secrets.ES_BASE_URL }}
       ES_API_KEY: ${{ secrets.ES_API_KEY }}
@@ -43,11 +48,28 @@ jobs:
         id: config
         run: |
           if [ -z "$ES_BASE_URL" ] || [ -z "$ES_API_KEY" ]; then
-            echo "::notice title=Sync skipped::The ES_BASE_URL and ES_API_KEY repository secrets are not both set, so nothing was sent to Event Schedule."
-            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::error::ES_BASE_URL and ES_API_KEY are required; nothing was sent."
+            exit 1
           else
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
+
+      # Fail before remote event writes if publication cannot be configured.
+      - name: Check deployment configuration
+        if: steps.config.outputs.ready == 'true' && inputs.dry_run != true
+        env:
+          ES_SSH_HOST: ${{ secrets.ES_SSH_HOST }}
+          ES_SSH_USER: ${{ secrets.ES_SSH_USER }}
+          ES_SSH_KEY: ${{ secrets.ES_SSH_KEY }}
+          ES_SSH_KNOWN_HOSTS: ${{ secrets.ES_SSH_KNOWN_HOSTS }}
+          ES_STATIC_ROOT: ${{ vars.ES_STATIC_ROOT }}
+        run: |
+          for name in ES_SSH_HOST ES_SSH_USER ES_SSH_KEY ES_SSH_KNOWN_HOSTS ES_STATIC_ROOT; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing $name; see deploy/eventschedule/README.md"
+              exit 1
+            fi
+          done
 
       - uses: actions/checkout@v4
         if: steps.config.outputs.ready == 'true'
@@ -83,6 +105,7 @@ jobs:
 
       # Stops short of the job timeout so the ID map is still committed below.
       - name: Sync events
+        id: sync
         if: steps.config.outputs.ready == 'true'
         timeout-minutes: 25
         env:
@@ -92,13 +115,14 @@ jobs:
           args=()
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ "$ARCHIVE" = "true" ]; then args+=(--archive); fi
-          npm run sync:eventschedule -- "${args[@]}"
+          trap 'cat sync-report.json' EXIT
+          npm run --silent sync:eventschedule -- --json "${args[@]}" > sync-report.json
 
       # Runs after a failed, timed-out or cancelled sync too: the script saves the map after every
       # write, and every ID in it names an event that now exists.
       # [skip ci] keeps this commit from triggering a Cloudflare Pages build of the old site.
       - name: Commit the ID map
-        if: always() && steps.config.outputs.ready == 'true'
+        if: always() && steps.sync.outcome != 'skipped' && inputs.dry_run != true
         run: |
           if git diff --quiet -- src/data/eventschedule-ids.json; then
             echo "ID map unchanged."
@@ -111,10 +135,33 @@ jobs:
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
 
+      - name: Validate static agent files
+        if: success() && inputs.dry_run != true
+        env:
+          ES_ALLOW_EMPTY: ${{ inputs.allow_empty }}
+          ES_SYNC_REPORT: sync-report.json
+        run: |
+          args=()
+          if [ "$ES_ALLOW_EMPTY" = "true" ]; then args+=(--allow-empty); fi
+          npm run verify:eventschedule -- "${args[@]}"
+
       - name: Upload static agent files
-        if: always() && steps.config.outputs.ready == 'true'
+        if: success() && inputs.dry_run != true
         uses: actions/upload-artifact@v4
         with:
           name: eventschedule-static
           path: dist-eventschedule/
-          if-no-files-found: ignore
+          if-no-files-found: error
+
+      - name: Deploy and verify public agent files
+        if: success() && inputs.dry_run != true
+        timeout-minutes: 8
+        env:
+          ES_SSH_HOST: ${{ secrets.ES_SSH_HOST }}
+          ES_SSH_USER: ${{ secrets.ES_SSH_USER }}
+          ES_SSH_KEY: ${{ secrets.ES_SSH_KEY }}
+          ES_SSH_KNOWN_HOSTS: ${{ secrets.ES_SSH_KNOWN_HOSTS }}
+          ES_STATIC_ROOT: ${{ vars.ES_STATIC_ROOT }}
+          ES_ALLOW_EMPTY: ${{ inputs.allow_empty }}
+          ES_SYNC_REPORT: sync-report.json
+        run: bash scripts/deploy-eventschedule-static.sh

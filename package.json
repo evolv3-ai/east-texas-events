@@ -12,7 +12,8 @@
     "validate:data": "tsx scripts/validate-data.ts",
     "validate:data:json": "tsx scripts/validate-data.ts --json",
     "validate:data:release": "tsx scripts/validate-data.ts --release",
-    "sync:eventschedule": "tsx scripts/sync-eventschedule.ts"
+    "sync:eventschedule": "tsx scripts/sync-eventschedule.ts",
+    "verify:eventschedule": "tsx scripts/verify-eventschedule-static.ts"
   },
   "dependencies": {
     "astro": "latest",

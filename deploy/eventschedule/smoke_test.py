@@ -25,6 +25,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 
 STOCK_LLMS_HEADING = "# Event Schedule"
 USER_AGENT = "etex-smoke-test/1"
@@ -140,6 +141,52 @@ def brief(resp):
     return f"{resp.status} {resp.text[:200]!r}"
 
 
+def check_static_files(client, run, allow_empty=False):
+    """Read-only checks; exact seed/map comparison is also required by the publishing CLI."""
+    responses = {}
+    types = {"/events.json": ("application/json",), "/llms.txt": ("text/plain",),
+             "/openapi.json": ("application/json",), "/sitemap-index.xml": ("application/xml", "text/xml")}
+    for path, accepted in types.items():
+        resp = client.request("GET", path)
+        responses[path] = resp
+        run.check(f"{path} status, content type and CORS",
+                  resp.status == 200 and resp.headers.get("Content-Type", "").split(";")[0] in accepted
+                  and resp.headers.get("Access-Control-Allow-Origin") == "*", brief(resp))
+    feed = responses["/events.json"].json()
+    events = feed.get("events") if isinstance(feed, dict) else None
+    valid = isinstance(events, list) and (allow_empty or len(events) > 0)
+    run.check("feed is nonempty (unless explicitly acknowledged)", valid)
+    if isinstance(events, list):
+        run.check("event_count matches actual events", type(feed.get("event_count")) is int and feed["event_count"] == len(events))
+        try:
+            generated = datetime.datetime.fromisoformat(feed["generated_at"].replace("Z", "+00:00"))
+            age = (datetime.datetime.now(datetime.timezone.utc) - generated).total_seconds()
+            fresh = -300 <= age <= 48 * 3600
+        except (KeyError, ValueError, TypeError):
+            fresh = False
+        run.check("feed timestamp is fresh (48 hours) and not future-dated", fresh)
+        ids = [event.get("id") for event in events if isinstance(event, dict)]
+        pages = feed.get("calendar", {}).get("event_pages", {})
+        run.check("events have unique IDs and active events have page mappings",
+                  len(ids) == len(events) and all(isinstance(i, str) and i for i in ids)
+                  and len(set(ids)) == len(ids) and isinstance(pages, dict)
+                  and set(pages) == {event.get("id") for event in events if isinstance(event, dict) and event.get("status") != "cancelled"})
+    guide = responses["/llms.txt"].text
+    run.check("llms.txt is generated site guidance without placeholders",
+              guide.startswith("# East Texas Events") and "placeholder" not in guide.lower()
+              and isinstance(feed, dict) and f"Generated: {feed.get('generated_at')}" in guide
+              and isinstance(events, list) and f"Upcoming events: {len(events)}" in guide)
+    spec = responses["/openapi.json"].json()
+    run.check("OpenAPI describes the public files", isinstance(spec, dict) and spec.get("openapi") == "3.1.0"
+              and all(p in spec.get("paths", {}) for p in ("/events.json", "/llms.txt", "/sitemap-index.xml")))
+    try:
+        sitemap = ET.fromstring(responses["/sitemap-index.xml"].body)
+        valid_xml = sitemap.tag == "{http://www.sitemaps.org/schemas/sitemap/0.9}sitemapindex" and bool(list(sitemap))
+    except ET.ParseError:
+        valid_xml = False
+    run.check("sitemap index is valid, nonempty XML", valid_xml)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--base-url", default=os.environ.get("ES_BASE_URL"),
@@ -149,14 +196,19 @@ def main():
     parser.add_argument("--contact-email", default="smoke-test@e-tex.events",
                         help="address set on the throwaway schedules; the app sends it nothing")
     parser.add_argument("--timeout", type=float, default=30)
+    parser.add_argument("--static-only", action="store_true", help="read-only public file checks; no API key or writes")
+    parser.add_argument("--allow-empty", action="store_true", help="explicitly acknowledge a legitimately empty upcoming feed")
     parser.add_argument("--keep", action="store_true",
                         help="leave the created schedules and events in place for inspection")
     args = parser.parse_args()
-    if not args.base_url or not args.api_key:
+    if not args.base_url or (not args.api_key and not args.static_only):
         parser.error("--base-url and an API key (ES_API_KEY) are required")
 
     client = Client(args.base_url, args.api_key, args.timeout)
     run = Run()
+    if args.static_only:
+        check_static_files(client, run, args.allow_empty)
+        return 1 if run.failures else 0
     tag = secrets.token_hex(3)
     curator = venue = None
     event_ids = []
@@ -172,19 +224,7 @@ def main():
                   resp.status in (301, 302, 307, 308) and urllib.parse.urlsplit(location).path == "/calendar",
                   f"{resp.status} Location={location!r}")
 
-        resp = client.request("GET", "/llms.txt")
-        run.check("/llms.txt is ours, not the stock Event Schedule file",
-                  resp.status == 200 and not resp.text.lstrip().startswith(STOCK_LLMS_HEADING),
-                  brief(resp))
-
-        resp = client.request("GET", "/events.json")
-        feed = resp.json()
-        run.check("/events.json is served as JSON with an events list",
-                  resp.status == 200 and isinstance(feed, dict) and isinstance(feed.get("events"), list),
-                  brief(resp))
-        run.check("/events.json allows cross-origin reads",
-                  resp.headers.get("Access-Control-Allow-Origin") == "*",
-                  f"Access-Control-Allow-Origin={resp.headers.get('Access-Control-Allow-Origin')!r}")
+        check_static_files(client, run, args.allow_empty)
 
         # --- The API -----------------------------------------------------------------------
         resp = client.request("GET", "/api/schedules")
