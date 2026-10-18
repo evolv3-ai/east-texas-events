@@ -1,7 +1,8 @@
 name: Sync to Event Schedule
 
 # One-way push of approved, flag-free seed events to the Event Schedule install.
-# API and SSH deployment secrets are documented in deploy/eventschedule/README.md.
+# API secrets are required; SSH publication is opt-in (deploy/eventschedule/README.md).
+# Without publisher settings, warn and build validated files as an artifact; with all five, publish.
 # Optional repository variable: ES_CONTACT_EMAIL.
 
 on:
@@ -54,8 +55,9 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
-      # Fail before remote event writes if publication cannot be configured.
+      # Partial publisher configuration fails before remote event writes; none opts out.
       - name: Check deployment configuration
+        id: deployment
         if: steps.config.outputs.ready == 'true' && inputs.dry_run != true
         env:
           ES_SSH_HOST: ${{ secrets.ES_SSH_HOST }}
@@ -64,12 +66,21 @@ jobs:
           ES_SSH_KNOWN_HOSTS: ${{ secrets.ES_SSH_KNOWN_HOSTS }}
           ES_STATIC_ROOT: ${{ vars.ES_STATIC_ROOT }}
         run: |
+          missing=()
           for name in ES_SSH_HOST ES_SSH_USER ES_SSH_KEY ES_SSH_KNOWN_HOSTS ES_STATIC_ROOT; do
             if [ -z "${!name}" ]; then
-              echo "::error::Missing $name; see deploy/eventschedule/README.md"
-              exit 1
+              missing+=("$name")
             fi
           done
+          if [ "${#missing[@]}" -eq 0 ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          elif [ "${#missing[@]}" -eq 5 ]; then
+            echo "::warning::Publisher is unconfigured; validated static agent files will be uploaded as an artifact only. See deploy/eventschedule/README.md"
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Publisher is partially configured; missing ${missing[*]}. See deploy/eventschedule/README.md"
+            exit 1
+          fi
 
       - uses: actions/checkout@v4
         if: steps.config.outputs.ready == 'true'
@@ -154,7 +165,7 @@ jobs:
           if-no-files-found: error
 
       - name: Deploy and verify public agent files
-        if: success() && inputs.dry_run != true
+        if: success() && inputs.dry_run != true && steps.deployment.outputs.publish == 'true'
         timeout-minutes: 8
         env:
           ES_SSH_HOST: ${{ secrets.ES_SSH_HOST }}

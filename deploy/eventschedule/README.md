@@ -110,8 +110,10 @@ covers inbound mail only; the `MAIL_*` settings above still decide how the app s
 
 ## Automated publication of agent files
 
-The sync workflow now publishes `events.json`, `llms.txt`, `openapi.json` and
-`sitemap-index.xml` after a successful live sync and successful ID-map persistence.
+With all five publisher settings configured, the sync workflow publishes `events.json`,
+`llms.txt`, `openapi.json` and `sitemap-index.xml` after a successful live sync and successful
+ID-map persistence. With none configured, it warns and still builds, validates and uploads
+these files as a GitHub artifact without publishing.
 It validates every file against the same approved seed data and ID map, and checks the
 successful sync report for every active event. Dry runs and runs outside `main` never publish.
 A failed sync can still save its partial ID map, but cannot replace the public release.
@@ -167,9 +169,12 @@ Actions attempt; it cannot be silently reactivated.
    `releases/<run-id>-<attempt>`, then run the read-only smoke check below. This establishes the
    first usable release; no committed sample feed is used as a fallback.
 
-Missing deployment configuration is an error before any synchronization writes. Configuration
-presence does not guarantee SSH reachability; a later SSH failure fails the job, keeps the saved
-ID map and leaves the previous release active. Fix access and rerun the workflow.
+Publication is opt-in: with none of the five publisher settings configured, the workflow warns
+and still syncs events, saves the ID map, and builds, validates and uploads the static files as
+an artifact. Setting all five enables publication automatically. Partial publisher configuration
+is an error before any synchronization writes. `ES_BASE_URL` and `ES_API_KEY` remain required.
+Configuration presence does not guarantee SSH reachability; a later SSH failure fails the job,
+keeps the saved ID map and leaves the previous release active. Fix access and rerun the workflow.
 
 ### Read-only checks and freshness
 
