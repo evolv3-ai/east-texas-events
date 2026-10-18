@@ -19,16 +19,18 @@
 	# Event Schedule sends "/" to its login page. Visitors should land on the calendar.
 	redir / /calendar 302
 
-	# Files we publish ourselves. These three always come from ./static, never from the app:
-	# the app ships an llms.txt and llms-full.txt that describe the Event Schedule product, not
-	# this site. A file missing from ./static is a 404 rather than a fall-through to those.
-	# Nothing else in ./static is served: to publish another file, add its path to this list.
-	@agent_files path /llms.txt /llms-full.txt /events.json
+	# Publish only the four generated files, atomically selected by the current symlink.
+	# Missing files must not fall through to Event Schedule's product documentation.
+	@agent_files path /llms.txt /events.json /openapi.json /sitemap-index.xml
 	handle @agent_files {
-		root * /srv/static
+		root * /srv/static/current
 		header Access-Control-Allow-Origin *
-		header Cache-Control "public, max-age=300"
+		header Cache-Control "public, no-cache, max-age=0, must-revalidate"
 		file_server
+	}
+	# Do not expose the app's unrelated llms-full.txt.
+	handle /llms-full.txt {
+		respond "Not Found" 404
 	}
 
 	handle {
