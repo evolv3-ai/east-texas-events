@@ -4403,10 +4403,7 @@
     "admission": {
       "availability": "unknown",
       "currency": "USD",
-      "is_free": false,
-      "requires_ticket": true,
-      "price_min": 6,
-      "price_max": 6
+      "is_free": false
     },
     "categories": [
       "outdoor",
