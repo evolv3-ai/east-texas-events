@@ -13,6 +13,16 @@
       "subdomain": "caldwell",
       "hash": "defb7281779efff8"
     },
+    "downtown kilgore||kilgore": {
+      "id": "gi1PpQ",
+      "subdomain": "downtown",
+      "hash": "8635dfdeb2678b84"
+    },
+    "downtown longview, tyler and whaley streets||longview": {
+      "id": "GyETvB",
+      "subdomain": "downtown-longview",
+      "hash": "54573ce0abf132ed"
+    },
     "historic downtown kilgore||kilgore": {
       "id": "43tpQn",
       "subdomain": "historic",
@@ -33,10 +43,25 @@
       "subdomain": "rusk",
       "hash": "fd99f3e180133413"
     },
+    "santaland|11455 interstate 20 west|tyler": {
+      "id": "FSwoDC",
+      "subdomain": "santaland",
+      "hash": "3eda84e27c019607"
+    },
+    "tyler rose complex|2000 w front street|tyler": {
+      "id": "rPvdgc",
+      "subdomain": "tyler-rose",
+      "hash": "9fca7d25ef05bb45"
+    },
     "tyler rose garden center|420 rose park drive|tyler": {
       "id": "L3iWDZ",
       "subdomain": "tyler",
       "hash": "e87a4864f18e9e8e"
+    },
+    "tyler state park|789 park road 16|tyler": {
+      "id": "smFNnu",
+      "subdomain": "tyler-state",
+      "hash": "38b21a1d4938c7d4"
     },
     "upshur county courthouse square and yamboree park|courthouse square, downtown gilmer|gilmer": {
       "id": "sqFNnu",
@@ -71,6 +96,12 @@
       "hash": "859eb137e1926c22",
       "sub_schedule": "near-shallow-creek-rv-park"
     },
+    "evt_be_like_blippi_tour_belcher_2027": {
+      "id": "5ATqoF",
+      "url": "https://e-tex.events/belcher/be-like-blippi-tour/5ATqoF",
+      "hash": "f34890a6d47da201",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
     "evt_beetlejuice_cowan_center_2026": {
       "id": "FSwoDC",
       "url": "https://e-tex.events/ut/beetlejuice-the-musical/FSwoDC",
@@ -95,6 +126,30 @@
       "hash": "ccbdda257137fa9b",
       "sub_schedule": "near-shallow-creek-rv-park"
     },
+    "evt_cirque_mechanics_tilt_cowan_2026": {
+      "id": "Ow9yXg",
+      "url": "https://e-tex.events/ut/cirque-mechanics-tilt/Ow9yXg",
+      "hash": "69e261d3dfd9a14d",
+      "sub_schedule": null
+    },
+    "evt_curious_george_the_golden_meatball_cowan_2026": {
+      "id": "d5H1WB",
+      "url": "https://e-tex.events/ut/curious-george-the-golden-meatball/d5H1WB",
+      "hash": "c047319e519dfa0c",
+      "sub_schedule": null
+    },
+    "evt_danny_gokey_cowan_2027": {
+      "id": "2JCMfq",
+      "url": "https://e-tex.events/ut/danny-gokey/2JCMfq",
+      "hash": "6adb52e09421c480",
+      "sub_schedule": null
+    },
+    "evt_delfeayo_marsalis_and_the_uptown_jazz_orchestra_cowan_2027": {
+      "id": "DJdQ2x",
+      "url": "https://e-tex.events/ut/delfeayo-marsalis-and-the-uptown-jazz-orchestra/DJdQ2x",
+      "hash": "3a556c7f1bcde1ad",
+      "sub_schedule": null
+    },
     "evt_dolly_parton_smoky_mountain_christmas_carol_2026": {
       "id": "WRcyGZ",
       "url": "https://e-tex.events/ut/dolly-partons-smoky-mountain-christmas-carol/WRcyGZ",
@@ -105,6 +160,12 @@
       "id": "qK0VK6",
       "url": "https://e-tex.events/upshur/89th-annual-east-texas-yamboree/qK0VK6",
       "hash": "121b4a0d01a6f559",
+      "sub_schedule": null
+    },
+    "evt_first_day_hike_tyler_state_park_2027": {
+      "id": "5vTqoF",
+      "url": "https://e-tex.events/tyler-state/first-day-hike-at-tyler-state-park-morning/5vTqoF",
+      "hash": "b76b408e81c60fcf",
       "sub_schedule": null
     },
     "evt_foreigner_cowan_center_2026": {
@@ -131,6 +192,12 @@
       "hash": "4bc372343a407b34",
       "sub_schedule": "near-shallow-creek-rv-park"
     },
+    "evt_kilgore_christmas_parade_2026": {
+      "id": "pE71dX",
+      "url": "https://e-tex.events/downtown/95th-annual-kilgore-christmas-parade/pE71dX",
+      "hash": "d1f71a7805ffaac2",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
     "evt_kilgore_oktoberfest_2026": {
       "id": "78gnEl",
       "url": "https://e-tex.events/historic/kilgore-oktoberfest/78gnEl",
@@ -142,6 +209,12 @@
       "url": "https://e-tex.events/ut/an-evening-with-kristin-chenoweth-featuring-the-east-texas-symphony-orchestra/RnaEY1",
       "hash": "f7fd2ac060753ce2",
       "sub_schedule": null
+    },
+    "evt_longview_ambucs_christmas_parade_2026": {
+      "id": "XVLgmH",
+      "url": "https://e-tex.events/downtown-longview/longview-ambucs-christmas-parade/XVLgmH",
+      "hash": "3e945d229e6ebbc0",
+      "sub_schedule": "near-shallow-creek-rv-park"
     },
     "evt_longview_jaycees_trade_days_oct_2026": {
       "id": "hPXmor",
@@ -173,6 +246,12 @@
       "hash": "d96fd6c67f3e8047",
       "sub_schedule": null
     },
+    "evt_mariachi_herencia_de_mexico_a_mariachi_christmas_cowan_2026": {
+      "id": "ImrvJT",
+      "url": "https://e-tex.events/ut/mariachi-herencia-de-mexico-a-mariachi-christmas/ImrvJT",
+      "hash": "27c272cea45a443e",
+      "sub_schedule": null
+    },
     "evt_nutcracker_magical_christmas_ballet_belcher_2026": {
       "id": "GyETvB",
       "url": "https://e-tex.events/belcher/nutcracker-magical-christmas-ballet/GyETvB",
@@ -185,16 +264,52 @@
       "hash": "c5609fcb795e3b76",
       "sub_schedule": null
     },
+    "evt_paul_cauthen_big_velvets_black_tie_affair_cowan_2026": {
+      "id": "x2RzNs",
+      "url": "https://e-tex.events/ut/paul-cauthen-big-velvets-black-tie-affair/x2RzNs",
+      "hash": "33fc7b895b8ff880",
+      "sub_schedule": null
+    },
+    "evt_pineywoods_christmas_tyler_state_park_2026": {
+      "id": "1BlMLP",
+      "url": "https://e-tex.events/tyler-state/a-pineywoods-christmas/1BlMLP",
+      "hash": "14e0060ecad2f3c6",
+      "sub_schedule": null
+    },
     "evt_rangerette_christmas_show_2026": {
       "id": "VopZTj",
       "url": "https://e-tex.events/w/rangerette-christmas-show/VopZTj",
       "hash": "d15bbf51438ebf9d",
       "sub_schedule": "near-shallow-creek-rv-park"
     },
+    "evt_rose_city_christmas_parade_tyler_2026": {
+      "id": "bR3gHv",
+      "url": "https://e-tex.events/tyler-rose/rose-city-christmas-parade/bR3gHv",
+      "hash": "ef28ee9c5cf3032c",
+      "sub_schedule": null
+    },
+    "evt_santaland_drive_thru_tyler_2026": {
+      "id": "6T2GyL",
+      "url": "https://e-tex.events/santaland/santaland-drive-thru-christmas-lights/6T2GyL",
+      "hash": "6dd741e23429dee7",
+      "sub_schedule": null
+    },
+    "evt_shucked_cowan_2027": {
+      "id": "iM5S5G",
+      "url": "https://e-tex.events/ut/shucked/iM5S5G",
+      "hash": "09ea9ad5e408e15b",
+      "sub_schedule": null
+    },
     "evt_texas_rose_festival_2026": {
       "id": "sqFNnu",
       "url": "https://e-tex.events/tyler/93rd-annual-texas-rose-festival/sqFNnu",
       "hash": "b478a0f2bba96d64",
+      "sub_schedule": null
+    },
+    "evt_the_kings_singers_cowan_2027": {
+      "id": "FrwoDC",
+      "url": "https://e-tex.events/ut/the-kings-singers/FrwoDC",
+      "hash": "3ee5f72ed7ff3eb3",
       "sub_schedule": null
     },
     "evt_tsf_eurydice_2026": {
@@ -208,6 +323,18 @@
       "url": "https://e-tex.events/woodruff/texas-shakespeare-festival-festival-of-trees/ufDIos",
       "hash": "7c0518337aae1260",
       "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_u_s_army_field_band_jazz_ambassadors_cowan_2027": {
+      "id": "hAXmor",
+      "url": "https://e-tex.events/ut/us-army-field-band-jazz-ambassadors/hAXmor",
+      "hash": "5255737cbcd6c52e",
+      "sub_schedule": null
+    },
+    "evt_waitress_cowan_2027": {
+      "id": "XILgmH",
+      "url": "https://e-tex.events/ut/waitress/XILgmH",
+      "hash": "df83346109e7b410",
+      "sub_schedule": null
     },
     "evt_zach_williams_belcher_2026": {
       "id": "vTfSO4",
