@@ -5026,5 +5026,1342 @@
     },
     "created_at": "2026-11-04T04:00:37Z",
     "updated_at": "2026-11-04T04:00:37Z"
+  },
+  {
+    "id": "evt_jungle_bell_jog_longview_2026",
+    "slug": "jungle-bell-jog-longview-2026",
+    "title": "Jungle Bell Jog",
+    "description": "Arts View organizes a holiday morning jog at Heritage Plaza in downtown Longview.",
+    "agent_summary": "Jungle Bell Jog at Heritage Plaza in Longview on December 5, 2026; the city lists an event window of 6:00-10:00 AM.",
+    "best_for": [
+      "runners",
+      "early risers"
+    ],
+    "trip_planning_notes": [
+      "The city lists the overall event window; confirm the race start, registration and entry fees with Arts View before attending."
+    ],
+    "start_at": "2026-12-05T06:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Heritage Plaza",
+      "address1": "219 E. Methvin St.",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75601",
+      "country": "US"
+    },
+    "geo": {
+      "radius_tier": 15
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10959",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10959"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "holiday",
+      "outdoor",
+      "community"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10959",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10959"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-05T10:00:00-06:00"
+  },
+  {
+    "id": "evt_dutch_oven_cooking_daingerfield_dec_2026",
+    "slug": "dutch-oven-cooking-daingerfield-dec-2026",
+    "title": "Dutch Oven Cooking & Tasting at Daingerfield State Park",
+    "description": "The Little Pine Friends demonstrate Dutch oven cooking and share samples at the Little Pine Day Use Area.",
+    "agent_summary": "Dutch oven cooking at Daingerfield State Park on December 5, 2026, 9:00 AM-noon; tasting starts at 11:30 AM. Park entry fees apply.",
+    "best_for": [
+      "families",
+      "camp cooks"
+    ],
+    "trip_planning_notes": [
+      "Meet at the Little Pine Day Use Area; cooking begins at 9:00 AM and tasting at 11:30 AM.",
+      "The program is included with park entry: $4 for ages 13 and older; children 12 and under enter free.",
+      "A burn ban automatically cancels this program. Check park alerts and weather before traveling.",
+      "Bring water, sun protection and optional Dutch oven equipment; loan equipment is available while supplies last."
+    ],
+    "start_at": "2026-12-05T09:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Daingerfield State Park",
+      "address1": "455 Park Road 17",
+      "city": "Daingerfield",
+      "region": "TX",
+      "postal_code": "75638",
+      "country": "US",
+      "latitude": 33.013,
+      "longitude": -94.690587
+    },
+    "geo": {
+      "radius_tier": 50
+    },
+    "links": {
+      "web_url": "https://tpwd.texas.gov/calendar/daingerfield/dutch-oven-cooking/2026-12-05",
+      "source_url": "https://tpwd.texas.gov/calendar/daingerfield/dutch-oven-cooking/2026-12-05"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "is_free": false
+    },
+    "categories": [
+      "outdoor",
+      "nature",
+      "family-friendly"
+    ],
+    "tags": [
+      "daingerfield",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Daingerfield outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "Texas Parks and Wildlife Department",
+      "type": "official-event-site",
+      "source_url": "https://tpwd.texas.gov/calendar/daingerfield/dutch-oven-cooking/2026-12-05",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-05T12:00:00-06:00"
+  },
+  {
+    "id": "evt_kayak_with_santa_martin_creek_2026",
+    "slug": "kayak-with-santa-martin-creek-2026",
+    "title": "Kayak with Santa at Martin Creek Lake State Park",
+    "description": "Paddle around the island with Santa, using your own kayak or a limited park loan kayak, and meet at the boat ramp.",
+    "agent_summary": "Kayak with Santa at Martin Creek Lake State Park near Tatum on December 5, 2026, 1:00-3:00 PM; advance registration is required.",
+    "best_for": [
+      "paddlers",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Meet at the boat ramp. Bring your own kayak or reserve a limited park kayak.",
+      "Register by calling 903-836-4336 starting November 30, between 8:30 AM and 4:00 PM.",
+      "Regular park entry is $4 for adults; children 12 and under enter free. Confirm any program-specific charges when registering.",
+      "Check weather and park alerts before making the trip."
+    ],
+    "start_at": "2026-12-05T13:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Martin Creek Lake State Park",
+      "address1": "9515 County Road 2181D",
+      "city": "Tatum",
+      "region": "TX",
+      "postal_code": "75691",
+      "country": "US",
+      "latitude": 32.27795,
+      "longitude": -94.566051
+    },
+    "geo": {
+      "radius_tier": 50
+    },
+    "links": {
+      "web_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/kayak-with-santa-2",
+      "source_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/kayak-with-santa-2"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "is_free": false,
+      "registration_required": true
+    },
+    "categories": [
+      "holiday",
+      "outdoor",
+      "nature",
+      "family-friendly"
+    ],
+    "tags": [
+      "tatum",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Tatum outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "Texas Parks and Wildlife Department",
+      "type": "official-event-site",
+      "source_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/kayak-with-santa-2",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-05T15:00:00-06:00"
+  },
+  {
+    "id": "evt_power_wheels_parade_longview_2026",
+    "slug": "power-wheels-parade-longview-2026",
+    "title": "Power Wheels Parade at Safety City",
+    "description": "Young drivers can celebrate the holidays at Safety City during two evening Power Wheels Parade sessions.",
+    "agent_summary": "Free Power Wheels Parade at Safety City in Longview, December 11-12, 2026, 6:00-8:00 PM each evening.",
+    "best_for": [
+      "families with young children"
+    ],
+    "trip_planning_notes": [
+      "Open 6:00-8:00 PM each evening, with no daytime session.",
+      "Use the city listing and its linked activity registration pages to check participation requirements for your chosen night.",
+      "The second evening is also listed at https://www.longviewtexas.gov/Calendar.aspx?EID=11091"
+    ],
+    "start_at": "2026-12-11T18:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Safety City",
+      "address1": "323 W. Cotton St.",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75601",
+      "country": "US"
+    },
+    "geo": {
+      "radius_tier": 15
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=11090",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=11090"
+    },
+    "admission": {
+      "availability": "not_applicable",
+      "currency": "USD",
+      "is_free": true,
+      "requires_ticket": false
+    },
+    "categories": [
+      "holiday",
+      "family-friendly",
+      "community"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=11090",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "11090"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-12T20:00:00-06:00"
+  },
+  {
+    "id": "evt_longview_jaycees_trade_days_dec_2026",
+    "slug": "longview-jaycees-trade-days-dec-2026",
+    "title": "Longview Jaycees Trade Days (December)",
+    "description": "Browse vendors selling, buying and trading a range of goods at the Longview Convention Complex Exhibit Center.",
+    "agent_summary": "Longview Jaycees Trade Days, December 12-13, 2026; Saturday 9:00 AM-4:00 PM and Sunday 10:00 AM-4:00 PM. Admission and parking are free.",
+    "best_for": [
+      "shoppers",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Saturday hours: 9:00 AM-4:00 PM. Sunday hours: 10:00 AM-4:00 PM. Closed overnight.",
+      "Admission and parking are free; the listing does not confirm RV or oversize parking.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2026-12-12T09:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9515",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9515"
+    },
+    "admission": {
+      "availability": "not_applicable",
+      "currency": "USD",
+      "is_free": true,
+      "requires_ticket": false
+    },
+    "categories": [
+      "markets",
+      "family-friendly",
+      "community"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=9515",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "9515"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-13T16:00:00-06:00"
+  },
+  {
+    "id": "evt_christmas_craft_martin_creek_2026",
+    "slug": "christmas-craft-martin-creek-2026",
+    "title": "Christmas Craft at Martin Creek Lake State Park",
+    "description": "Make a Christmas craft with park staff at the Trammel's Trace Pavilion.",
+    "agent_summary": "Christmas craft at Martin Creek Lake State Park near Tatum on December 12, 2026, 2:00-3:00 PM; meet at Trammel's Trace Pavilion.",
+    "best_for": [
+      "families",
+      "craft lovers"
+    ],
+    "trip_planning_notes": [
+      "Dress for the weather and meet at Trammel's Trace Pavilion.",
+      "Regular park entry is $4 for adults; children 12 and under enter free. Confirm any program-specific charges with the park.",
+      "Check park alerts before traveling."
+    ],
+    "start_at": "2026-12-12T14:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Martin Creek Lake State Park",
+      "address1": "9515 County Road 2181D",
+      "city": "Tatum",
+      "region": "TX",
+      "postal_code": "75691",
+      "country": "US",
+      "latitude": 32.27795,
+      "longitude": -94.566051
+    },
+    "geo": {
+      "radius_tier": 50
+    },
+    "links": {
+      "web_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/christmas-craft",
+      "source_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/christmas-craft"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "is_free": false
+    },
+    "categories": [
+      "holiday",
+      "family-friendly",
+      "outdoor"
+    ],
+    "tags": [
+      "tatum",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Tatum outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "Texas Parks and Wildlife Department",
+      "type": "official-event-site",
+      "source_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/christmas-craft",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-12T15:00:00-06:00"
+  },
+  {
+    "id": "evt_christmas_campfire_stories_martin_creek_2026",
+    "slug": "christmas-campfire-stories-martin-creek-2026",
+    "title": "Christmas Campfire Stories at Martin Creek Lake State Park",
+    "description": "A ranger shares Christmas stories with a Texas flavor around a campfire at the Twin Oak Amphitheater.",
+    "agent_summary": "Christmas Campfire Stories at Martin Creek Lake State Park near Tatum on December 12, 2026, 4:00-4:30 PM; bring a chair or blanket.",
+    "best_for": [
+      "families",
+      "story lovers"
+    ],
+    "trip_planning_notes": [
+      "Meet at the Twin Oak Amphitheater; dress for the weather and bring a chair or blanket.",
+      "Regular park entry is $4 for adults; children 12 and under enter free. Confirm any program-specific charges with the park.",
+      "Check park alerts and fire restrictions before traveling."
+    ],
+    "start_at": "2026-12-12T16:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Martin Creek Lake State Park",
+      "address1": "9515 County Road 2181D",
+      "city": "Tatum",
+      "region": "TX",
+      "postal_code": "75691",
+      "country": "US",
+      "latitude": 32.27795,
+      "longitude": -94.566051
+    },
+    "geo": {
+      "radius_tier": 50
+    },
+    "links": {
+      "web_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/christmas-campfire-stories",
+      "source_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/christmas-campfire-stories"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "is_free": false
+    },
+    "categories": [
+      "holiday",
+      "outdoor",
+      "family-friendly"
+    ],
+    "tags": [
+      "tatum",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Tatum outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "Texas Parks and Wildlife Department",
+      "type": "official-event-site",
+      "source_url": "https://tpwd.texas.gov/calendar/martin-creek-lake/christmas-campfire-stories",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-12T16:30:00-06:00"
+  },
+  {
+    "id": "evt_christmas_in_the_park_daingerfield_2026",
+    "slug": "christmas-in-the-park-daingerfield-2026",
+    "title": "Christmas in the Park at Daingerfield State Park",
+    "description": "Drive through holiday campsite lights; Santa visits the Historic Pavilion on Friday and Saturday evenings.",
+    "agent_summary": "Daingerfield State Park Christmas lights, December 16-19, 2026: Wednesday-Thursday 6:00-9:00 PM, Friday-Saturday 6:00-10:00 PM; free entrance during event hours.",
+    "best_for": [
+      "families",
+      "holiday light fans"
+    ],
+    "trip_planning_notes": [
+      "Event hours are 6:00-9:00 PM Wednesday and Thursday, and 6:00-10:00 PM Friday and Saturday; the display is not open continuously.",
+      "Santa visits the Historic Pavilion from 6:00 PM on Friday and Saturday, with hot chocolate and cookies.",
+      "Entrance is free during event hours only. Canned food donations are encouraged.",
+      "Confirm vehicle size restrictions with the park before bringing an RV through the display."
+    ],
+    "start_at": "2026-12-16T18:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Daingerfield State Park",
+      "address1": "455 Park Road 17",
+      "city": "Daingerfield",
+      "region": "TX",
+      "postal_code": "75638",
+      "country": "US",
+      "latitude": 33.013,
+      "longitude": -94.690587
+    },
+    "geo": {
+      "radius_tier": 50
+    },
+    "links": {
+      "web_url": "https://tpwd.texas.gov/calendar/daingerfield/christmas-in-the-park",
+      "source_url": "https://tpwd.texas.gov/calendar/daingerfield/christmas-in-the-park"
+    },
+    "admission": {
+      "availability": "not_applicable",
+      "currency": "USD",
+      "is_free": true,
+      "requires_ticket": false
+    },
+    "categories": [
+      "holiday",
+      "outdoor",
+      "family-friendly"
+    ],
+    "tags": [
+      "daingerfield",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Daingerfield outing.",
+      "outdoor": true,
+      "rainy_day_friendly": false,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "Texas Parks and Wildlife Department",
+      "type": "official-event-site",
+      "source_url": "https://tpwd.texas.gov/calendar/daingerfield/christmas-in-the-park",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2026-12-19T22:00:00-06:00"
+  },
+  {
+    "id": "evt_longview_jaycees_trade_days_jan_2027",
+    "slug": "longview-jaycees-trade-days-jan-2027",
+    "title": "Longview Jaycees Trade Days (January)",
+    "description": "Browse vendors selling, buying and trading a range of goods at the Longview Convention Complex Exhibit Center.",
+    "agent_summary": "Longview Jaycees Trade Days, January 9-10, 2027; Saturday 9:00 AM-4:00 PM and Sunday 10:00 AM-4:00 PM. Admission and parking are free.",
+    "best_for": [
+      "shoppers",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Saturday hours: 9:00 AM-4:00 PM. Sunday hours: 10:00 AM-4:00 PM. Closed overnight.",
+      "Admission and parking are free; the listing does not confirm RV or oversize parking.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-01-09T09:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10585",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10585"
+    },
+    "admission": {
+      "availability": "not_applicable",
+      "currency": "USD",
+      "is_free": true,
+      "requires_ticket": false
+    },
+    "categories": [
+      "markets",
+      "family-friendly",
+      "community"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10585",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10585"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2027-01-10T16:00:00-06:00"
+  },
+  {
+    "id": "evt_herps_reptile_show_longview_jan_2027",
+    "slug": "herps-reptile-show-longview-jan-2027",
+    "title": "HERPS Exotic Reptile & Pet Show (January)",
+    "description": "A two-day reptile and pet expo with animal and supply vendors, educational exhibits and food trucks at the Longview Exhibit Center.",
+    "agent_summary": "HERPS Exotic Reptile & Pet Show in Longview, January 16-17, 2027; the city lists a 10:00 AM start and a 4:00 PM final-day close. Check the organizer for daily hours and tickets.",
+    "best_for": [
+      "reptile enthusiasts",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Confirm daily opening and closing times, admission prices and animal-handling rules with HERPS before visiting.",
+      "The show runs over two days, with an overnight closure.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-01-16T10:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10586",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10586"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD"
+    },
+    "categories": [
+      "expo",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10586",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10586"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2027-01-17T16:00:00-06:00"
+  },
+  {
+    "id": "evt_gun_knife_show_longview_jan_2027",
+    "slug": "gun-knife-show-longview-jan-2027",
+    "title": "2A Events Gun & Knife Show",
+    "description": "An indoor vendor show featuring firearms, knives, collectibles and related supplies at the Longview Exhibit Center.",
+    "agent_summary": "2A Events Gun & Knife Show in Longview, January 30-31, 2027: Saturday 9:00 AM-5:00 PM and Sunday 10:00 AM-4:00 PM; adult tickets $10.",
+    "best_for": [
+      "collectors"
+    ],
+    "trip_planning_notes": [
+      "Saturday 9:00 AM-5:00 PM; Sunday 10:00 AM-4:00 PM. Closed overnight.",
+      "Adult admission is $10; children ages 6-11 pay $2. Anyone under 18 must attend with a parent.",
+      "Confirm current entry rules with the organizer before attending.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-01-30T09:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10587",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10587"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "is_free": false,
+      "requires_ticket": true,
+      "price_min": 10,
+      "price_max": 10
+    },
+    "categories": [
+      "expo"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10587",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10587"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2027-01-31T16:00:00-06:00"
+  },
+  {
+    "id": "evt_etso_bravo_cowan_2027",
+    "slug": "etso-bravo-cowan-2027",
+    "title": "East Texas Symphony Orchestra: Bravo! A Night at the Theatre",
+    "description": "An orchestral program celebrating stage and opera music, featuring soprano Julianne Casey and actors from the Texas Shakespeare Festival.",
+    "agent_summary": "East Texas Symphony Orchestra: Bravo! A Night at the Theatre at the UT Tyler Cowan Center on January 30, 2027, at 7:30 PM; see the organizer for ticket prices and availability.",
+    "best_for": [
+      "orchestra fans",
+      "theatre lovers"
+    ],
+    "trip_planning_notes": [
+      "Tickets are linked from the official orchestra page; prices and remaining availability were not verified.",
+      "Confirm parking arrangements with the Cowan Center before bringing an RV.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-01-30T19:30:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://etso.org/bravo/",
+      "source_url": "https://etso.org/bravo/",
+      "tickets_url": "https://www.etix.com/ticket/p/92608040/etso-bravoa-night-at-the-theatre-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "requires_ticket": true,
+      "purchase_url": "https://www.etix.com/ticket/p/92608040/etso-bravoa-night-at-the-theatre-tyler-ut-tyler-cowan-center"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "tyler",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Tyler outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "East Texas Symphony Orchestra",
+      "type": "official-event-site",
+      "source_url": "https://etso.org/bravo/",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z"
+  },
+  {
+    "id": "evt_bourbon_bowties_longview_2027",
+    "slug": "bourbon-bowties-longview-2027",
+    "title": "Longview WOW Bourbon & Bowties",
+    "description": "An evening fundraiser for Longview World of Wonders with bourbon tasting, auctions and dancing.",
+    "agent_summary": "Longview WOW Bourbon & Bowties at Maude Cobb Convention Center on February 6, 2027, at 6:30 PM; tickets benefit the children's discovery center.",
+    "best_for": [
+      "adults",
+      "supporters of Longview WOW"
+    ],
+    "trip_planning_notes": [
+      "The program includes a bourbon trail, live and silent auctions, and dancing.",
+      "Check the linked organizer page for ticket prices, availability and admission requirements.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-02-06T18:30:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10591",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10591",
+      "tickets_url": "https://longviewwow.org/bourbon-bowties/"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "requires_ticket": true,
+      "purchase_url": "https://longviewwow.org/bourbon-bowties/"
+    },
+    "categories": [
+      "community",
+      "nightlife"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "family_friendly": false
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10591",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10591"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z"
+  },
+  {
+    "id": "evt_longview_jaycees_trade_days_feb_2027",
+    "slug": "longview-jaycees-trade-days-feb-2027",
+    "title": "Longview Jaycees Trade Days (February)",
+    "description": "Browse vendors selling, buying and trading a range of goods at the Longview Convention Complex Exhibit Center.",
+    "agent_summary": "Longview Jaycees Trade Days, February 13-14, 2027; Saturday 9:00 AM-4:00 PM and Sunday 10:00 AM-4:00 PM. Admission and parking are free.",
+    "best_for": [
+      "shoppers",
+      "families"
+    ],
+    "trip_planning_notes": [
+      "Saturday hours: 9:00 AM-4:00 PM. Sunday hours: 10:00 AM-4:00 PM. Closed overnight.",
+      "Admission and parking are free; the listing does not confirm RV or oversize parking.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-02-13T09:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Longview Exhibit Center",
+      "address1": "1123 Jaycee Drive",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10593",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10593"
+    },
+    "admission": {
+      "availability": "not_applicable",
+      "currency": "USD",
+      "is_free": true,
+      "requires_ticket": false
+    },
+    "categories": [
+      "markets",
+      "family-friendly",
+      "community"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10593",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10593"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2027-02-14T16:00:00-06:00"
+  },
+  {
+    "id": "evt_home_design_show_longview_2027",
+    "slug": "home-design-show-longview-2027",
+    "title": "East Texas Builders Association Home & Design Show",
+    "description": "Meet East Texas builders and home service vendors and explore their products at Maude Cobb Convention Center.",
+    "agent_summary": "Home & Design Show in Longview, February 19-21, 2027: Friday 5:00-8:00 PM, Saturday 10:00 AM-5:00 PM, Sunday noon-4:00 PM. Adult admission $8 advance or $10 at the door.",
+    "best_for": [
+      "homeowners",
+      "home design enthusiasts"
+    ],
+    "trip_planning_notes": [
+      "Friday 5:00-8:00 PM; Saturday 10:00 AM-5:00 PM; Sunday noon-4:00 PM. Closed overnight.",
+      "Adult admission is $8 online in advance or $10 at the door; children 12 and under enter free.",
+      "Visit East Texas Builders Association for advance ticket details; contact 903-758-6416 with questions.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-02-19T17:00:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "Maude Cobb Convention Center",
+      "address1": "100 Grand Blvd.",
+      "city": "Longview",
+      "region": "TX",
+      "postal_code": "75604",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 14.5,
+      "radius_tier": 15,
+      "estimated_drive_time_minutes": 22
+    },
+    "links": {
+      "web_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10594",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10594"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "is_free": false,
+      "requires_ticket": true,
+      "price_min": 8,
+      "price_max": 10
+    },
+    "categories": [
+      "expo",
+      "family-friendly"
+    ],
+    "tags": [
+      "longview",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Longview outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true,
+      "family_friendly": true
+    },
+    "relevance": {
+      "score": 840,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 15 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "City of Longview Calendar",
+      "type": "municipal-calendar",
+      "source_url": "https://www.longviewtexas.gov/Calendar.aspx?EID=10594",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95,
+      "source_event_id": "10594"
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z",
+    "end_at": "2027-02-21T16:00:00-06:00"
+  },
+  {
+    "id": "evt_etso_flute_in_flight_cowan_2027",
+    "slug": "etso-flute-in-flight-cowan-2027",
+    "title": "East Texas Symphony Orchestra: The Flute in Flight",
+    "description": "ETSO principal flutist Dominique Reilly performs Mozart, in a program also featuring Schumann, Rimsky-Korsakov and Louise Farrenc.",
+    "agent_summary": "East Texas Symphony Orchestra: The Flute in Flight at the UT Tyler Cowan Center on February 27, 2027, at 7:30 PM; see the organizer for ticket prices and availability.",
+    "best_for": [
+      "orchestra fans",
+      "classical music lovers"
+    ],
+    "trip_planning_notes": [
+      "Tickets are linked from the official orchestra page; prices and remaining availability were not verified.",
+      "Confirm parking arrangements with the Cowan Center before bringing an RV.",
+      "Distances and drive times from the park are estimates."
+    ],
+    "start_at": "2027-02-27T19:30:00-06:00",
+    "timezone": "America/Chicago",
+    "status": "scheduled",
+    "location": {
+      "name": "UT Tyler Cowan Center",
+      "address1": "3900 University Blvd, FAC 1120",
+      "city": "Tyler",
+      "region": "TX",
+      "postal_code": "75799",
+      "country": "US"
+    },
+    "geo": {
+      "distance_from_park_miles": 28,
+      "radius_tier": 50,
+      "estimated_drive_time_minutes": 38
+    },
+    "links": {
+      "web_url": "https://etso.org/flute-in-flight-4/",
+      "source_url": "https://etso.org/flute-in-flight-4/",
+      "tickets_url": "https://www.etix.com/ticket/p/50355311/etso-the-flute-in-flight-tyler-ut-tyler-cowan-center"
+    },
+    "admission": {
+      "availability": "unknown",
+      "currency": "USD",
+      "requires_ticket": true,
+      "purchase_url": "https://www.etix.com/ticket/p/50355311/etso-the-flute-in-flight-tyler-ut-tyler-cowan-center"
+    },
+    "categories": [
+      "live-music",
+      "performing-arts"
+    ],
+    "tags": [
+      "tyler",
+      "winter-2026-2027"
+    ],
+    "rv_context": {
+      "rv_parking_notes": "Confirm parking and vehicle restrictions with the organizer before bringing an RV.",
+      "ideal_stay_length_days": 1,
+      "booking_prompt": "Use Shallow Creek RV Park as a base for this Tyler outing.",
+      "outdoor": false,
+      "rainy_day_friendly": true
+    },
+    "relevance": {
+      "score": 790,
+      "score_version": "mvp-0.1",
+      "reasons": [
+        "within 50 miles",
+        "official source verified"
+      ]
+    },
+    "source": {
+      "name": "East Texas Symphony Orchestra",
+      "type": "official-event-site",
+      "source_url": "https://etso.org/flute-in-flight-4/",
+      "first_seen_at": "2026-11-15T08:44:35Z",
+      "last_seen_at": "2026-11-15T08:44:35Z",
+      "confidence": 0.95
+    },
+    "moderation": {
+      "status": "approved",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-11-15T08:44:35Z",
+      "risk_flags": []
+    },
+    "created_at": "2026-11-15T08:44:35Z",
+    "updated_at": "2026-11-15T08:44:35Z"
   }
 ]
