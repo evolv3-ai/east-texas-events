@@ -1,0 +1,25 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EventCard from '@/components/EventCard.astro';
+import type { BrowseGroup, BrowseKind } from '@/lib/events/browse';
+import { itemListJsonLd } from '@/lib/events/jsonld';
+
+interface Props { kind: BrowseKind; group: BrowseGroup }
+const { kind, group } = Astro.props;
+const title = kind === 'cities' ? `Upcoming events in ${group.name}, Texas` : `Upcoming ${group.name} events in East Texas`;
+const description = `${title}. Browse ${group.events.length} source-verified ${group.events.length === 1 ? 'event' : 'events'} with dates, venue details, and official source links.`;
+const jsonLd = itemListJsonLd(group.events, Astro.site!.origin);
+---
+<BaseLayout title={`${title} | Shallow Creek`} description={description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <section class="hero">
+    <p class="eyebrow">The Piney Woods event bill</p>
+    <h1>{title}</h1>
+    <p class="lede">Source-verified events to help plan your next East Texas outing.</p>
+    <p><a href={`/events/${kind}/`}>Browse all {kind}</a> · <a href="/events/">All events</a></p>
+  </section>
+  <section aria-label="Upcoming events">
+    <p class="freshness">{group.events.length} source-verified events · regenerated with every site build.</p>
+    <div class="cards">{group.events.map(event => <EventCard event={event} />)}</div>
+  </section>
+</BaseLayout>
