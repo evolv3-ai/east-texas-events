@@ -19,7 +19,7 @@ const jsonLd = itemListJsonLd(group.events, Astro.site!.origin);
     <p><a href={`/events/${kind}/`}>Browse all {kind}</a> · <a href="/events/">All events</a></p>
   </section>
   <section aria-label="Upcoming events">
-    <p class="freshness">{group.events.length} source-verified events · regenerated with every site build.</p>
+    <p class="freshness">{group.events.length} source-verified {group.events.length === 1 ? 'event' : 'events'} · regenerated with every site build.</p>
     <div class="cards">{group.events.map(event => <EventCard event={event} />)}</div>
   </section>
 </BaseLayout>
