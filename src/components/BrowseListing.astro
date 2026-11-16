@@ -6,7 +6,7 @@ import { itemListJsonLd } from '@/lib/events/jsonld';
 
 interface Props { kind: BrowseKind; group: BrowseGroup }
 const { kind, group } = Astro.props;
-const title = kind === 'cities' ? `Upcoming events in ${group.name}, Texas` : `Upcoming ${group.name} events in East Texas`;
+const title = kind === 'cities' ? `Upcoming events in ${group.label}, Texas` : `Upcoming ${group.label} events in East Texas`;
 const description = `${title}. Browse ${group.events.length} source-verified ${group.events.length === 1 ? 'event' : 'events'} with dates, venue details, and official source links.`;
 const jsonLd = itemListJsonLd(group.events, Astro.site!.origin);
 ---

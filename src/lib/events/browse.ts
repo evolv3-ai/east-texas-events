@@ -1,18 +1,26 @@
-import { createHash } from 'node:crypto';
 import { getApprovedEvents } from './data';
 import type { CanonicalEvent } from './schema';
 
 export type BrowseKind = 'cities' | 'categories';
 export interface BrowseGroup {
   name: string;
+  label: string;
   slug: string;
   events: CanonicalEvent[];
 }
 
+const CATEGORY_LABELS: Record<string, string> = { 'food-drink': 'Food & Drink' };
+
 export function browseSlug(name: string): string {
-  const slug = name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  const slug = name.normalize('NFKD').replace(/[̀-ͯ]/g, '')
     .toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  return slug || `group-${createHash('sha256').update(name).digest('hex').slice(0, 12)}`;
+  if (!slug) throw new Error(`Browse name has no URL-safe characters: ${JSON.stringify(name)}`);
+  return slug;
+}
+
+export function browseLabel(kind: BrowseKind, name: string): string {
+  if (kind === 'cities') return name;
+  return CATEGORY_LABELS[name] ?? name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
 export function getBrowseGroups(kind: BrowseKind, now: Date = new Date()): BrowseGroup[] {
@@ -31,7 +39,7 @@ export function getBrowseGroups(kind: BrowseKind, now: Date = new Date()): Brows
     // Fail explicitly rather than silently overwrite a different field value's page.
     if (slugs.has(slug)) throw new Error(`Duplicate ${kind} browse slug: ${slug}`);
     slugs.add(slug);
-    return { name, slug, events: groups.get(name)! };
+    return { name, label: browseLabel(kind, name), slug, events: groups.get(name)! };
   });
 }
 

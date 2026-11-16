@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getBrowseGroups, getBrowsePaths, browseSlug } from '../browse';
+import { getBrowseGroups, getBrowsePaths, browseLabel, browseSlug } from '../browse';
 import { getApprovedEvents } from '../data';
 
 const NOW = new Date('2026-11-15T12:00:00Z');
@@ -13,6 +13,25 @@ describe('browseSlug', () => {
     ['Café Music', 'cafe-music'],
   ])('turns %s into a stable URL segment', (name, slug) => {
     expect(browseSlug(name)).toBe(slug);
+  });
+
+  it('rejects a name with no URL-safe characters', () => {
+    expect(() => browseSlug('!!! ')).toThrow(/no URL-safe characters/);
+  });
+});
+
+describe('browseLabel', () => {
+  it.each([
+    ['food-drink', 'Food & Drink'],
+    ['live-music', 'Live Music'],
+    ['family-friendly', 'Family Friendly'],
+    ['festival', 'Festival'],
+  ])('labels category %s as %s', (name, label) => {
+    expect(browseLabel('categories', name)).toBe(label);
+  });
+
+  it('keeps city names as written', () => {
+    expect(browseLabel('cities', 'New London')).toBe('New London');
   });
 });
 

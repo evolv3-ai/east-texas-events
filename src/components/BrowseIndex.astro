@@ -17,7 +17,7 @@ const groups = getBrowseGroups(kind);
     {groups.length ? (
       <ul>
         {groups.map(group => (
-          <li><a href={`/events/${kind}/${group.slug}/`}>{group.name}</a> — {group.events.length} upcoming {group.events.length === 1 ? 'event' : 'events'}</li>
+          <li><a href={`/events/${kind}/${group.slug}/`}>{group.label}</a> — {group.events.length} upcoming {group.events.length === 1 ? 'event' : 'events'}</li>
         ))}
       </ul>
     ) : (

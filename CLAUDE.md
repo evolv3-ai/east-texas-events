@@ -22,7 +22,7 @@ src/data/events.seed.json
   → src/pages/*                (HTML + .json + llms.txt endpoints)
 ```
 
-**Routes:** `/events`, `/events/[slug]`, `/events/near-shallow-creek-rv-park`, `/events/cities`, `/events/cities/[slug]`, `/events/categories`, `/events/categories/[slug]`, `/sitemap.xml`, `/events.json`, `/events.rss.xml`, `/events.ics`, `/openapi.json`, `/llms.txt`
+**Routes:** `/events`, `/events/[slug]`, `/events/near-shallow-creek-rv-park`, `/events/cities`, `/events/cities/[slug]`, `/events/categories`, `/events/categories/[slug]`, `/events.json`, `/events.rss.xml`, `/events.ics`, `/openapi.json`, `/llms.txt`
 
 ## Project rules
 
