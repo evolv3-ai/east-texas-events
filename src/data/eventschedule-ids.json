@@ -13,6 +13,11 @@
       "subdomain": "caldwell",
       "hash": "defb7281779efff8"
     },
+    "daingerfield state park|455 park road 17|daingerfield": {
+      "id": "WRcyGZ",
+      "subdomain": "daingerfield",
+      "hash": "871d9e17535be22a"
+    },
     "downtown kilgore||kilgore": {
       "id": "gi1PpQ",
       "subdomain": "downtown",
@@ -22,6 +27,11 @@
       "id": "GyETvB",
       "subdomain": "downtown-longview",
       "hash": "54573ce0abf132ed"
+    },
+    "heritage plaza|219 e. methvin st.|longview": {
+      "id": "EgbsFr",
+      "subdomain": "heritage",
+      "hash": "7c8fbe412b27bda7"
     },
     "historic downtown kilgore||kilgore": {
       "id": "43tpQn",
@@ -33,6 +43,11 @@
       "subdomain": "longview",
       "hash": "d28e00dd5c24cc16"
     },
+    "martin creek lake state park|9515 county road 2181d|tatum": {
+      "id": "jKN2Ro",
+      "subdomain": "martin",
+      "hash": "abaa7644516340bd"
+    },
     "maude cobb convention center|100 grand blvd.|longview": {
       "id": "cluSua",
       "subdomain": "maude",
@@ -42,6 +57,11 @@
       "id": "ufDIos",
       "subdomain": "rusk",
       "hash": "fd99f3e180133413"
+    },
+    "safety city|323 w. cotton st.|longview": {
+      "id": "CiULIn",
+      "subdomain": "safety",
+      "hash": "c7bffc0cb66cf8df"
     },
     "santaland|11455 interstate 20 west|tyler": {
       "id": "FSwoDC",
@@ -114,11 +134,35 @@
       "hash": "496c379773463c7d",
       "sub_schedule": null
     },
+    "evt_bourbon_bowties_longview_2027": {
+      "id": "asNjTu",
+      "url": "https://e-tex.events/maude/longview-wow-bourbon-bowties/asNjTu",
+      "hash": "a319a27667ed1921",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
     "evt_cardboard_cove_longview_2026": {
       "id": "LmiWDZ",
       "url": "https://e-tex.events/longview/cardboard-cove-longview/LmiWDZ",
       "hash": "eb6985115fdab68e",
       "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_christmas_campfire_stories_martin_creek_2026": {
+      "id": "lVIpKt",
+      "url": "https://e-tex.events/martin/christmas-campfire-stories-at-martin-creek-lake-state-park/lVIpKt",
+      "hash": "f5ac1366955a1590",
+      "sub_schedule": null
+    },
+    "evt_christmas_craft_martin_creek_2026": {
+      "id": "j8N2Ro",
+      "url": "https://e-tex.events/martin/christmas-craft-at-martin-creek-lake-state-park/j8N2Ro",
+      "hash": "c0b3a9d71d4817c8",
+      "sub_schedule": null
+    },
+    "evt_christmas_in_the_park_daingerfield_2026": {
+      "id": "wjhkHm",
+      "url": "https://e-tex.events/daingerfield/christmas-in-the-park-at-daingerfield-state-park/wjhkHm",
+      "hash": "f609b6f3c873cb16",
+      "sub_schedule": null
     },
     "evt_christmas_in_the_pineywoods_2026": {
       "id": "rPvdgc",
@@ -156,10 +200,28 @@
       "hash": "e50ca76419345df9",
       "sub_schedule": null
     },
+    "evt_dutch_oven_cooking_daingerfield_dec_2026": {
+      "id": "PwnGVl",
+      "url": "https://e-tex.events/daingerfield/dutch-oven-cooking-tasting-at-daingerfield-state-park/PwnGVl",
+      "hash": "1d0bc0af96260450",
+      "sub_schedule": null
+    },
     "evt_east_texas_yamboree_2026": {
       "id": "qK0VK6",
       "url": "https://e-tex.events/upshur/89th-annual-east-texas-yamboree/qK0VK6",
       "hash": "121b4a0d01a6f559",
+      "sub_schedule": null
+    },
+    "evt_etso_bravo_cowan_2027": {
+      "id": "HH63jO",
+      "url": "https://e-tex.events/ut/east-texas-symphony-orchestra-bravo-a-night-at-the-theatre/HH63jO",
+      "hash": "c11eda1a0b41bf0d",
+      "sub_schedule": null
+    },
+    "evt_etso_flute_in_flight_cowan_2027": {
+      "id": "NwXstH",
+      "url": "https://e-tex.events/ut/east-texas-symphony-orchestra-the-flute-in-flight/NwXstH",
+      "hash": "d7c06987c84b6d89",
       "sub_schedule": null
     },
     "evt_first_day_hike_tyler_state_park_2027": {
@@ -174,6 +236,12 @@
       "hash": "9bff361277e2aeb2",
       "sub_schedule": null
     },
+    "evt_gun_knife_show_longview_jan_2027": {
+      "id": "3bJYtP",
+      "url": "https://e-tex.events/longview/2a-events-gun-knife-show/3bJYtP",
+      "hash": "6de489749fa032af",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
     "evt_harvest_festival_livestock_show_2026": {
       "id": "cluSua",
       "url": "https://e-tex.events/maude/harvest-festival-livestock-show/cluSua",
@@ -186,11 +254,35 @@
       "hash": "4485b5254f46684b",
       "sub_schedule": null
     },
+    "evt_herps_reptile_show_longview_jan_2027": {
+      "id": "o4PWC6",
+      "url": "https://e-tex.events/longview/herps-exotic-reptile-pet-show-january/o4PWC6",
+      "hash": "046875e7696d8848",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_home_design_show_longview_2027": {
+      "id": "KWcOGi",
+      "url": "https://e-tex.events/maude/east-texas-builders-association-home-design-show/KWcOGi",
+      "hash": "d32be30d5358d618",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
     "evt_jim_gaffigan_belcher_2026": {
       "id": "smFNnu",
       "url": "https://e-tex.events/belcher/jim-gaffigan-everything-is-wonderful/smFNnu",
       "hash": "4bc372343a407b34",
       "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_jungle_bell_jog_longview_2026": {
+      "id": "wMhkHm",
+      "url": "https://e-tex.events/heritage/jungle-bell-jog/wMhkHm",
+      "hash": "b89e7dd80eb3a706",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_kayak_with_santa_martin_creek_2026": {
+      "id": "yuVRl6",
+      "url": "https://e-tex.events/martin/kayak-with-santa-at-martin-creek-lake-state-park/yuVRl6",
+      "hash": "53a1c5a0f98dfb0a",
+      "sub_schedule": null
     },
     "evt_kilgore_christmas_parade_2026": {
       "id": "pE71dX",
@@ -214,6 +306,24 @@
       "id": "XVLgmH",
       "url": "https://e-tex.events/downtown-longview/longview-ambucs-christmas-parade/XVLgmH",
       "hash": "3e945d229e6ebbc0",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_longview_jaycees_trade_days_dec_2026": {
+      "id": "niq3wp",
+      "url": "https://e-tex.events/longview/longview-jaycees-trade-days-december/niq3wp",
+      "hash": "e31bc66f56395660",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_longview_jaycees_trade_days_feb_2027": {
+      "id": "zbbGQB",
+      "url": "https://e-tex.events/longview/longview-jaycees-trade-days-february/zbbGQB",
+      "hash": "dacd8d0b38a33b15",
+      "sub_schedule": "near-shallow-creek-rv-park"
+    },
+    "evt_longview_jaycees_trade_days_jan_2027": {
+      "id": "U6kRwx",
+      "url": "https://e-tex.events/longview/longview-jaycees-trade-days-january/U6kRwx",
+      "hash": "051e5892e99724e4",
       "sub_schedule": "near-shallow-creek-rv-park"
     },
     "evt_longview_jaycees_trade_days_oct_2026": {
@@ -275,6 +385,12 @@
       "url": "https://e-tex.events/tyler-state/a-pineywoods-christmas/1BlMLP",
       "hash": "14e0060ecad2f3c6",
       "sub_schedule": null
+    },
+    "evt_power_wheels_parade_longview_2026": {
+      "id": "9JWaKv",
+      "url": "https://e-tex.events/safety/power-wheels-parade-at-safety-city/9JWaKv",
+      "hash": "2a9abf5ae4711020",
+      "sub_schedule": "near-shallow-creek-rv-park"
     },
     "evt_rangerette_christmas_show_2026": {
       "id": "VopZTj",
