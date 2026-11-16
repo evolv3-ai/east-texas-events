@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "vitest run --config vitest.e2e.config.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "validate:data:json": "tsx scripts/validate-data.ts --json",
     "validate:data:release": "tsx scripts/validate-data.ts --release",

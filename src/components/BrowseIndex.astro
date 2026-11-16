@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getBrowseGroups, type BrowseKind } from '@/lib/events/browse';
+
+interface Props { kind: BrowseKind }
+const { kind } = Astro.props;
+const label = kind === 'cities' ? 'city' : 'category';
+const groups = getBrowseGroups(kind);
+---
+<BaseLayout title={`Browse East Texas events by ${label} | Shallow Creek`} description={`Find upcoming, source-verified East Texas events by ${label}. Choose from the ${kind} with events on the calendar.`}>
+  <section class="hero">
+    <p class="eyebrow">The Piney Woods event bill</p>
+    <h1>Browse East Texas events by <em>{label}</em></h1>
+    <p class="lede">Choose a {label} to see upcoming events, with dates and links to the official sources.</p>
+  </section>
+  <section aria-label={`Browse by ${label}`}>
+    {groups.length ? (
+      <ul>
+        {groups.map(group => (
+          <li><a href={`/events/${kind}/${group.slug}/`}>{group.label}</a> — {group.events.length} upcoming {group.events.length === 1 ? 'event' : 'events'}</li>
+        ))}
+      </ul>
+    ) : (
+      <p>No upcoming events are currently listed. Check back for the next calendar update.</p>
+    )}
+    <p><a href="/events/">All East Texas events</a></p>
+  </section>
+</BaseLayout>

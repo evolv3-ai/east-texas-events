@@ -1,0 +1,9 @@
+---
+import BrowseListing from '@/components/BrowseListing.astro';
+import { getBrowsePaths, type BrowseGroup } from '@/lib/events/browse';
+
+export function getStaticPaths() { return getBrowsePaths('cities'); }
+interface Props { group: BrowseGroup }
+const { group } = Astro.props;
+---
+<BrowseListing kind="cities" group={group} />

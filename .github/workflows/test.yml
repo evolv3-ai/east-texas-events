@@ -16,6 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - run: npm run test:e2e
       - run: bash -n scripts/deploy-eventschedule-static.sh deploy/eventschedule/activate-static.sh
       - run: python -m unittest discover -s deploy/eventschedule -p test_smoke_static.py
       - name: Test actual Caddy routing

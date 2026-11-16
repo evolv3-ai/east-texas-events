@@ -16,7 +16,8 @@ cd east-texas-events
 npm install
 npm run dev               # http://localhost:4321/events/
 npm run validate:data     # Zod-validate src/data/events.seed.json
-npm run build             # astro check + validate:data + astro build
+npm run build             # astro check + validate:data + tests + astro build
+npm run test:e2e          # check the built dist/ output (run after build)
 npm run preview           # preview production build
 ```
 
@@ -40,6 +41,8 @@ Public feed only includes events with `moderation.status === 'approved'`. Curren
 | `/events/` | Human index of all approved events |
 | `/events/[slug]/` | Per-event detail page with JSON-LD |
 | `/events/near-shallow-creek-rv-park/` | Events within ~15 miles of the park |
+| `/events/cities/`, `/events/cities/[slug]/` | Browse upcoming approved events by city |
+| `/events/categories/`, `/events/categories/[slug]/` | Browse upcoming approved events by category |
 | `/events.json` | Agent-friendly JSON feed (schema `events-feed.v0.1`) |
 | `/openapi.json` | OpenAPI 3.1 description of the JSON surfaces |
 | `/llms.txt` | Plain-text usage guide for AI agents |
